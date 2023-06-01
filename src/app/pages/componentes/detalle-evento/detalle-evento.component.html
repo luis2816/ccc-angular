@@ -1,0 +1,121 @@
+<nav id="BreadCrumb" aria-label="breadcrumb">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a [routerLink]="['/eventos']">Eventos</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">{{evento.titulo}}</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</nav>
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 order-md-last">
+                <h1 class="mb-4">{{evento.titulo}}</h1>
+                <div class="img-thumbnail p-0 rounded-5">
+                    <img class="img-fluid w-100" src="{{evento.ruta}}" alt="">
+                </div>
+                <div class="d-flex justify-content-between align-items-center my-4">
+                    <ul class="social-share list-unstyled">
+                        <li>Compartir</li>
+                        <li><i class="bi bi-envelope-fill" style="color: #FFA000;"></i></li>
+                        <li><i class="bi bi-facebook" style="color: #4460A0;"></i></li>
+                        <li><i class="bi bi-twitter" style="color: #00AAEC;"></i></li>
+                        <li><i class="bi bi-whatsapp" style="color: #67C15E;"></i></li>
+                    </ul>
+                    <button type="button" class="btn btn-primary btn-lg px-5 fw-bold fs-4 rounded-4">Inscríbete</button>
+                </div>
+                <p class="event-description border-top border-1 border-primary pt-3 mb-3">{{evento.descripcion}}</p>
+                <h4 class="my-3">Información general</h4>
+                <ul class="list-unstyled contact-info-icons row row-cols-1 row-cols-md-2">
+                    <li class="ci place">Lugar: {{evento.lugar}}</li>
+                    <li class="ci time">Hora: {{evento.hora}}</li>
+                    <li class="ci city">Ciudad: {{evento.ciudad}}</li>
+                    <li class="ci address">Dirección: {{evento.direccion}}</li>
+                    <li class="ci date">Fecha: {{evento.fecha_evento}}</li>
+                    <li class="ci duration">Duración: {{evento.duracion}} </li>
+                </ul>
+            </div>            
+            <div class="col-md-4 order-md-first">
+                <div class="card shadow-lg rounded-4">
+                    <div class="card-body p-4">
+                        <form>
+                            <div class="mb-3">
+                                <label for="dateFilter" class="form-label">Fecha</label>
+                                <input type="date" name="" id="dateFilter" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <span class="badge p-2 rounded-pill text-bg-accent text-white">Gratuito</span>
+                                <span class="badge p-2 rounded-pill text-bg-success text-white">Con costo</span>
+                            </div>
+                            <div class="mb-3">
+                                <label for="nameEventFilter" class="form-label">Nombre del evento</label>
+                                <select class="form-select" id="nameEventFilter" aria-label="Default select example">
+                                    <option selected>Open this select menu</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                  </select>
+                            </div>
+                            <div class="accordion-filters">
+                                <div class="accordion accordion-flush" id="accordionFlushExample">
+                                    <div class="accordion-item">
+                                      <h2 class="accordion-header" id="flush-headingOne">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                          Filtrar por Categoría
+                                        </button>
+                                      </h2>
+                                      <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                        <div class="accordion-body">
+                                            <ul class="list-unstyled">
+                                                <li>Item-1</li>
+                                                <li>Item-2</li>
+                                                <li>Item-3</li>
+                                            </ul>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                      <h2 class="accordion-header" id="flush-headingTwo">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                                          Filtrar por eje temático
+                                        </button>
+                                      </h2>
+                                      <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                                        <div class="accordion-body">
+                                            <ul class="list-unstyled">
+                                                <li>Item-1</li>
+                                                <li>Item-2</li>
+                                                <li>Item-3</li>
+                                            </ul>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="info mt-5">
+                    <h5>Mayor información</h5>
+                    <p>Área de Desarrollo Empresarial</p>
+                    <ul class="list-unstyled contact-info-icons">
+                        <li class="ci phone">(602) 8243625 Ext 104</li>
+                        <li class="ci mobile">3201234567</li>
+                        <li class="ci email"><a href="mailto:correo@mail.com.co">correo@mail.com.co</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="container">
+        <div class="row">
+            <h2 class="mb-4">Información que pueda interesarte</h2>
+        </div>
+    </div>
+</section>

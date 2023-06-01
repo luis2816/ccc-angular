@@ -1,0 +1,20 @@
+<div class="col" *ngFor="let e of eventos" >
+   <div class="card evento">
+     <div class="card-body">
+        <h3 class="card-title">{{e.titulo}}</h3>
+        <div class="date">
+            <span class="day">{{e.dia}}</span>
+            <span class="month">{{e.mes}}</span>
+        </div>
+        <div class="badge bg-accent">{{e.tipo}}</div>
+    </div>
+    <div class="card-footer">
+        <ul class="list-unstyled contact-info-icons">
+            <li class="ci city">{{e.ciudad}}</li>
+            <li class="ci duration">{{e.hora}}</li>
+            <li class="ci email">correo@mail.com.co</li>
+            <li class="detailsBtn"><a [routerLink]="['/inicio']">ver detalles</a></li>
+        </ul>
+    </div>
+</div>
+</div>

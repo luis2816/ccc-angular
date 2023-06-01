@@ -1,0 +1,53 @@
+<header>
+    <div id="headerTopBar">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-auto">
+                    <a class="nav-link logogovco" aria-label="Logo Gobierno de Colombia. Te llevará al inicio" href="https://www.gov.co" target="_blank"><img src="https://cdn.www.gov.co/assets/images/logo.svg" height="30"></a>
+                </div>
+                <div class="col-auto">
+                    <div class="follow-us">
+                        <ul class="list-unstyled d-flex flex-row mb-0">
+                            <li class="me-3 text-white">Síguenos en:</li>
+                            <li><a title="visitar perfil de facebook" href="https://www.facebook.com/CamaraCauca" target="_blank"><i class="bi bi-facebook text-white"></i></a></li>
+                            <li><a title="visitar perfil de instagram" href="https://www.instagram.com/cccauca" target="_blank"><i class="bi bi-instagram text-white"></i></a></li>
+                            <li><a title="visitar perfil de twitter" href="https://twitter.com/cccauca" target="_blank"><i class="bi bi-twitter text-white"></i></a></li>
+                            <li><a title="visitar perfil de youtube" href="https://www.youtube.com/channel/UCsJZpKzgKcUv9sdCmKKZo1w" target="_blank"><i class="bi bi-youtube text-white"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>        
+    <nav class="navbar navbar-expand-sm navbar-light bg-white">
+        <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="../../../../assets/logo.svg" alt="logo Cámara de comercio del Cauca" width="50">
+                </a>
+                <div class="collapse navbar-collapse justify-content-end d-none" id="navbarID">
+                    <div class="col-md-4">
+                        <div class="input-group flex-nowrap">
+                            <input type="search" name="input_search" id="headerSearch" class="form-control rounded-3" placeholder="Buscar...">
+                            <button class="btn btn-link p-0 ms-2 me-4"><i class="bi bi-search fs-4"></i></button>
+                        </div>
+                    </div>
+                    <div class="navbar-nav me-5 align-items-center justify-content-end">
+                        <a class="nav-link" [routerLink]="['inicio']" aria-current="page">Inicio</a>
+                        <a class="nav-link" href="#">Transparencia y acceso a<br> la información pública</a>
+                        <a class="nav-link" href="#">Servicios de atención<br> a la ciudadanía</a>
+                        <a class="nav-link" href="#">Participa</a>
+                    </div>
+                </div>
+                <button class="btn offmenu-toggle" type="button" data-bs-toggle="offcanvas" data-bs-target="#OffCanvasMenu" aria-controls="OffCanvasMenu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+    </nav>
+</header>  
+
+<app-menu></app-menu>
+
+    <div id="AccesibilityBtn">
+        <div class="tag">Accesibilidad</div>
+        <img width="40" src="../../../../assets/icons/accesibilidad.svg" alt="">
+    </div>

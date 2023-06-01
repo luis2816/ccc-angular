@@ -1,0 +1,18 @@
+<section id="IconMenu" style="margin-top:-3rem;background-color: #e6e6e6;padding: 1rem 0 2rem;" ref="swiperContainer">
+    <div class="container">
+        <div class="swiper swiper-icon-menu" style="padding-bottom: 2rem;">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" *ngFor="let icon of iconos">
+                    <div class="card icon-title move-down-hover">
+                        <div class="card-body">
+                            <div class="card-icon">
+                                <img src="{{icon.imagen}}" alt="">
+                            </div>
+                            <a href="#" class="card-title stretched-link">{{icon.titulo}}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

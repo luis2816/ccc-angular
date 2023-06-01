@@ -1,0 +1,27 @@
+<div class="swiper slidesPerView-3">
+    <div class="swiper-wrapper" >
+        <div class="swiper-slide" *ngFor="let oferta of listaOfertas ">
+            <div class="card body-footer">
+                <div class="card-body">
+                    <div class="title-location">
+                        <h5 class="card-title">{{oferta.titulo}}</h5>
+                        <small class="location"><i class="bi bi-geo-alt-fill"></i>{{oferta.ciudad}}</small>
+                    </div>
+                    <small class="published-time"><i class="bi bi-clock"></i>{{oferta.fecha_publicacion}}</small>
+                    <span class="badge bg-success">{{oferta.nom_convocatoria}}</span>
+                </div>
+                <div class="card-footer">
+                    <small class="vacancies"><i class="bi bi-people-fill"></i> Vancantes | {{oferta.no_vacantes}}</small>
+                    <ul class="social-share list-unstyled">
+                        <li>Compartir</li>
+                        <li><i class="bi bi-envelope-fill" style="color: #FFA000;"></i></li>
+                        <li><i class="bi bi-facebook" style="color: #4460A0;"></i></li>
+                        <li><i class="bi bi-twitter" style="color: #00AAEC;"></i></li>
+                        <li><i class="bi bi-whatsapp" style="color: #67C15E;"></i></li>
+                    </ul>
+                    <button type="button" class="btn btn-primary btn-sm">Postularme</button>
+                </div>
+            </div>
+        </div>
+    </div> 
+</div>

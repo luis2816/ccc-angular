@@ -1,0 +1,20 @@
+
+<h2>{{tituloEventos}}</h2>
+<!-- Slider main container -->
+<div class="swiper swiper-eventos py-3 swiper-initialized swiper-horizontal swiper-free-mode swiper-backface-hidden">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide"  *ngFor="let event of eventos">
+      <div class="card bg-img eventos">
+        <div class="card-body">
+          <img src="{{event.ruta}}" alt="">
+          <div class="card-title tp-left">
+            <h3 class="text-uppercase">{{event.titulo}}</h3>
+            <p>{{event.lugar}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="swiper-pagination"></div>
+</div>
+

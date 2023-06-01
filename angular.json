@@ -11,6 +11,7 @@
       "prefix": "app",
       "architect": {
         "build": {
+          
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/proyect-ccc",
@@ -22,15 +23,31 @@
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
-            ],
+              "src/assets",
+              {
+                "glob": "prueba.js",
+                "input": "src/",
+                "output": "/"
+              }         
+           ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/assets/scss/style.scss",
+              "node_modules/swiper/swiper-bundle.min.css",
+              "node_modules/bootstrap-icons/font/bootstrap-icons.css",
+              "node_modules/bootstrap/scss/mixins/_grid.scss",
+              "node_modules/bootstrap/scss/mixins/_utilities.scss"
+           
             ],
-            "scripts": []
+            "scripts": [
+              "src/script.js",
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+              "node_modules/swiper/swiper-bundle.js"
+            ]
           },
           "configurations": {
             "production": {
+             
               "budgets": [
                 {
                   "type": "initial",
@@ -43,6 +60,7 @@
                   "maximumError": "4kb"
                 }
               ],
+              "optimization": true,
               "outputHashing": "all"
             },
             "development": {
