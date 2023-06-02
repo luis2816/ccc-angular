@@ -8,7 +8,7 @@ import { ProgramaIngeniaComponent } from "./pages/componentes/programa-ingenia/p
 import { ServiciosVirtualesComponent } from "./pages/componentes/servicios-virtuales/servicios-virtuales.component";
 import { EventosComponent } from "./pages/componentes/eventos/eventos.component";
 import { DetalleEventoComponent } from "./pages/componentes/detalle-evento/detalle-evento.component";
-
+import { DetalleNoticiaComponent } from "./pages/componentes/detalle-noticia/detalle-noticia.component";
 
 const APP_ROUTES: Routes=[
 {path:'inicio', component: IniciComponent},
@@ -20,6 +20,7 @@ const APP_ROUTES: Routes=[
 {path:'programa-ingenia', component: ProgramaIngeniaComponent},
 {path:'eventos', component: EventosComponent},
 {path:'detalle', component: DetalleEventoComponent},
+{path:'detalleNoticia', component: DetalleNoticiaComponent},
 {path:'**', pathMatch: 'full' , redirectTo: 'inicio'}
 ];
 

@@ -8,8 +8,9 @@ export class InicioService {
 
   constructor(private http: HttpClient) { }
   
+
   getNoticias(): any {
-    const url = 'https://bodecom.com/ccc/ws_pme/?get_noticias';
+    const url = 'http://35.231.9.84:8091/scriptcase/app/CCC/ws_pme/?get_noticias';
     return this.http.get(url);
   }
 
@@ -18,4 +19,5 @@ export class InicioService {
     const body = { "oidDestino": parametro };
     return this.http.post(url, body);
   }
+  
 }

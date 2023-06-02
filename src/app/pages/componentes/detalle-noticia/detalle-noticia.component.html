@@ -1,0 +1,41 @@
+<app-nav [titulo]="'Noticia'"></app-nav>
+<section>
+    <div class="container">
+        <div class="row">
+            <h2 class="my-3">{{noticia.titulo}}</h2>
+            <div class="banner rounded-5" style="height:500px;background-image: url({{noticia.ruta}});"></div>
+            <div class="d-flex justify-content-between my-3">
+                <small>Fecha de publicación: {{noticia.fecha}}</small>
+                 
+            </div>
+        </div>  
+        <div class="row">
+            <p> {{noticia.descripcion}}</p>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-auto">
+                <button type="button" class="btn btn-secondary">Más información</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="row bg-primary rounded-5 p-2 pt-5" id="Noticias" style="margin-bottom: 7rem;">
+    <div class="col">
+        <h2 class="text-white ms-3">eventos</h2>
+        <div  class="swiper slidesPerView-3 swiper-noticias" style="margin-bottom: -7rem;">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" *ngFor="let noticia of noticias">
+                    <div class="card bg-img">
+                        <div class="card-body">
+                            <img src="{{noticia.ruta}}" alt="">
+                            <a (click)="obtenerNoticia(noticia.oid)">{{noticia.titulo}} <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                        <span class="badge rounded-pill text-bg-success">{{noticia.tipo}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

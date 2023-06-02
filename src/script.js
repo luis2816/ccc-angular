@@ -1,4 +1,23 @@
 document.addEventListener('DOMContentLoaded', function(){
+
+  var mainSwiper = new Swiper(".mainSwiper", {
+    spaceBetween: 0,
+    centeredSlides: true,
+    autoplay: {
+      delay: 3500,
+      disableOnInteraction: false,
+      pauseOnMouseEnter:true,
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+});
+
   var swiperBlog = new Swiper(".swiper-blog", {
       grabCursor: true,
       effect: "creative",

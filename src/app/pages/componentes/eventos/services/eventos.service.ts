@@ -5,9 +5,18 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class EventosService {
+  private oidEvento: any;
+
 
   constructor(private http: HttpClient) { }
 
+  setoidEvento(valor: any) {
+    this.oidEvento = valor;
+  }
+
+  getoidEvento() {
+    return this.oidEvento;
+  }
   getEventos(): any {
     const url = 'https://bodecom.com/ccc/ws_pme/?get_eventos';
     return this.http.get(url);

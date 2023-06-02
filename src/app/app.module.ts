@@ -29,7 +29,7 @@ import { SwiperEventosComponent } from './components/componentes/swiper-eventos/
 import { EventosComponent } from './pages/componentes/eventos/eventos.component';
 import { CardEventoComponent } from './components/componentes/card-evento/card-evento.component';
 import { DetalleEventoComponent } from './pages/componentes/detalle-evento/detalle-evento.component';
-
+import { DetalleNoticiaComponent } from './pages/componentes/detalle-noticia/detalle-noticia.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +55,8 @@ import { DetalleEventoComponent } from './pages/componentes/detalle-evento/detal
     SwiperEventosComponent,
     EventosComponent,
     CardEventoComponent,
-    DetalleEventoComponent
+    DetalleEventoComponent,
+    DetalleNoticiaComponent
     
   ],
   imports: [

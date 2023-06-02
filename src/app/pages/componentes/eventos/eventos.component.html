@@ -20,7 +20,7 @@
                                  <li class="ci city">{{e.ciudad}}</li>
                                  <li class="ci duration">{{e.hora}}</li>
                                  <li class="ci email">correo@mail.com.co</li>
-                                 <li class="detailsBtn"><a [routerLink]="['/detalle']" [queryParams]="{ parametro: e.oid }">ver detalles</a></li>
+                                 <li class="detailsBtn"><a (click)="enviarDato(e.oid)" [routerLink]="['/detalle']">ver detalles</a></li>
                              </ul>
                          </div>
                      </div>

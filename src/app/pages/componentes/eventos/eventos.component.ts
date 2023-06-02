@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EventosService } from './services/eventos.service';
 
+
 @Component({
   selector: 'app-eventos',
   templateUrl: './eventos.component.html',
@@ -17,7 +18,10 @@ export class EventosComponent implements OnInit {
       .subscribe((response: any) => this.eventos= response.lista_eventos);
    
   }
-
-
+  
+  enviarDato(dato: number) {
+   // El valor que deseas enviar
+    this.eventosService.setoidEvento(dato);
+  }
 
 }

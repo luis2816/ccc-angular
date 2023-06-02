@@ -1,15 +1,16 @@
 <h2 class="text-white ms-3">{{tituloNoticias}}</h2>
-
 <div  class="swiper slidesPerView-3 swiper-noticias" style="margin-bottom: -7rem;">
     <div class="swiper-wrapper">
         <div class="swiper-slide" *ngFor="let noticia of noticias">
             <div class="card bg-img">
                 <div class="card-body">
                     <img src="{{noticia.ruta}}" alt="">
-                    <a href="noticia.html">{{noticia.titulo}} <i class="bi bi-arrow-right"></i></a>
+                    <a (click)="enviaroidNoticia(noticia.oid)" [routerLink]="['/detalleNoticia']">{{noticia.titulo}} <i class="bi bi-arrow-right"></i></a>
                 </div>
                 <span class="badge rounded-pill text-bg-success">{{noticia.tipo}}</span>
             </div>
         </div>
     </div>
 </div>
+
+
