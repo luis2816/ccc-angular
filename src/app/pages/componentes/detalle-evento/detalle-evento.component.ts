@@ -15,9 +15,9 @@ export class DetalleEventoComponent implements OnInit {
               private elementRef: ElementRef ) {}
 
   ngOnInit() {
-      //obtenemos la varible guardada en el localStorage
-      const oidEventolocal = localStorage.getItem('oidEvento');
-
+    
+    //obtenemos la varible guardada en el localStorage
+    const oidEventolocal = localStorage.getItem('oidEvento');
     //Obtenemos el oidEvento enviado desde el compoenente de eventos
     this.oidEvento=this.eventosService.getoidEvento();
   

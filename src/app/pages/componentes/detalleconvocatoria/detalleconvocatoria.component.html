@@ -1,0 +1,234 @@
+<nav id="BreadCrumb" aria-label="breadcrumb">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a [routerLink]="['/convocatorias']">convocatoria</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">{{oferta.titulo}}</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-3 position-relative">
+    <div class="row banner rounded-5 justify-content-between"
+        style="background: url('https://source.unsplash.com/random/1024x768?business-meeting')no-repeat center/cover;">
+        <div class="col-md-6 align-self-center">
+            <h2 class="text-white">{{oferta.titulo}}</h2>
+            <ul class="social-share list-unstyled">
+                <li class="text-white d-block">Compartir</li>
+                <li><i class="bi bi-envelope-fill" style="color: #FFA000;"></i></li>
+                <li><i class="bi bi-facebook" style="color: #4460A0;"></i></li>
+                <li><i class="bi bi-twitter" style="color: #00AAEC;"></i></li>
+                <li><i class="bi bi-whatsapp" style="color: #67C15E;"></i></li>
+            </ul>
+        </div>
+    </div>
+    <div class="position-absolute top-0 end-0 m-4">
+        <span class="badge bg-success fs-4 p-2">{{oferta.nom_convocatoria}}</span>
+    </div>
+</div>
+
+<div class="bg-primary pt-5" style="margin-top: -4rem;margin-bottom: 6rem;padding-bottom: 4rem;">
+    <div class="container pt-5" style="margin-bottom: -7rem;">
+        <div class="row bg-white border rounded-5 py-3 px-5 shadow">
+            <div class="col-12 text-end">
+                <span><i class="bi bi-clock"></i> {{oferta.fecha_publicacion}}</span>
+            </div>
+            <div class="col  position-relative">
+                <h5 class="text-secondary">{{oferta.titulo}}</h5>
+                <ul class="list-unstyled">
+                    <li><b>Salario:</b> {{oferta.salario}} COP</li>
+                    <li><b>Tipo de contrato:</b> {{oferta.tipo_contrato}}</li>
+                </ul>
+            </div>
+            <div *ngIf="banderaFormulario==false; else boton">
+                <div class="col-12 text-center text-xl-end"><a (click)="mostrarFormulario()"
+                        class="btn btn-primary">Postularme</a></div>
+            </div>
+
+            <ng-template #boton>
+                <div class="col-12 text-center text-xl-end"><a (click)="ocultarBoton()" class="btn btn-primary">Ver
+                        detalle</a></div>
+            </ng-template>
+
+        </div>
+    </div>
+</div>
+<div class="container" *ngIf="banderaFormulario==false;  else Formulario">
+    <div class="row bg-white border rounded-5 py-5 px-4 mb-5 shadow">
+        <div class="col">
+            <h5 class="text-secondary">Objetivo del cargo</h5>
+            <p [innerHTML]="oferta.descripcion"></p>
+            <br>
+            <h5 class="text-secondary">Requisitos del cargo</h5>
+            <p [innerHTML]="oferta.requisitos"></p>
+
+        </div>
+    </div>
+    <div class="row bg-white border rounded-5 py-5 px-4 mb-5 shadow">
+        <div class="col">
+            <h5 class="text-secondary">Política de datos personales</h5>
+            <p>Los parámetros establecidos en la normatividad vigente y lo contemplado en la Política de Tratamiento de
+                Datos Personales de LA CÁMARA se encuentran disponibles en
+                https://www.cccauca.org.co/atencion-ciudadana/ terminos-y-condiciones-de-uso, y en consecuencia, el
+                aspirante autoriza a LA CÁMARA, de manera expresa, libre, consciente, informada y espontánea, la
+                recolección....</p>
+        </div>
+    </div>
+</div>
+
+<ng-template #Formulario>
+
+    <div class="container">
+        <div class="row bg-white border rounded-5 p-5 mb-5 shadow">
+            <div class="col">
+                <form #formularioRef="ngForm" (ngSubmit)="enviarFormulario()">
+                    <h5 class="text-secondary">Datos de identificación</h5>
+                    <div class="row mb-5 g-3">
+                        <div class="col-md-6">
+                            <select class="form-select" [(ngModel)]="formulario.tipoIdentificacion"
+                             name="tipoDocumento" aria-label="tipo de documento">
+                            <option selected>Tipo de documento</option>
+                            <option value="1">C.C</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-floating">
+                                <input type="number" [(ngModel)]="formulario.edad" name="edad" class="form-control" id="edad" placeholder="Edad ">
+                                <label for="inputAge"  class="form-label">Edad</label>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-floating">
+                                <input type="number" [(ngModel)]="formulario.anoNacimiento" name="nacimiento" class="form-control" id="nacimiento" placeholder="1990">
+                                <label for="inputYear" class="form-label">Año de Nacimiento</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="text" [(ngModel)]="formulario.nombre" name="nombre" class="form-control" id="nombre" placeholder="Nombre">
+                                <label for="inputName" class="form-label">Nombre</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" [(ngModel)]="formulario.apellido" name="apellido" id="apellido" placeholder="Apellido">
+                                <label for="inputLastName" class="form-label">Apellido</label>
+                            </div>
+                        </div>
+                    </div>
+                    <h5 class="text-secondary">Formación académica</h5>
+                    <div class="row mb-5 g-3">
+                        <div class="col-md-6">
+                            <select class="form-select" aria-label="Derpartamento de residencia"
+                             [(ngModel)]="formulario.tipoAcademia"
+                              name="tipoAcademia">
+                                <option selected>Técnico</option>
+                                <option value="1">Bachiller</option>
+                                <option value="2">Pregrado</option>
+                                <option value="3">Postgrado</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row mb-5 g-3">
+                        <div class="col-md-6">
+                            <h5 class="text-secondary">Experiencia Relacionada con el cargo</h5>
+                            <select class="form-select" aria-label="Técnico" 
+                             [(ngModel)]="formulario.tipoFormacion" name="tipoFormacion">
+                                <option selected>Técnico</option>
+                                <option value="1">Atlántico</option>
+                                <option value="2">Bolívar</option>
+                                <option value="3">Caldas</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <h5 class="text-secondary">Experiencia laboral</h5>
+                            <select class="form-select" aria-label="Técnico"  
+                            [(ngModel)]="formulario.experienciaLaboral" name="esperienciaLaboral">
+                                <option selected>Técnico</option>
+                                <option value="1">Argelia</option>
+                                <option value="2">Balboa</option>
+                                <option value="3">Popayán</option>
+                            </select>
+                        </div>
+                    </div>
+                    <h5 class="text-secondary">Datos de Contacto</h5>
+                    <div class="row mb-5 g-3">
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="email" class="form-control" id="inputEmail" 
+                                placeholder="micorreo@mail.com" [(ngModel)]="formulario.email" name="email">
+                                <label for="inputEmail" class="form-label">Email</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="inputAddress"
+                                 placeholder="CL 123 # 99 - 100" [(ngModel)]="formulario.direccion" name="direccion">
+                                <label for="inputAddress" class="form-label">Dirección</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <select class="form-select" aria-label="Derpartamento de residencia"
+                            [(ngModel)]="formulario.departamento" name="departamento">
+                                <option selected>Derpartamento de residencia</option>
+                                <option value="1">Atlántico</option>
+                                <option value="2">Bolívar</option>
+                                <option value="3">Caldas</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <select class="form-select" aria-label="Municipio de residencia"
+                            [(ngModel)]="formulario.municipio" name="municipio">
+                                <option selected>Municipio de residencia</option>
+                                <option value="1">Argelia</option>
+                                <option value="2">Balboa</option>
+                                <option value="3">Popayán</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="number" class="form-control" id="telefono" 
+                                placeholder="+57 300 123 45 56" [(ngModel)]="formulario.telefono" name="telefono">
+                                <label for="telefono" class="form-label">Teléfono</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="number" class="form-control" id="wassap"
+                                 placeholder="+57 300 123 45 56" [(ngModel)]="formulario.wassap" name="wassap" >
+                                <label for="wassap" class="form-label">WhatsApp</label>
+                            </div>
+                        </div>
+                    </div>
+                    <h5 class="text-secondary">Documentos necesarios para postularte</h5>
+                    <div class="row  mb-5 g-3">
+                        <div class="col-md-6">
+                            <div class="input-group upload-file">
+                                <label class="input-group-text" for="HojaVida">Hoja de vida</label>
+                                <input type="file" class="form-control" placeholder="Hoja de vida" id="HojaVida">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="input-group upload-file">
+                                <label class="input-group-text" for="SoportesEscaneados">Soportes escaneados</label>
+                                <input type="file" class="form-control" placeholder="Soportes escaneados" id="SoportesEscaneados">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center my-3">
+                        <div class="col-auto">
+                          <button type="submit" class="btn btn-primary btn-lg fw-bold px-5">Enviar Formulario</button>
+                        </div>
+                    </div>
+                                      
+                </form>
+            </div>
+       </div>
+    </div>
+
+</ng-template>

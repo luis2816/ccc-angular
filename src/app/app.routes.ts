@@ -9,6 +9,7 @@ import { ServiciosVirtualesComponent } from "./pages/componentes/servicios-virtu
 import { EventosComponent } from "./pages/componentes/eventos/eventos.component";
 import { DetalleEventoComponent } from "./pages/componentes/detalle-evento/detalle-evento.component";
 import { DetalleNoticiaComponent } from "./pages/componentes/detalle-noticia/detalle-noticia.component";
+import { DetalleconvocatoriaComponent } from "./pages/componentes/detalleconvocatoria/detalleconvocatoria.component";
 
 const APP_ROUTES: Routes=[
 {path:'inicio', component: IniciComponent},
@@ -17,6 +18,7 @@ const APP_ROUTES: Routes=[
 {path:'servicios-virtuales', component: ServiciosVirtualesComponent},
 {path:'programa-aliado-plus', component: ProgramaAliadoPlusComponent},
 {path:'convocatorias', component: ConvocatoriasComponent},
+{path:'convocatoria', component: DetalleconvocatoriaComponent},
 {path:'programa-ingenia', component: ProgramaIngeniaComponent},
 {path:'eventos', component: EventosComponent},
 {path:'detalle', component: DetalleEventoComponent},

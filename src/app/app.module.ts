@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+
 
 //IMPORTANDO RUTAS
 import { APP_ROUTING } from './app.routes';
@@ -30,6 +32,7 @@ import { EventosComponent } from './pages/componentes/eventos/eventos.component'
 import { CardEventoComponent } from './components/componentes/card-evento/card-evento.component';
 import { DetalleEventoComponent } from './pages/componentes/detalle-evento/detalle-evento.component';
 import { DetalleNoticiaComponent } from './pages/componentes/detalle-noticia/detalle-noticia.component';
+import { DetalleconvocatoriaComponent } from './pages/componentes/detalleconvocatoria/detalleconvocatoria.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +59,8 @@ import { DetalleNoticiaComponent } from './pages/componentes/detalle-noticia/det
     EventosComponent,
     CardEventoComponent,
     DetalleEventoComponent,
-    DetalleNoticiaComponent
+    DetalleNoticiaComponent,
+    DetalleconvocatoriaComponent
     
   ],
   imports: [
@@ -64,6 +68,7 @@ import { DetalleNoticiaComponent } from './pages/componentes/detalle-noticia/det
     AppRoutingModule,
     APP_ROUTING,
     HttpClientModule, 
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
