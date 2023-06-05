@@ -1,0 +1,36 @@
+<nav id="BreadCrumb" aria-label="breadcrumb">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a [routerLink]="['/competitividad-regional']">Competitividad regional</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">{{competitividad.sub_titulo}}</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<main class="container pt-3">
+    <section class="row banner rounded-5" style="background: url('{{competitividad.ruta}}')no-repeat center/cover;">
+        <h1 class="title bt-left text-white">{{competitividad.sub_titulo}}</h1>
+    </section>
+    <section class="row">
+        <div class="col-md-8 order-md-last">
+            <h2 class="mb-4">{{competitividad.titulo}}</h2>
+            <p>{{competitividad.descripcion}}</p>
+        </div>
+
+        <div class="col-md-4 order-md-first">
+            <div class="card border-primary rounded-5">
+                  <div class="card-body">
+                    <ul class="list-unstyled">
+                        <li *ngFor="let item of listamenu">
+                            <a (click)="cambiarOidcompetitividad(item.oid)" [routerLink]="['/detalle-competitividad-regional']" >{{item.titulo}}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

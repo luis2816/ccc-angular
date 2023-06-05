@@ -33,6 +33,7 @@ import { CardEventoComponent } from './components/componentes/card-evento/card-e
 import { DetalleEventoComponent } from './pages/componentes/detalle-evento/detalle-evento.component';
 import { DetalleNoticiaComponent } from './pages/componentes/detalle-noticia/detalle-noticia.component';
 import { DetalleconvocatoriaComponent } from './pages/componentes/detalleconvocatoria/detalleconvocatoria.component';
+import { DetalleCompetitividadRegionalComponent } from './pages/componentes/detalle-competitividad-regional/detalle-competitividad-regional.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,8 @@ import { DetalleconvocatoriaComponent } from './pages/componentes/detalleconvoca
     CardEventoComponent,
     DetalleEventoComponent,
     DetalleNoticiaComponent,
-    DetalleconvocatoriaComponent
+    DetalleconvocatoriaComponent,
+    DetalleCompetitividadRegionalComponent
     
   ],
   imports: [

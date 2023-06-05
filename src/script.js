@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function(){
-
   var mainSwiper = new Swiper(".mainSwiper", {
     spaceBetween: 0,
     centeredSlides: true,
@@ -16,7 +15,46 @@ document.addEventListener('DOMContentLoaded', function(){
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
     },
-});
+  });
+
+  var swiperIconMenu = new Swiper(".swiper-icon-menu", {
+      spaceBetween: 30,
+      slidesPerView: 2,
+      freeMode: {
+          enabled: true,
+          sticky: true,
+      },
+      breakpoints: {
+        567: {
+          slidesPerView: 3,
+        },
+        768: {
+          slidesPerView: 4,
+        },
+        1200: {
+          slidesPerView: 6,
+        }
+      }
+  }); 
+
+  var swiperEventos = new Swiper(".swiper-eventos", {
+      spaceBetween: 30,
+      slidesPerView: 1,
+      freeMode: {
+          enabled: true,
+          sticky: true,
+      },            
+      pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+      },
+      breakpoints: {
+        567: {
+          slidesPerView: 3,
+          spaceBetween: 20,
+        }
+      }
+  });
 
   var swiperBlog = new Swiper(".swiper-blog", {
       grabCursor: true,
@@ -93,7 +131,25 @@ document.addEventListener('DOMContentLoaded', function(){
     },
   });
 
-
+  var swiper_3 = new Swiper(".slidesPerView-3", {
+    spaceBetween: 40,
+    slidesPerView: 1,
+    freeMode: {
+        enabled: true,
+        sticky: true,
+    },            
+    pagination: false,
+    breakpoints: {
+          567: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+          }
+        }
+  });
 
   var swiper_4 = new Swiper(".slidesPerView-4", {
     spaceBetween: 40,

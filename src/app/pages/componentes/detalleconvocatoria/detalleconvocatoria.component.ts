@@ -47,7 +47,6 @@ export class DetalleconvocatoriaComponent implements OnInit {
 
   ngOnInit(): void {
 
-    console.log("valor de la oferta :" + this.oidOferta);
     //obtenemos la varible guardada en el localStorage
     this.oidOfertalocal = localStorage.getItem('oidOferta');
     //Obtenemos el oidEvento enviado desde el compoenente de eventos

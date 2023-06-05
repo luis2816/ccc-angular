@@ -10,10 +10,14 @@ import { EventosComponent } from "./pages/componentes/eventos/eventos.component"
 import { DetalleEventoComponent } from "./pages/componentes/detalle-evento/detalle-evento.component";
 import { DetalleNoticiaComponent } from "./pages/componentes/detalle-noticia/detalle-noticia.component";
 import { DetalleconvocatoriaComponent } from "./pages/componentes/detalleconvocatoria/detalleconvocatoria.component";
-
+import { DetalleCompetitividadRegionalComponent } from "./pages/componentes/detalle-competitividad-regional/detalle-competitividad-regional.component";
 const APP_ROUTES: Routes=[
+
+
+    
 {path:'inicio', component: IniciComponent},
 {path:'competitividad-regional', component: CompetitividadRegionalComponent},
+{path:'detalle-competitividad-regional', component: DetalleCompetitividadRegionalComponent},
 {path:'informacion-economica', component: InformaionEconomicaComponent},
 {path:'servicios-virtuales', component: ServiciosVirtualesComponent},
 {path:'programa-aliado-plus', component: ProgramaAliadoPlusComponent},
