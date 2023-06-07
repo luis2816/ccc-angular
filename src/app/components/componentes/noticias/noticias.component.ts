@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, ElementRef, Input } from '@angular/core';
+import { Component, AfterViewInit, ElementRef, Input, OnInit } from '@angular/core';
 import Swiper from 'swiper';
 import { NoticiasService } from './services/noticias.service';
 
@@ -7,11 +7,21 @@ import { NoticiasService } from './services/noticias.service';
   templateUrl: './noticias.component.html',
   styleUrls: ['./noticias.component.css']
 })
-export class NoticiasComponent implements  AfterViewInit {
-  @Input() noticias: any= [];
-  @Input() tituloNoticias : any = String;
+export class NoticiasComponent implements  AfterViewInit, OnInit {
+
+    //Variables para noticias 
+    noticias: any= []
+    tituloNoticias= "Noticias";
+    noticia: any= [];
+
  
   constructor(private noticiaService: NoticiasService, private elementRef: ElementRef){
+  }
+
+  ngOnInit(): void {
+     //Se obtinene todas las noticias
+     this.noticiaService.getNoticias()
+     .subscribe((response: any) => this.noticias= response.noticias);
   }
 
 

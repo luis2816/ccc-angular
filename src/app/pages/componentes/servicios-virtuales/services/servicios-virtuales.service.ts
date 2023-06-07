@@ -1,3 +1,4 @@
+import { GlobalService } from './../../../../services/global.service';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
@@ -6,14 +7,15 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ServiciosVirtualesService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private globalService: GlobalService) { }
 
+  ruta=this.globalService.var_ruta_prod;
   getNoticias(): any {
-    const url = 'https://bodecom.com/ccc/ws_pme/?get_noticias';
+    const url =this.ruta+'get_noticias';
     return this.http.get(url);
   }
   getEventos(parametro: any): any {
-    const url = 'https://bodecom.com/ccc/ws_pme/?get_eventos';
+    const url =this.ruta+'get_eventos';
     const body = { "oidDestino": parametro };
     return this.http.post(url, body);
   }

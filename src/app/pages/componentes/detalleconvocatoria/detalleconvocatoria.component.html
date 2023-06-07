@@ -90,28 +90,21 @@
                         <div class="col-md-6">
                             <select class="form-select" [(ngModel)]="formulario.tipoIdentificacion"
                              name="tipoDocumento" aria-label="tipo de documento">
-                            <option selected>Tipo de documento</option>
-                            <option value="1">C.C</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                             <option selected>Selecione Tipo de documento</option>
+                            <option *ngFor="let tipo of listaTipodocumentos" selected value="{{tipo.oid}}">{{tipo.tipo_documento}}</option>
+                            
                         </select>
                         </div>
-                        <div class="col-md-2">
+                        <div class="col-md-3">
                             <div class="form-floating">
-                                <input type="number" [(ngModel)]="formulario.edad" name="edad" class="form-control" id="edad" placeholder="Edad ">
-                                <label for="inputAge"  class="form-label">Edad</label>
+                                <input name="cedula" type="number" [(ngModel)]="formulario.cedula" class="form-control" id="cedula" placeholder="1990">
+                                <label for="cedula" class="form-label">Numero de cedula</label>
                             </div>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-3">
                             <div class="form-floating">
-                                <input type="number" [(ngModel)]="formulario.anoNacimiento" name="nacimiento" class="form-control" id="nacimiento" placeholder="1990">
-                                <label for="inputYear" class="form-label">Año de Nacimiento</label>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-floating">
-                                <input type="text" [(ngModel)]="formulario.nombre" name="nombre" class="form-control" id="nombre" placeholder="Nombre">
-                                <label for="inputName" class="form-label">Nombre</label>
+                                <input type="date" [(ngModel)]="formulario.anoNacimiento" name="nacimiento" class="form-control" id="nacimiento" placeholder="1990">
+                                <label for="inputYear" class="form-label">Fecha de Nacimiento</label>
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -120,6 +113,15 @@
                                 <label for="inputLastName" class="form-label">Apellido</label>
                             </div>
                         </div>
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="text" [(ngModel)]="formulario.nombre" name="nombre" class="form-control" id="nombre" placeholder="Nombre">
+                                <label for="inputName" class="form-label">Nombre</label>
+                            </div>
+                        </div>
+
+                       
+                       
                     </div>
                     <h5 class="text-secondary">Formación académica</h5>
                     <div class="row mb-5 g-3">
@@ -127,10 +129,8 @@
                             <select class="form-select" aria-label="Derpartamento de residencia"
                              [(ngModel)]="formulario.tipoAcademia"
                               name="tipoAcademia">
-                                <option selected>Técnico</option>
-                                <option value="1">Bachiller</option>
-                                <option value="2">Pregrado</option>
-                                <option value="3">Postgrado</option>
+                                <option  *ngFor="let tipo of listaTipoformacionacademica" selected value="{{tipo.oid}}">{{tipo.nombre}}</option>
+                                
                             </select>
                         </div>
                     </div>
@@ -173,23 +173,25 @@
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <select class="form-select" aria-label="Derpartamento de residencia"
-                            [(ngModel)]="formulario.departamento" name="departamento">
-                                <option selected>Derpartamento de residencia</option>
-                                <option value="1">Atlántico</option>
-                                <option value="2">Bolívar</option>
-                                <option value="3">Caldas</option>
+                            <select class="form-select" aria-label="Departamento de residencia"
+                              [(ngModel)]="formulario.departamento" name="departamento" (change)="actualizarMunicipios()">
+                              <option selected>Departamento de residencia</option>
+                              <option *ngFor="let departamento of listaDepartamento" [value]="departamento.oidDepartamento">
+                                {{departamento.nombreDepartamento}}
+                              </option>
                             </select>
-                        </div>
-                        <div class="col-md-6">
+                          </div>
+                          <div class="col-md-6">
                             <select class="form-select" aria-label="Municipio de residencia"
-                            [(ngModel)]="formulario.municipio" name="municipio">
-                                <option selected>Municipio de residencia</option>
-                                <option value="1">Argelia</option>
-                                <option value="2">Balboa</option>
-                                <option value="3">Popayán</option>
+                              [(ngModel)]="formulario.municipio" name="municipio">
+                              <option selected>Municipio de residencia</option>
+                              <option *ngFor="let municipio of listaMunicipios" [value]="municipio.oidMunicipio">
+                                {{municipio.nombreMunicipio}}
+                              </option>
+                         
                             </select>
-                        </div>
+                          </div>
+                          
                         <div class="col-md-6">
                             <div class="form-floating">
                                 <input type="number" class="form-control" id="telefono" 

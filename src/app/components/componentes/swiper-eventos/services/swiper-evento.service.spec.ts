@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { InicioService } from './inicio.service';
+import { SwiperEventoService } from './swiper-evento.service';
 
-describe('InicioService', () => {
-  let service: InicioService;
+describe('SwiperEventoService', () => {
+  let service: SwiperEventoService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(InicioService);
+    service = TestBed.inject(SwiperEventoService);
   });
 
   it('should be created', () => {

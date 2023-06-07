@@ -1,17 +1,23 @@
-import { Component, AfterViewInit, ElementRef, Input } from '@angular/core';
+import { Component, AfterViewInit, ElementRef, Input, OnInit } from '@angular/core';
+import { SwiperEventoService } from './services/swiper-evento.service';
 import Swiper from 'swiper';
+
 
 @Component({
   selector: 'app-swiper-eventos',
   templateUrl: './swiper-eventos.component.html',
   styleUrls: ['./swiper-eventos.component.css']
 })
-export class SwiperEventosComponent implements AfterViewInit{
-  @Input() eventos: any= [];
-  @Input() tituloEventos: any= String;
+export class SwiperEventosComponent implements OnInit, AfterViewInit{
+  eventos: any= [];
  
-   constructor(private elementRef: ElementRef){
+   constructor(private swiperEventosComponent: SwiperEventoService, private elementRef: ElementRef){
    }
+  ngOnInit(): void {
+         //Se obtiene todos los evntos por medio de un servicio y se guarda en la variable eventos
+         this.swiperEventosComponent.getEventos(3)
+         .subscribe((response: any) => this.eventos= response.eventos);
+  }
 
    ngAfterViewInit(): void {
     const eventosSwiper = new Swiper(this.elementRef.nativeElement.querySelector('#Eventos .swiper'), {

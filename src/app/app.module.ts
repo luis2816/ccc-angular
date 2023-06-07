@@ -1,7 +1,6 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-
 
 //IMPORTANDO RUTAS
 import { APP_ROUTING } from './app.routes';
@@ -22,8 +21,8 @@ import { ProgramaAliadoPlusComponent } from './pages/componentes/programa-aliado
 import { ConvocatoriasComponent } from './pages/componentes/convocatorias/convocatorias.component';
 import { ProgramaIngeniaComponent } from './pages/componentes/programa-ingenia/programa-ingenia.component';
 import { BlogComponent } from './components/componentes/blog/blog.component';
-import { NoticiasComponent } from './components/componentes/noticias/noticias.component';
 import { NavComponent } from './components/componentes/nav/nav.component';
+import { NoticiasComponent } from './components/componentes/noticias/noticias.component';
 import { OfertasComponent } from './components/componentes/ofertas/ofertas.component';
 import { CardSideImgComponent } from './components/componentes/card-side-img/card-side-img.component';
 import { BlockButtonComponent } from './components/componentes/block-button/block-button.component';
@@ -34,6 +33,11 @@ import { DetalleEventoComponent } from './pages/componentes/detalle-evento/detal
 import { DetalleNoticiaComponent } from './pages/componentes/detalle-noticia/detalle-noticia.component';
 import { DetalleconvocatoriaComponent } from './pages/componentes/detalleconvocatoria/detalleconvocatoria.component';
 import { DetalleCompetitividadRegionalComponent } from './pages/componentes/detalle-competitividad-regional/detalle-competitividad-regional.component';
+import { PlantillaComponent } from './plantillas/plantilla/plantilla.component';
+import { ServiciosComponent } from './pages/componentes/servicios/servicios.component';
+import { ComercioComponent } from './pages/componentes/comercio/comercio.component';
+import { TransparenciaComponent } from './pages/componentes/transparencia/transparencia.component';
+import { RegistrosPublicosComponent } from './pages/componentes/registros-publicos/registros-publicos.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +66,12 @@ import { DetalleCompetitividadRegionalComponent } from './pages/componentes/deta
     DetalleEventoComponent,
     DetalleNoticiaComponent,
     DetalleconvocatoriaComponent,
-    DetalleCompetitividadRegionalComponent
+    DetalleCompetitividadRegionalComponent,
+    PlantillaComponent,
+    ServiciosComponent,
+    ComercioComponent,
+    TransparenciaComponent,
+    RegistrosPublicosComponent
     
   ],
   imports: [
@@ -73,6 +82,7 @@ import { DetalleCompetitividadRegionalComponent } from './pages/componentes/deta
     FormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }

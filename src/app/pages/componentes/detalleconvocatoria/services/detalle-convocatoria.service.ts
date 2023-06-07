@@ -1,22 +1,39 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { GlobalService } from 'src/app/services/global.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DetalleConvocatoriaService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private globalService: GlobalService) { }
+  ruta = this.globalService.var_ruta_prod;
+
   get_detalle_oferta(parametro: any): any {
-    const url ='http://35.231.9.84:8091/scriptcase/app/CCC/ws_pme/?get_ofertas_detalle';
+    const url =this.ruta+'get_ofertas_detalle';
     const body = { "oidoferta": parametro };
     return this.http.post(url, body);
   }
 
   enviar_oferta(parametro: any): any {
-    const url = 'http://35.231.9.84:8091/scriptcase/app/CCC/ws_pme/?get_registroOferta';
-    const headers = new HttpHeaders().set('Content-Type', 'application/json');
-    const body = JSON.stringify({ parametro });
-    return this.http.post(url, body, { headers: headers });
+    const url =this.ruta+'get_registroOferta';
+    const body = parametro ;
+    return this.http.post(url, body);
+  }
+
+  listar_departamentos(){
+    const url =this.ruta+'get_depto_ciudad';
+    return this.http.get(url);
+  }
+
+  listar_tipoDocumento(){
+    const url =this.ruta+'o_get_tipo_identificacion';
+    return this.http.get(url);
+  }
+
+listar_tiposFormacionacademica(){
+    const url =this.ruta+'o_get_formacion_academica';
+    return this.http.get(url);
   }
 }

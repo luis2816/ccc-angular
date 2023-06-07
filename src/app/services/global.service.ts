@@ -5,8 +5,8 @@ import { Injectable } from '@angular/core';
 })
 export class GlobalService {
 
-  public var_ruta_prod ="http://35.231.9.84:8091/scriptcase/app/CCC/ws_pme/?";
-  //public var_ruta_dev = "http://35.231.9.84:8091/scriptcase/app/CCC/ws_pme/?";
+  //public var_ruta_prod ="http://35.231.9.84:8091/scriptcase/app/CCC/ws_pme/?";
+  public var_ruta_prod  = "https://bodecom.com/ccc/ws_pme/?";
   constructor() { }
 
 }

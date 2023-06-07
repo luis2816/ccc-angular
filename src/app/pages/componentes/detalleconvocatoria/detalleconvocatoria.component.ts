@@ -14,22 +14,28 @@ import Swal from 'sweetalert2';
 export class DetalleconvocatoriaComponent implements OnInit {
 
 
+ listaDepartamento: any =[];
+ listaTipodocumentos: any =[];
+ listaTipoformacionacademica: any =[];
+
+  listaMunicipios: any= [];
   //Datos del formulario
   formulario = {
-    oidoferta: 0,
+    oidoferta: null,
     tipoIdentificacion: '',
+    cedula: null ,
     nombre: '',
-    edad: '',
     apellido: '',
     anoNacimiento: '',
-    tipoAcademia: '',
     tipoFormacion: '',
+    experienciaCargo: '',
     experienciaLaboral: '',
     email: '',
     direccion: '',
+    telefono: '',
     departamento: '',
     municipio: '',
-    telefono: '',
+    tipoAcademia: '',
     wassap: '',
 
   };
@@ -43,7 +49,7 @@ export class DetalleconvocatoriaComponent implements OnInit {
   oferta: any = [];
   oidOfertalocal: any = Number;
   oidOferta: any = Number;
-  constructor(private ofertaService: OfertaService, private detalleofertaService: DetalleConvocatoriaService) { }
+  constructor(private ofertaService: OfertaService, private detalleConvocatoriaService: DetalleConvocatoriaService) { }
 
   ngOnInit(): void {
 
@@ -54,20 +60,34 @@ export class DetalleconvocatoriaComponent implements OnInit {
     if (this.oidOferta != null) {
       localStorage.setItem('oidOferta', this.oidOferta);
       //Obtenemos el detalle del evento
-      this.detalleofertaService.get_detalle_oferta(this.oidOferta)
+      this.detalleConvocatoriaService.get_detalle_oferta(this.oidOferta)
         .subscribe((response: any) => this.oferta = response.detalle_ofertas);
 
     } else {
       //Obtenemos el detalle del evento
-      this.detalleofertaService.get_detalle_oferta(this.oidOfertalocal)
+      this.detalleConvocatoriaService.get_detalle_oferta(this.oidOfertalocal)
         .subscribe((response: any) => this.oferta = response.detalle_ofertas);
     }
+
+    //Obtenemos la lista de departamentos
+    this.detalleConvocatoriaService.listar_departamentos()
+    .subscribe((response: any) => this.listaDepartamento = response.listaDepartamento);
+
+    
+    //Obtenemos la lista de departamentos
+    this.detalleConvocatoriaService.listar_tipoDocumento()
+    .subscribe((response: any) => this.listaTipodocumentos = response.lista_tipo_identificacion);
+
+    
+    //Obtenemos la lista de departamentos
+    this.detalleConvocatoriaService.listar_tiposFormacionacademica()
+    .subscribe((response: any) => this.listaTipoformacionacademica = response.lista_formacion_academia);
+    
 
   }
 
   mostrarFormulario() {
     this.banderaFormulario = !this.banderaFormulario;
-    console.log(this.banderaFormulario);
     this.banderaBoton = !this.banderaBoton;
   }
 
@@ -78,23 +98,33 @@ export class DetalleconvocatoriaComponent implements OnInit {
 
   enviarFormulario() {
 
-    if(this.oidOferta!=null){
+    if (this.oidOferta != null) {
       this.formulario.oidoferta = this.oidOferta;
-    }else{
+    } else {
       this.formulario.oidoferta = this.oidOfertalocal;
     }
     console.log(this.formulario);
     // Realizar la petición POST al servidor
-    this.detalleofertaService.enviar_oferta(this.formulario).subscribe(
+    this.detalleConvocatoriaService.enviar_oferta(this.formulario).subscribe(
       (response: any) => {
-        console.log('Éxito:', response);
-        Swal.fire({
-          icon: 'success',
-          title: 'Éxito',
-          text: 'El formulario se envió exitosamente.',
-        });
-        this.formularioRef.reset();
-        this.banderaFormulario = !this.banderaFormulario;
+        if(response.status==200){
+          Swal.fire({
+            icon: 'success',
+            title: 'Éxito',
+            text: 'El formulario se envió exitosamente.',
+          });
+          this.formularioRef.reset();
+          this.banderaFormulario = !this.banderaFormulario;
+        }else{
+          Swal.fire({
+            icon: 'warning',
+            title: 'Advertencia',
+            text: response.message,
+          });
+          this.formularioRef.reset();
+          this.banderaFormulario = !this.banderaFormulario;
+        }
+       
       },
       (error: any) => {
         console.error('Error:', error);
@@ -102,6 +132,23 @@ export class DetalleconvocatoriaComponent implements OnInit {
       }
     );
   }
+
+
+  actualizarMunicipios() {
+    const oid = this.formulario.departamento;
+    this.listaMunicipios = []; // Vaciar la listaMunicipios si no se encuentra el departamento
+    
+    // Buscar el departamento en la lista
+    const departamento = this.listaDepartamento.find((dep: { oidDepartamento: string; }) => dep.oidDepartamento === this.formulario.departamento);
+  
+    // Obtener la lista de municipios del departamento encontrado
+    if (departamento != null) {
+      this.listaMunicipios = departamento.listaMunicipios;
+    } else {
+      this.listaMunicipios = []; // Vaciar la listaMunicipios si no se encuentra el departamento
+    }
+  }
+  
 
 
 

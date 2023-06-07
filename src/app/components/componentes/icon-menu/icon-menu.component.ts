@@ -11,26 +11,32 @@ export class IconMenuComponent implements OnInit, AfterViewInit {
     {
       imagen: '../../../../assets/icons/renovacion-mercantil.svg',
       titulo: 'Renovación mercantil',
+      link: '/renovacion-mercantil',
     },
     {
       imagen: '../../../../assets/icons/servicios-virtuales.svg',
       titulo: 'Servicios Virtuales',
+      link: '/servicios-virtuales',
     },
     {
       imagen: '../../../../assets/icons/aliado-plus.svg',
       titulo: 'Aliado Plus',
+      link: '/programa-aliado-plus',
     },
     {
       imagen: '../../../../assets/icons/convocatorias.svg',
       titulo: 'Convocatorias',
+      link: '/convocatorias',
     },
     {
       imagen: '../../../../assets/icons/servicios.svg',
       titulo: 'Servicios',
+      link: '/servicios',
     },
     {
       imagen: '../../../../assets/icons/programa-ingenia.svg',
       titulo: 'Programa Ingenia',
+      link: '/programa-ingenia',
     },
 
   ]

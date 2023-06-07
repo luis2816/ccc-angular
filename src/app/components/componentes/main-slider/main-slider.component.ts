@@ -1,7 +1,7 @@
 import { Component, OnInit, AfterViewInit, ElementRef } from '@angular/core';
 import { MainSliderService } from './services/main-slider.service';
-import Swiper from 'swiper';
-
+import { register } from 'swiper/element/bundle';
+register(); // register Swiper custom elements
 @Component({
   selector: 'app-main-slider',
   templateUrl: './main-slider.component.html',
@@ -14,29 +14,40 @@ export class MainSliderComponent  implements OnInit, AfterViewInit {
 
 
   ngOnInit(): void {
-    this.imagenes = this.mainSliderService.getImagenes();  
+    this.imagenes = this.mainSliderService.getImagenes();
   }
 
   ngAfterViewInit(): void {
-    var mainSwiper = new Swiper(this.elementRef.nativeElement.querySelector('.mainSwiper'), {
+    var mainSwiper = this.elementRef.nativeElement.querySelector('.mainSwiper');
+    const swParams = {
       spaceBetween: 0,
       centeredSlides: true,
-
       autoplay: {
         delay: 3500,
         disableOnInteraction: false,
         pauseOnMouseEnter:true,
       },
       pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
+        clickable: false
       },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-    });
+      injectStyles: [
+        `
+        .swiper-button-next, .swiper-button-prev{
+          color: #fff;
+        }
+        .swiper-pagination {
+          bottom: 4rem !important;
+        }
+        .swiper-pagination .swiper-pagination-bullet {
+          width: 0.8rem;
+          height: 0.8rem;
+          background: #e4e3e3;
+        }
+        `,
+      ],
+    }
+    Object.assign(mainSwiper, swParams);
+    mainSwiper.initialize();
   }
-
 
 }
