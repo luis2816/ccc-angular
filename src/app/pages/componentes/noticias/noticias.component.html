@@ -1,0 +1,66 @@
+<nav id="BreadCrumb" aria-label="breadcrumb">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a [routerLink]="['/noticias']">Noticias</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">{{noticia.titulo}}</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</nav>
+<section >
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 order-md-last">
+                <h1 class="mb-4">Noticias</h1>
+                <div class="row row-cols-1 row-cols-md-2 g-4">
+                    <div class="col" *ngFor="let noticia of noticias" >
+                        <div class="card evento">
+                            <div class="swiper-slide">
+                                <div class="card bg-img">
+                                    <div class="card-body">
+                                        <img src="{{noticia.ruta}}" alt="">
+                                        <a href="noticia.html">{{noticia.titulo}}<i class="bi bi-arrow-right"></i></a>
+                                    </div>
+                                    <span class="badge rounded-pill text-bg-success">{{noticia.tipo}}</span>
+                                </div>
+                            </div>
+                         <div class="card-footer">
+                             <ul class="list-unstyled contact-info-icons">
+                                 <li class="ci city"></li>
+                                 <li class="ci duration"></li>
+                                 <li class="ci email"></li>
+                                 <li class="detailsBtn"><a (click)="verDetalle(noticia.oid)" [routerLink]="['/detalleNoticia']">ver detalles</a></li>
+                             </ul>
+                         </div>
+                     </div>
+                     </div>
+                </div>
+            </div>  
+            <div class="col-md-4 order-md-first">
+                <div class="card shadow-lg rounded-4">
+                    <div class="card-body p-4">
+                        <form>
+                            <div class="mb-3">
+                                <label for="dateFilter" class="form-label">Fecha publicación</label>
+                                <input type="date" name="" id="dateFilter" class="form-control">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="info mt-5">
+                    <h5>Mayor información</h5>
+                    <p>Área de Desarrollo Empresarial</p>
+                    <ul class="list-unstyled contact-info-icons">
+                        <li class="ci phone">(602) 8243625 Ext 104</li>
+                        <li class="ci mobile">3201234567</li>
+                        <li class="ci email"><a href="mailto:correo@mail.com.co">correo@mail.com.co</a></li>
+                    </ul>
+                </div>
+            </div>            
+        </div>
+    </div>
+</section>
+

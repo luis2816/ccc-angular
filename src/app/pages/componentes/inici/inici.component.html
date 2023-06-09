@@ -1,16 +1,9 @@
 
-<section id="MainSlider" >
-    <app-main-slider></app-main-slider>
-</section>
+<app-main-slider></app-main-slider>
 <app-icon-menu></app-icon-menu>
 <main>
-    <div class="container">
-        <section class="row" id="Eventos">
-            <div class="col py-5">
-                <app-swiper-eventos  [eventos]="eventos" [tituloEventos]="'Eventos'"></app-swiper-eventos>
-            </div>
-          </section>
-
+    <div class="container">  
+        <app-swiper-eventos></app-swiper-eventos>
         <section id="Blog" class="pt-0">
             <div class="row mb-4">
                 <h2>Blog</h2>
@@ -26,30 +19,8 @@
                 </div>
             </div>
         </section>
+        <app-swiper-noticia></app-swiper-noticia>
 
-
-        <section class="row bg-primary rounded-5 p-2 pt-5" id="Noticias" style="margin-bottom: 7rem;">
-            <div class="col">
-                <app-noticias ></app-noticias>
-            </div>
-        </section>
-        <div class="d-flex justify-content-end">
-            <a [routerLink]="['/eventos']" class="btn btn-lg btn-primary fw-bold rounded-4 py-4 px-5 mt-4">Ver todas las Noticias
-              >></a>
-        </div>
-
-        <section class="row" id="Destacados">
-            <div class="col">
-                <h2>Destacados</h2>
-                <div class="row row-cols-1  row-cols-md-2 row-cols-xl-3 g-4 mt-5">
-                    <app-card-side-img></app-card-side-img>
-                    <app-card-side-img></app-card-side-img>
-                    <app-card-side-img></app-card-side-img>
-                    <app-card-side-img></app-card-side-img>
-                    <app-card-side-img></app-card-side-img>
-                    <app-card-side-img></app-card-side-img>
-                </div>
-            </div>
-        </section>
+        <app-card-side-img [titulo]="'Destacados'"></app-card-side-img>
     </div>
 </main>

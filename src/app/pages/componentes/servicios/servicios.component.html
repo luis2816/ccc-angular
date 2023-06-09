@@ -51,87 +51,16 @@
 </div>
 <section>
     <div class="container">
-        <div class="row">
-            <h2>Eventos</h2>
-            <div class="swiper swiper-eventos py-3">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="card bg-img eventos">
-                            <div class="card-body">
-                                <img src="https://source.unsplash.com/random/480x768?tech" alt="">
-                                <div class="card-title tp-left">
-                                    <h3 class="text-uppercase">Título</h3>
-                                    <p>Popayán</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="card bg-img eventos">
-                            <div class="card-body">
-                                <img src="https://source.unsplash.com/random/480x768?filming" alt="">
-                                <div class="card-title tp-left">
-                                    <h3 class="text-uppercase">Título</h3>
-                                    <p>Popayán</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="card bg-img eventos">
-                            <div class="card-body">
-                                <img src="https://source.unsplash.com/random/480x768?business" alt="">
-                                <div class="card-title tp-left">
-                                    <h3 class="text-uppercase">Título</h3>
-                                    <p>Popayán</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="card bg-img eventos">
-                            <div class="card-body">
-                                <img src="https://source.unsplash.com/random/480x768?party" alt="">
-                                <div class="card-title tp-left">
-                                    <h3 class="text-uppercase">Título</h3>
-                                    <p>Popayán</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="card bg-img eventos">
-                            <div class="card-body">
-                                <img src="https://source.unsplash.com/random/480x768?meeting" alt="">
-                                <div class="card-title tp-left">
-                                    <h3 class="text-uppercase">Título</h3>
-                                    <p>Popayán</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="card bg-img eventos">
-                            <div class="card-body">
-                                <img src="https://source.unsplash.com/random/480x768?shopping" alt="">
-                                <div class="card-title tp-left">
-                                    <h3 class="text-uppercase">Título</h3>
-                                    <p>Popayán</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-pagination"></div>
-            </div>
-        </div>
+     
+           <app-swiper-eventos></app-swiper-eventos>
+       
         <h2 class="mb-4">Nuestros Servicios</h2>
         <div class="row mb-5">
             <div class="col-md-6">
                 <div class="card bg-img only-title">
                     <div class="card-body">
                         <img src="https://source.unsplash.com/random/450x320?enterprise" alt="">
-                            <a href="registros-publicos.html" class="stretched-link">Registros Públicos</a>
+                            <a [routerLink]="['/registros-publicos']" class="stretched-link">Registros Públicos</a>
                     </div>
                 </div>
             </div>

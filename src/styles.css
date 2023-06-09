@@ -10128,14 +10128,14 @@ textarea.form-control-lg {
 .card.bg-img.only-title .card-body {
   position: inherit;
 }
-.card.bg-img.only-title .card-body img, .card.bg-img.only-title .card-body::after {
-  z-index: -1;
-}
+
 .card.bg-img.only-title .stretched-link {
   color: #fff;
   font-size: 2rem;
   text-align: left;
   text-decoration: none;
+  position:relative;
+  z-index:1;
 }
 .card.img-top {
   border: none;

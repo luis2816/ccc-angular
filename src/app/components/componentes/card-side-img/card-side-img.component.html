@@ -1,10 +1,17 @@
-<div class="card side-img">
-    <div class="card-image">
-        <img src="https://source.unsplash.com/random/200x200?championship" alt="">
+<section class="row" id="Destacados">
+    <div class="col">
+        <h2>{{titulo}}</h2>
+        <div class="row row-cols-1  row-cols-md-2 row-cols-xl-3 g-4 mt-5">
+            <div class="card side-img" *ngFor="let destacado of destacados">
+                <div class="card-image">
+                    <img src="{{destacado.ruta}}" alt="">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title"><a (click)="enviaroidNoticia(destacado.oid)" [routerLink]="['/detalleNoticia']" class="stretched-link">{{destacado.titulo}}</a></h5>
+                    <p class="card-text">{{destacado.descripcion}}</p>
+                    <small><i class="bi bi-clock"></i>{{destacado.fecha_publicacion}}</small>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="card-body">
-        <h5 class="card-title"><a href="#" class="stretched-link">Título del destacado</a></h5>
-        <p class="card-text">Ofrecer herramientas prácticas en cada uno de los talleres.</p>
-        <small><i class="bi bi-clock"></i> Hace 3 horas</small>
-    </div>
-</div>                    
+</section>

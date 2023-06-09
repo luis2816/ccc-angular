@@ -2,7 +2,6 @@ import { Component, AfterViewInit, ElementRef, Input, OnInit } from '@angular/co
 import { SwiperEventoService } from './services/swiper-evento.service';
 import Swiper from 'swiper';
 
-
 @Component({
   selector: 'app-swiper-eventos',
   templateUrl: './swiper-eventos.component.html',
@@ -11,11 +10,11 @@ import Swiper from 'swiper';
 export class SwiperEventosComponent implements OnInit, AfterViewInit{
   eventos: any= [];
  
-   constructor(private swiperEventosComponent: SwiperEventoService, private elementRef: ElementRef){
+   constructor(private swiperEventoService: SwiperEventoService, private elementRef: ElementRef){
    }
   ngOnInit(): void {
          //Se obtiene todos los evntos por medio de un servicio y se guarda en la variable eventos
-         this.swiperEventosComponent.getEventos(3)
+         this.swiperEventoService.getEventos(3)
          .subscribe((response: any) => this.eventos= response.eventos);
   }
 

@@ -1,33 +1,31 @@
-import { Component, AfterViewInit, ElementRef, Input, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ElementRef } from '@angular/core';
 import Swiper from 'swiper';
-import { NoticiasService } from './services/noticias.service';
+import { SwiperNoticiaService } from './services/swiper-noticia.service';
 
 @Component({
-  selector: 'app-noticias',
-  templateUrl: './noticias.component.html',
-  styleUrls: ['./noticias.component.css']
+  selector: 'app-swiper-noticia',
+  templateUrl: './swiper-noticia.component.html',
+  styleUrls: ['./swiper-noticia.component.css']
 })
-export class NoticiasComponent implements  AfterViewInit, OnInit {
+export class SwiperNoticiaComponent implements  AfterViewInit, OnInit {
+   //Variables para noticias 
+   noticias: any= []
+   tituloNoticias= "Noticias";
+   noticia: any= [];
 
-    //Variables para noticias 
-    noticias: any= []
-    tituloNoticias= "Noticias";
-    noticia: any= [];
-
- 
-  constructor(private noticiaService: NoticiasService, private elementRef: ElementRef){
+  constructor(private swiperNoticiaService: SwiperNoticiaService, private elementRef: ElementRef){
   }
 
   ngOnInit(): void {
      //Se obtinene todas las noticias
-     this.noticiaService.getNoticias()
+     this.swiperNoticiaService.getNoticias()
      .subscribe((response: any) => this.noticias= response.noticias);
   }
 
 
   enviaroidNoticia(dato: number) {
     // El valor que deseas enviar
-     this.noticiaService.setoidNoticia(dato);
+     this.swiperNoticiaService.setoidNoticia(dato);
    }
   ngAfterViewInit(): void {
     const NoticiasSwiper = new Swiper(this.elementRef.nativeElement.querySelector('#Noticias .swiper'), {
@@ -50,4 +48,5 @@ export class NoticiasComponent implements  AfterViewInit, OnInit {
           }
     });
   }
+
 }

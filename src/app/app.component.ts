@@ -1,3 +1,4 @@
+import { GlobalService } from 'src/app/services/global.service';
 import { Component  } from '@angular/core';
 
 
@@ -9,6 +10,9 @@ import { Component  } from '@angular/core';
 export class AppComponent  {
   componentVisible = true;
 
+  constructor(private globalService: GlobalService){
+    globalService.obtenerRutas();
+  }
   toggleComponent() {
     this.componentVisible = !this.componentVisible;
   }

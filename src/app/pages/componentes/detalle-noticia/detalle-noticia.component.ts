@@ -1,5 +1,5 @@
 import { Component, OnInit, AfterViewInit, ElementRef } from '@angular/core';
-import { NoticiasService } from 'src/app/components/componentes/noticias/services/noticias.service';
+import { SwiperNoticiaService } from 'src/app/components/componentes/swiper-noticia/services/swiper-noticia.service';
 import { DetalleNoticiaService } from './services/detalle-noticia.service';
 import Swiper from 'swiper';
 
@@ -15,7 +15,7 @@ export class DetalleNoticiaComponent implements OnInit, AfterViewInit {
   oidNoticia: any= Number ;
 
 
-constructor(private noticiaService: NoticiasService, 
+constructor(private swiperNoticiaService: SwiperNoticiaService, 
             private detallenoticiaServices: DetalleNoticiaService,
             private elementRef: ElementRef) {
   
@@ -29,13 +29,13 @@ obtenerNoticia(oid: number){
 ngOnInit() {  
 
   //Se obtinene todas las noticias
-  this.noticiaService.getNoticias()
+  this.swiperNoticiaService.getNoticias()
   .subscribe((response: any) => this.noticias= response.noticias);
  
   //obtenemos la varible guardada en el localStorage
   const oidNoticialocal = localStorage.getItem('oidNoticia');
     //Obtenemos el oid de la noticia  enviado desde el compoenete de noticias
-  this.oidNoticia=this.noticiaService.getoidNoticia();
+  this.oidNoticia=this.swiperNoticiaService.getoidNoticia();
 
   if(this.oidNoticia!=null){
 

@@ -1,0 +1,28 @@
+<section class="bg-primary"  style="margin-bottom: 7rem;" id="Eventos">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h2 class="text-white">Eventos</h2>
+                <div class="swiper slidesPerView-3"  style="margin-bottom: -7rem;">
+                    <div class="swiper-wrapper" >
+                        <div class="swiper-slide" *ngFor="let evento of eventos">
+                            <div class="card bg-img">
+                                <div class="card-body">
+                                    <img src="{{evento.ruta}}" alt="">
+                                    <div class="card-title bt-left">
+                                        <h3>{{evento.titulo}}</h3>
+                                        <button (click)="enviarDato(evento.oid)" [routerLink]="['/detalle']" class="btn btn-light bt-left">
+                                            <span>Ver</span><i class="bi bi-arrow-right"></i>
+                                        </button>
+                                    </div>
+                                    <span class="media-type"><i class="bi bi-caret-right-fill"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

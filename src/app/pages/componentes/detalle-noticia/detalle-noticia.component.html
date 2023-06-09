@@ -1,4 +1,15 @@
-<app-nav [titulo]="'Noticia'"></app-nav>
+<nav id="BreadCrumb" aria-label="breadcrumb">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a [routerLink]="['/noticias']">Noticias</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">{{noticia.titulo}}</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</nav>
 <section>
     <div class="container">
         <div class="row">

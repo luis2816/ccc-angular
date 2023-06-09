@@ -15,6 +15,7 @@ import { ServiciosComponent } from "./pages/componentes/servicios/servicios.comp
 import { ComercioComponent } from "./pages/componentes/comercio/comercio.component";
 import { TransparenciaComponent } from "./pages/componentes/transparencia/transparencia.component";
 import { RegistrosPublicosComponent } from "./pages/componentes/registros-publicos/registros-publicos.component";
+import { NoticiasComponent } from "./pages/componentes/noticias/noticias.component";
 
 const APP_ROUTES: Routes=[
 
@@ -34,7 +35,7 @@ const APP_ROUTES: Routes=[
 {path:'detalle', component: DetalleEventoComponent},
 {path:'detalleNoticia', component: DetalleNoticiaComponent},
 {path:'registros-publicos', component: RegistrosPublicosComponent},
-{path:'**', pathMatch: 'full' , redirectTo: 'inicio'}
+{path:'noticias', component: NoticiasComponent}
 ];
 
 export const APP_ROUTING = RouterModule.forRoot(APP_ROUTES)

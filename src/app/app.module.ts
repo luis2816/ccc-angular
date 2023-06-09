@@ -22,7 +22,6 @@ import { ConvocatoriasComponent } from './pages/componentes/convocatorias/convoc
 import { ProgramaIngeniaComponent } from './pages/componentes/programa-ingenia/programa-ingenia.component';
 import { BlogComponent } from './components/componentes/blog/blog.component';
 import { NavComponent } from './components/componentes/nav/nav.component';
-import { NoticiasComponent } from './components/componentes/noticias/noticias.component';
 import { OfertasComponent } from './components/componentes/ofertas/ofertas.component';
 import { CardSideImgComponent } from './components/componentes/card-side-img/card-side-img.component';
 import { BlockButtonComponent } from './components/componentes/block-button/block-button.component';
@@ -38,6 +37,10 @@ import { ServiciosComponent } from './pages/componentes/servicios/servicios.comp
 import { ComercioComponent } from './pages/componentes/comercio/comercio.component';
 import { TransparenciaComponent } from './pages/componentes/transparencia/transparencia.component';
 import { RegistrosPublicosComponent } from './pages/componentes/registros-publicos/registros-publicos.component';
+import { SwiperNoticiaComponent } from './components/componentes/swiper-noticia/swiper-noticia.component';
+import { NoticiasComponent } from './pages/componentes/noticias/noticias.component';
+import { DynamicComponentDirective } from './directive/dynamic-component.directive';
+import { SwiperSlideEventosComponent } from './components/componentes/swiper-slide-eventos/swiper-slide-eventos.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +58,6 @@ import { RegistrosPublicosComponent } from './pages/componentes/registros-public
     ConvocatoriasComponent,
     ProgramaIngeniaComponent,
     BlogComponent,
-    NoticiasComponent,
     NavComponent,
     OfertasComponent,
     CardSideImgComponent,
@@ -71,7 +73,11 @@ import { RegistrosPublicosComponent } from './pages/componentes/registros-public
     ServiciosComponent,
     ComercioComponent,
     TransparenciaComponent,
-    RegistrosPublicosComponent
+    RegistrosPublicosComponent,
+    SwiperNoticiaComponent,
+    NoticiasComponent,
+    DynamicComponentDirective,
+    SwiperSlideEventosComponent
     
   ],
   imports: [
@@ -81,6 +87,7 @@ import { RegistrosPublicosComponent } from './pages/componentes/registros-public
     HttpClientModule, 
     FormsModule
   ],
+
   providers: [],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

@@ -1,0 +1,24 @@
+<section class="row bg-primary rounded-5 p-2 pt-5" id="Noticias" style="margin-bottom: 7rem;">
+    <div class="col">
+        <h2 class="text-white ms-3">Noticias</h2>
+        <div class="swiper slidesPerView-3 swiper-noticias" style="margin-bottom: -7rem;">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" *ngFor="let noticia of noticias">
+                    <div class="card bg-img">
+                        <div class="card-body">
+                            <img src="{{noticia.ruta}}" alt="">
+                            <a (click)="enviaroidNoticia(noticia.oid)" [routerLink]="['/detalleNoticia']">{{noticia.titulo}} <i
+                                    class="bi bi-arrow-right"></i></a>
+                        </div>
+                        <span class="badge rounded-pill text-bg-success">{{noticia.tipo}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="d-flex justify-content-end">
+    <a [routerLink]="['/noticias']" class="btn btn-lg btn-primary fw-bold rounded-4 py-4 px-5 mt-4">Ver todas las Noticias
+      >></a>
+</div>

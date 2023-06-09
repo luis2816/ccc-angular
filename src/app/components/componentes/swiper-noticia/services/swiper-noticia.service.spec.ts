@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { NoticiasService } from './noticias.service';
+import { SwiperNoticiaService } from './swiper-noticia.service';
 
-describe('NoticiasService', () => {
-  let service: NoticiasService;
+describe('SwiperNoticiaService', () => {
+  let service: SwiperNoticiaService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(NoticiasService);
+    service = TestBed.inject(SwiperNoticiaService);
   });
 
   it('should be created', () => {

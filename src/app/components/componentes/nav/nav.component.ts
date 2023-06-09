@@ -8,7 +8,7 @@ import { Component, Input } from '@angular/core';
 export class NavComponent {
 
   @Input() titulo: string | undefined;
-  @Input() tituloEvento: string | undefined;
+  
 
 
 }

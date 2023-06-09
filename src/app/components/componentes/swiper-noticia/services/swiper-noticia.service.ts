@@ -1,10 +1,12 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { GlobalService } from 'src/app/services/global.service';
+import { HttpClient } from '@angular/common/http';
+
+
 @Injectable({
   providedIn: 'root'
 })
-export class NoticiasService {
+export class SwiperNoticiaService {
   private oidNoticia: any;
 
   constructor(private http: HttpClient, private globalService: GlobalService) { }
@@ -22,5 +24,4 @@ getNoticias(): any {
   const url =this.url+'get_noticias';
   return this.http.get(url);
 }
-
 }
