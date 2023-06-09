@@ -41,6 +41,7 @@ import { SwiperNoticiaComponent } from './components/componentes/swiper-noticia/
 import { NoticiasComponent } from './pages/componentes/noticias/noticias.component';
 import { DynamicComponentDirective } from './directive/dynamic-component.directive';
 import { SwiperSlideEventosComponent } from './components/componentes/swiper-slide-eventos/swiper-slide-eventos.component';
+import { PqrsComponent } from './pages/componentes/pqrs/pqrs.component';
 
 @NgModule({
   declarations: [
@@ -77,14 +78,14 @@ import { SwiperSlideEventosComponent } from './components/componentes/swiper-sli
     SwiperNoticiaComponent,
     NoticiasComponent,
     DynamicComponentDirective,
-    SwiperSlideEventosComponent
-    
+    SwiperSlideEventosComponent,
+    PqrsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     APP_ROUTING,
-    HttpClientModule, 
+    HttpClientModule,
     FormsModule
   ],
 

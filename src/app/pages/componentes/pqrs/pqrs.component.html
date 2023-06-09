@@ -1,0 +1,20 @@
+<app-nav [titulo]="'PQRS'"></app-nav>
+<section class="container">
+  <div class="row mb-4">
+    <h2>Realizar peticiones, quejas, reclamos, sugerencias y denuncias (PQRDS)</h2>
+    <p>Por favor tenga en cuenta las siguientes definiciones para establecer el tipo de solicitud a presentar y los términos de respuesta.</p>
+  </div>
+  <div class="row">
+    <p class="text-primary fs-4">Seleccione el tipo de solicitud que desea registrar</p>
+    <div class="card flex-row mb-3 rounded-4" *ngFor="let icon of iconos">
+      <div class="card-image align-self-center px-4">
+        <img width="50" src="{{icon.imagen}}" alt="">
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">{{icon.titulo}}</h5>
+        <p class="card-text">{{icon.descripcion}}</p>
+        <a [routerLink]="[icon.link]" class="btn btn-outline-primary px-4 rounded-pill text-uppercase">{{icon.textoBtn}}</a>
+      </div>
+    </div>
+  </div>
+</section>
