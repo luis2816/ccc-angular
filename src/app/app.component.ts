@@ -1,12 +1,12 @@
 import { GlobalService } from 'src/app/services/global.service';
 import { Component  } from '@angular/core';
 
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent  {
   componentVisible = true;
 
@@ -16,5 +16,4 @@ export class AppComponent  {
   toggleComponent() {
     this.componentVisible = !this.componentVisible;
   }
-  
 }

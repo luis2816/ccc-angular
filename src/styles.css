@@ -10128,14 +10128,13 @@ textarea.form-control-lg {
 .card.bg-img.only-title .card-body {
   position: inherit;
 }
-
 .card.bg-img.only-title .stretched-link {
   color: #fff;
   font-size: 2rem;
   text-align: left;
   text-decoration: none;
-  position:relative;
-  z-index:1;
+  position: relative;
+  z-index: 1;
 }
 .card.img-top {
   border: none;
@@ -10808,7 +10807,63 @@ header .nav-link {
 header .nav-link.btn.search:hover .bi-search {
   color: #0378b3;
 }
-
+/* accesibility controls ↓↓↓*/
+header #headerTopBar .accesibility {
+  margin: 0 1rem;
+	height: calc(2.1rem + 2px);
+  width: calc(2.1rem + 2px);
+	overflow: hidden;
+  transition: width .5s ease-in-out;
+  border: 1px solid #0066CD;
+}
+header #headerTopBar .accesibility.show {
+  width: 10rem;
+  border-radius: 2rem;
+  border-color: #fff;
+}
+header #headerTopBar .accesibility > *{
+  display: inline-block;
+  vertical-align: middle;
+}
+header #headerTopBar .accesibility .universal-icon{
+  width:2.1rem;
+  height:2.1rem;
+  font-size:1.65rem;
+  line-height:1;
+  padding:0.2rem;
+  border-width: 0;
+  border-radius: 2rem;
+  margin: 0.05rem 1rem 0.05rem 0;
+}
+header #headerTopBar .accesibility .btn.icon-minus, header #headerTopBar .accesibility .btn.icon-plus{
+  width: 1.7rem;
+  height: 1.7rem;
+  color: #fff;
+  font-size: 1.5rem;
+  line-height: 1;
+  display: inline-block;
+  padding: 0;
+}
+header #headerTopBar .accesibility .btn.icon-minus span, header #headerTopBar .accesibility .btn.icon-plus span{
+  display: block;
+}
+header #headerTopBar .accesibility .btn.icon-minus span::before, header #headerTopBar .accesibility .btn.icon-plus span::before{
+  font-family: 'bootstrap-icons';
+  display: block;
+}
+header #headerTopBar .accesibility .btn.icon-minus span::before{
+  content: "\F2E6";
+}
+header #headerTopBar .accesibility .btn.icon-minus:hover ::before{
+  content: "\F2E5";
+}
+header #headerTopBar .accesibility .btn.icon-plus span::before{
+  content: "\F4FA";
+}
+header #headerTopBar .accesibility .btn.icon-plus:hover ::before{
+  content: "\F4F9";
+}
+/* accesibility controls ↑↑↑ */
 main {
   padding-bottom: 4rem;
 }
@@ -10932,32 +10987,6 @@ footer .sub-footer .subfooter-menu li {
 }
 footer .sub-footer .subfooter-menu li:last-child {
   border: 0;
-}
-
-#AccesibilityBtn {
-  position: fixed;
-  top: 50%;
-  left: 0.5rem;
-  cursor: pointer;
-  z-index: 9999;
-}
-#AccesibilityBtn .tag {
-  width: 0px;
-  padding: 0.3rem;
-  border-radius: 3rem;
-  background-color: #e77d05;
-  color: #fff;
-  position: absolute;
-  overflow: hidden;
-  text-align: center;
-  top: calc(50% - 1rem);
-  left: 20px;
-  z-index: -1;
-  transition: all 0.5s ease-in-out;
-}
-#AccesibilityBtn:hover .tag {
-  left: 45px;
-  width: 8rem;
 }
 
 /* offset menu */
