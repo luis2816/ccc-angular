@@ -17,9 +17,9 @@ export class DetalleConvocatoriaService {
   }
 
   enviar_oferta(parametro: any): any {
-    const url =this.ruta+'get_registroOferta';
-    const body = parametro ;
-    return this.http.post(url, body);
+    const url ='https://bodecom.com/ccc/ws_pme/?get_registroOferta';
+    console.log(JSON.stringify(parametro))
+    return this.http.post(url, JSON.stringify(parametro));
   }
 
   listar_departamentos(){

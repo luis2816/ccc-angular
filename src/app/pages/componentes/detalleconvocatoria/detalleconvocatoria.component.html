@@ -212,19 +212,21 @@
                         <div class="col-md-6">
                             <div class="input-group upload-file">
                                 <label class="input-group-text" for="HojaVida">Hoja de vida</label>
-                                <input type="file" class="form-control" placeholder="Hoja de vida" id="HojaVida">
+                                <input (change)="capturarFile($event, 1)" type="file" class="form-control" placeholder="Hoja de vida" id="HojaVida">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="input-group upload-file">
                                 <label class="input-group-text" for="SoportesEscaneados">Soportes escaneados</label>
-                                <input type="file" class="form-control" placeholder="Soportes escaneados" id="SoportesEscaneados">
+                                <input (change)="capturarFile($event, 2)" type="file" class="form-control" placeholder="Soportes escaneados" id="SoportesEscaneados">
                             </div>
                         </div>
                     </div>
                     <div class="row justify-content-center my-3">
                         <div class="col-auto">
-                          <button type="submit" class="btn btn-primary btn-lg fw-bold px-5">Enviar Formulario</button>
+                          <button type="submit" [disabled]="loading" class="btn btn-primary btn-lg fw-bold px-5">
+                            {{(loading)? 'Cargando...': 'Enviar Formulario'}}
+                          </button>
                         </div>
                     </div>
                                       

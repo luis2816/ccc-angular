@@ -3,6 +3,7 @@ import { OfertaService } from 'src/app/components/componentes/ofertas/services/o
 import { DetalleConvocatoriaService } from './services/detalle-convocatoria.service';
 import { NgForm } from '@angular/forms';
 import Swal from 'sweetalert2';
+import { DomSanitizer } from '@angular/platform-browser';
 
 
 
@@ -17,6 +18,7 @@ export class DetalleconvocatoriaComponent implements OnInit {
  listaDepartamento: any =[];
  listaTipodocumentos: any =[];
  listaTipoformacionacademica: any =[];
+  public loading: boolean=false
 
   listaMunicipios: any= [];
   //Datos del formulario
@@ -37,8 +39,17 @@ export class DetalleconvocatoriaComponent implements OnInit {
     municipio: '',
     tipoAcademia: '',
     wassap: '',
-
+    nombreArchivo:'',
+    base64textString:'',
+    nombreArchivoEscaneado:'',
+    base64textStringEscaneado:''
   };
+
+  archivo = {
+    nombre: '',
+    nombreArchivo: null,
+    base64textString: ''
+  }
 
   @ViewChild('formularioRef', { static: false }) formularioRef!: NgForm;
 
@@ -49,7 +60,9 @@ export class DetalleconvocatoriaComponent implements OnInit {
   oferta: any = [];
   oidOfertalocal: any = Number;
   oidOferta: any = Number;
-  constructor(private ofertaService: OfertaService, private detalleConvocatoriaService: DetalleConvocatoriaService) { }
+  constructor(private ofertaService: OfertaService, 
+              private detalleConvocatoriaService: DetalleConvocatoriaService,
+              private sanitizer : DomSanitizer) { }
 
   ngOnInit(): void {
 
@@ -96,6 +109,56 @@ export class DetalleconvocatoriaComponent implements OnInit {
     this.banderaFormulario = !this.banderaFormulario;
   }
 
+  capturarFile(event: any, soporte: any): any{
+    var files = event.target.files;
+    var file = files[0];
+    //Hoja de vida
+    if(soporte==1){
+      var nombreArchivo= file.name;      
+      this.extraerBase64(file).then((imagen :any) =>{
+       this.formulario.nombreArchivo= nombreArchivo;
+       this.formulario.base64textString=(imagen.base);
+ 
+      })
+    // Soportes escaneados
+    }else{
+      var nombreArchivo= file.name;      
+      this.extraerBase64(file).then((imagen :any) =>{
+       this.formulario.nombreArchivoEscaneado= nombreArchivo;
+       this.formulario.base64textStringEscaneado=(imagen.base);
+      })
+    }
+    console.log(this.formulario);
+
+    
+  }
+
+  extraerBase64 = async ($event: any) => {
+    try {
+      const unsafeImg = window.URL.createObjectURL($event);
+      const image = this.sanitizer.bypassSecurityTrustUrl(unsafeImg);
+      const reader = new FileReader();
+      reader.readAsDataURL($event);
+      
+      return new Promise((resolve, reject) => {
+        reader.onload = () => {
+          resolve({
+            base: reader.result
+            
+          });
+        };
+        reader.onerror = error => {
+          resolve({
+            base: null
+          });
+        };
+      });
+    } catch (e) {
+      return Promise.resolve({
+        base: null
+      });
+    }
+  };
   enviarFormulario() {
 
     if (this.oidOferta != null) {
@@ -105,6 +168,7 @@ export class DetalleconvocatoriaComponent implements OnInit {
     }
     console.log(this.formulario);
     // Realizar la petición POST al servidor
+    this.loading= true;
     this.detalleConvocatoriaService.enviar_oferta(this.formulario).subscribe(
       (response: any) => {
         if(response.status==200){
@@ -115,6 +179,7 @@ export class DetalleconvocatoriaComponent implements OnInit {
           });
           this.formularioRef.reset();
           this.banderaFormulario = !this.banderaFormulario;
+          this.loading= false;
         }else{
           Swal.fire({
             icon: 'warning',
@@ -123,6 +188,7 @@ export class DetalleconvocatoriaComponent implements OnInit {
           });
           this.formularioRef.reset();
           this.banderaFormulario = !this.banderaFormulario;
+          this.loading= false;
         }
        
       },
