@@ -18,7 +18,7 @@ export class SwiperSlideEventosComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
     //Se obtiene todos los evntos por medio de un servicio y se guarda en la variable eventos
     this.eventosService.getEventos()
-    .subscribe((response: any) => this.eventos= response.lista_eventos);
+    .subscribe((response: any) =>console.log( response.lista_eventos));
 }
 ngAfterViewInit(): void {
   const NoticiasSwiper = new Swiper(this.elementRef.nativeElement.querySelector('#Eventos .swiper'), {

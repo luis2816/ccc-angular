@@ -1,27 +1,71 @@
-<div class="swiper slidesPerView-3">
-    <div class="swiper-wrapper" >
-        <div class="swiper-slide" *ngFor="let oferta of listaOfertas ">
-            <div class="card body-footer">
-                <div class="card-body">
-                    <div class="title-location">
-                        <h5 class="card-title">{{oferta.titulo}}</h5>
-                        <small class="location"><i class="bi bi-geo-alt-fill"></i>{{oferta.ciudad}}</small>
+<section id="Ofertas">
+    <div class="container">
+        <!-- Filters -->
+        <div class="row mb-5" *ngIf="bandera">
+            <div class="col">
+                <div class="card shadow rounded-4">
+                    <div class="card-body">
+                        <div class="row justify-content-center align-items-end">
+                            <div class="col-md-auto">
+                                <p>Filtrar por:</p>
+                                <div class="dropdown">
+                                    <button class="btn btn-light dropdown-toggle" type="button" id="triggerId"
+                                        data-bs-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">Seleccionar</button>
+                                    <div class="dropdown-menu" aria-labelledby="triggerId">
+                                        <a class="dropdown-item"
+                                            (click)="filtrarPorTipo('Oferta laboral')">Oferta laboral</a>
+                                        <a class="dropdown-item"
+                                            (click)="filtrarPorTipo('Pasantia')">Pasantía</a>
+                                        <a class="dropdown-item" 
+                                            (click)="filtrarPorTipo('Tarjeta Invitación')">Tarjeta Invitación</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control w-100" name="searchInput" id="searchInput"
+                                    placeholder="Ingrese su búsqueda" (input)="filtrarOfertas($event)">
+                            </div>
+                            <div class="col-md-auto">
+                                <button type="button" class="btn btn-primary">Buscar</button>
+                            </div>
+                        </div>
                     </div>
-                    <small class="published-time"><i class="bi bi-clock"></i>{{oferta.fecha_publicacion}}</small>
-                    <span class="badge bg-success">{{oferta.nom_convocatoria}}</span>
-                </div>
-                <div class="card-footer">
-                    <small class="vacancies"><i class="bi bi-people-fill"></i> Vancantes | {{oferta.no_vacantes}}</small>
-                    <ul class="social-share list-unstyled">
-                        <li>Compartir</li>
-                        <li><i class="bi bi-envelope-fill" style="color: #FFA000;"></i></li>
-                        <li><i class="bi bi-facebook" style="color: #4460A0;"></i></li>
-                        <li><i class="bi bi-twitter" style="color: #00AAEC;"></i></li>
-                        <li><i class="bi bi-whatsapp" style="color: #67C15E;"></i></li>
-                    </ul>
-                    <button type="button" (click)="enviaroidOferta(oferta.oid)" [routerLink]="['/convocatoria']" class="btn btn-primary btn-sm">Postularme</button>
                 </div>
             </div>
         </div>
-    </div> 
-</div>
+        <!-- cards ofertas -->
+        <div class="row">
+            <div class="col">
+                <h2 class="mb-4">Ofertas</h2>
+                <div class="swiper slidesPerView-3">
+                    <div class="swiper-wrapper" >
+                        <div class="swiper-slide" *ngFor="let oferta of listaOfertas ">
+                            <div class="card body-footer">
+                                <div class="card-body">
+                                    <div class="title-location">
+                                        <h5 class="card-title">{{oferta.titulo}}</h5>
+                                        <small class="location"><i class="bi bi-geo-alt-fill"></i>{{oferta.ciudad}}</small>
+                                    </div>
+                                    <small class="published-time"><i class="bi bi-clock"></i>{{oferta.fecha_publicacion}}</small>
+                                    <span class="badge bg-success">{{oferta.nom_convocatoria}}</span>
+                                </div>
+                                <div class="card-footer">
+                                    <small class="vacancies"><i class="bi bi-people-fill"></i> Vancantes | {{oferta.no_vacantes}}</small>
+                                    <ul class="social-share list-unstyled">
+                                        <li>Compartir</li>
+                                        <li><i class="bi bi-envelope-fill" style="color: #FFA000;"></i></li>
+                                        <li><i class="bi bi-facebook" style="color: #4460A0;"></i></li>
+                                        <li><i class="bi bi-twitter" style="color: #00AAEC;"></i></li>
+                                        <li><i class="bi bi-whatsapp" style="color: #67C15E;"></i></li>
+                                    </ul>
+                                    <button type="button" (click)="enviaroidOferta(oferta.oid)" [routerLink]="['/convocatoria']" class="btn btn-primary btn-sm">Postularme</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                </div>                
+            </div>
+        </div>
+    </div>
+</section>

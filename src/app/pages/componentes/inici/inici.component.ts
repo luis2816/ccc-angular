@@ -7,14 +7,4 @@ import { Component } from '@angular/core';
 })
 export class IniciComponent {
 
-  //Variables para eventos se declara el parametro 3= eventos
-  parametro= 3;
-  eventos: any= [];
-  
-
-  constructor(){}
-
-
-
- 
 }

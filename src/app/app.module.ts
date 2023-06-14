@@ -42,6 +42,7 @@ import { NoticiasComponent } from './pages/componentes/noticias/noticias.compone
 import { DynamicComponentDirective } from './directive/dynamic-component.directive';
 import { SwiperSlideEventosComponent } from './components/componentes/swiper-slide-eventos/swiper-slide-eventos.component';
 import { PqrsComponent } from './pages/componentes/pqrs/pqrs.component';
+import { PodcastsComponent } from './pages/componentes/podcasts/podcasts.component';
 
 @NgModule({
   declarations: [
@@ -79,7 +80,8 @@ import { PqrsComponent } from './pages/componentes/pqrs/pqrs.component';
     NoticiasComponent,
     DynamicComponentDirective,
     SwiperSlideEventosComponent,
-    PqrsComponent
+    PqrsComponent,
+    PodcastsComponent
   ],
   imports: [
     BrowserModule,

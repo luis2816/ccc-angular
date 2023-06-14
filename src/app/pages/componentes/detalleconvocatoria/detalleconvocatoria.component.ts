@@ -194,6 +194,7 @@ export class DetalleconvocatoriaComponent implements OnInit {
       },
       (error: any) => {
         console.error('Error:', error);
+        this.loading= false;
         // Aquí puedes agregar código adicional para manejar el error
       }
     );
