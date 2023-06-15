@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { PlantillaComponent } from '../plantillas/plantilla/plantilla.component';
@@ -9,7 +10,7 @@ export class GlobalService {
 
   //public var_ruta_prod ="http://35.231.9.84:8091/scriptcase/app/CCC/ws_pme/?";
   public var_ruta_prod  = "https://bodecom.com/ccc/ws_pme/?";
-  constructor(private router: Router) { }
+  constructor(private router: Router, private http: HttpClient) { }
 
 ruta: any= [];
 
@@ -19,7 +20,11 @@ ruta: any= [];
         componente: PlantillaComponent
       }
   ]
-
+  get_contenidoWeb_modulo(parametro: any): any {
+    const url ='http://35.231.9.84:8091/scriptcase/app/CCC/ws_pme/?get_contenidoWeb_modulo';
+    const body = { "modulo": parametro };
+    return this.http.post(url, body);
+  }
   obtenerRutas() {
     this.listaRutas.forEach(ruta => {
       const routeConfig = {

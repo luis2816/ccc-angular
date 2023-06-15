@@ -13,7 +13,7 @@ export class DetalleNoticiaComponent implements OnInit, AfterViewInit {
   noticia: any= [];
   noticias: any= [];
   oidNoticia: any= Number ;
-
+  showMore: boolean = false;
 
 constructor(private swiperNoticiaService: SwiperNoticiaService, 
             private detallenoticiaServices: DetalleNoticiaService,

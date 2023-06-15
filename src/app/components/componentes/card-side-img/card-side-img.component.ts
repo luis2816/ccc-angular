@@ -10,6 +10,8 @@ import { CardSideImgService } from './services/card-side-img.service';
 })
 export class CardSideImgComponent implements OnInit  {
   @Input() titulo: string | undefined;
+  showMore: boolean = false;
+
 
   destacados: any=[];
   constructor(private cardSideImgService: CardSideImgService, private swiperNoticiaService: SwiperNoticiaService){}
@@ -24,6 +26,5 @@ export class CardSideImgComponent implements OnInit  {
     // El valor que deseas enviar
      this.swiperNoticiaService.setoidNoticia(dato);
    }
-
 
 }

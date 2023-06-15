@@ -1,0 +1,9 @@
+.card-text {
+    max-height: 100px; /* Altura máxima inicial del texto */
+    overflow: hidden;
+  }
+  
+  .card-text.expanded {
+    max-height: none; /* Altura máxima cuando se muestra todo el texto */
+    overflow: visible;
+  }

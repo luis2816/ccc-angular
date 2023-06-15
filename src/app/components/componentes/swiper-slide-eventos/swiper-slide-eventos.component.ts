@@ -13,12 +13,13 @@ export class SwiperSlideEventosComponent implements OnInit, AfterViewInit {
   eventos: any = [];
   constructor(private  swiperEventoService: SwiperEventoService,
                private elementRef: ElementRef,
-               private eventosService: EventosService){}
+              private  eventosService: EventosService
+               ){}
 
   ngOnInit(): void {
-    //Se obtiene todos los evntos por medio de un servicio y se guarda en la variable eventos
-    this.eventosService.getEventos()
-    .subscribe((response: any) =>console.log( response.lista_eventos));
+     //Se obtiene todos los eventos por medio de un servicio y se guarda en la variable eventos
+     this.swiperEventoService.getEventos(3)
+     .subscribe((response: any) => this.eventos= response.eventos);
 }
 ngAfterViewInit(): void {
   const NoticiasSwiper = new Swiper(this.elementRef.nativeElement.querySelector('#Eventos .swiper'), {

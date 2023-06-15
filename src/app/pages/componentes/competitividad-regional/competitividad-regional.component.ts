@@ -1,3 +1,4 @@
+import { GlobalService } from 'src/app/services/global.service';
 import { CompetitividadRegionalService } from './service/competitividad-regional.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -9,11 +10,18 @@ import { Component, OnInit } from '@angular/core';
 export class CompetitividadRegionalComponent implements OnInit {
   
    listaTiposCompetitividad: any = [];
-  constructor(private competitividadRegionalService : CompetitividadRegionalService){}
+   contenidoWeb: any= [];
+  constructor(private competitividadRegionalService : CompetitividadRegionalService, private globalService: GlobalService){}
   ngOnInit(): void {
 
       this.competitividadRegionalService.getTiposcompetitividadRegional()
      .subscribe((response: any) => this.listaTiposCompetitividad = response.lista_competitividad );
+
+     //Obtener el contenido web de la pagina competitividad-regional
+     this.globalService.get_contenidoWeb_modulo('competitividad-regional')
+     .subscribe((response: any) => this.contenidoWeb = response.contenidoWeb );
+
+     
   }
 
   enviarDato(dato: number) {

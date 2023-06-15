@@ -14,10 +14,5 @@ export class ServiciosVirtualesService {
     const url =this.ruta+'get_noticias';
     return this.http.get(url);
   }
-  getEventos(parametro: any): any {
-    const url =this.ruta+'get_eventos';
-    const body = { "oidDestino": parametro };
-    return this.http.post(url, body);
-  }
 }
 

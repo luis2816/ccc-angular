@@ -8,7 +8,9 @@
                 </div>
                 <div class="card-body">
                     <h5 class="card-title"><a (click)="enviaroidNoticia(destacado.oid)" [routerLink]="['/detalleNoticia']" class="stretched-link">{{destacado.titulo}}</a></h5>
-                    <p class="card-text">{{destacado.descripcion}}</p>
+                    <p class="card-text" [class.expanded]="showMore">{{destacado.descripcion}}</p>
+                    <button class="btn btn-primary" (click)="showMore = !showMore" *ngIf="!showMore">Ver más</button>
+                    <button class="btn btn-primary" (click)="showMore = !showMore" *ngIf="showMore">Ver menos</button>
                     <small><i class="bi bi-clock"></i>{{destacado.fecha_publicacion}}</small>
                 </div>
             </div>

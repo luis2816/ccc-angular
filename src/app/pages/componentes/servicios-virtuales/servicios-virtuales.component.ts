@@ -7,7 +7,7 @@ import { ServiciosVirtualesService } from './services/servicios-virtuales.servic
 })
 export class ServiciosVirtualesComponent implements OnInit  {
   
-  serviciosVirtuales: any = [];
+
   otrosServicios: any = [];
 
   constructor(private inicioService: ServiciosVirtualesService){}
@@ -17,9 +17,6 @@ export class ServiciosVirtualesComponent implements OnInit  {
       this.inicioService.getNoticias()
     .subscribe((response: any) => this.otrosServicios=response.noticias);
 
-    //Se obtinene todos los servicios virtuales
-    this.inicioService.getNoticias()
-    .subscribe((response: any) => this.serviciosVirtuales=response.noticias);
   }
 
 }

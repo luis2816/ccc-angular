@@ -2,13 +2,10 @@
 <main>
     <div class="container">
       <section>
-        <div class="row rounded-4 border border-1" style="background-image: linear-gradient(to right, #fff 65%,#ffffff00), url('https://source.unsplash.com/random/768x1024?entrepreneurs'); background-repeat: no-repeat; background-position: center, center right; background-size: 100%,contain;">               
+        <div class="row rounded-4 border border-1" style="background-image: linear-gradient(to right, #fff 65%,#ffffff00), url('{{contenidoWeb.imagen}}'); background-repeat: no-repeat; background-position: center, center right; background-size: 100%,contain;">               
             <div class="col-md-8 px-5 pt-3 pb-5 h-75">
-                <h1 class="card-title text-primary mb-3">Competitividad Regional</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ligula purus, pharetra 
-                    sit amet mi lobortis, aliquam porta nisl. Aliquam rhoncus elementum libero, id 
-                    fringilla tortor elementum non. Donec pellentesque odio eget nibh dapibus.
-                </p>
+                <h1 class="card-title text-primary mb-3">{{contenidoWeb.titulo_1}}</h1>
+                <p>{{contenidoWeb.descripcion}}</p>
                 <div class="row row-cols-2 row-cols-md-3 row-cols-xl-5 mt-4 g-3">
                 
                     <div class="col"  *ngFor="let competitividad of listaTiposCompetitividad">
