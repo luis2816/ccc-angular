@@ -1,0 +1,270 @@
+<app-nav [titulo]="'PQRS'"></app-nav>
+<section class="container">
+  <div class="row mb-4">
+    <h2>PQRDS (Recepción de Solicitudes)</h2>
+    <p class="fw-bold text-primary fs-5">{{subtitulo}}</p>
+  </div>
+  <form action="">
+    <div *ngIf="!isDatosPersonales && !isAgendarCita" class="row mb-4">
+      <div class="col">
+        <p class="text-primary fs-4">Selecciona de que manera desea registrar la solicitud</p>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" (click)= "ChangeData(false)" type="radio" name="tipoRegistro" id="radioPersonal" value="personal" checked>
+          <label class="form-check-label" for="radioPersonal">A nombre personal</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" (click)= "ChangeData(true)" type="radio" name="tipoRegistro" id="radioAnonimo" value="anonimo">
+          <label class="form-check-label" for="radioAnonimo">Anónima</label>
+        </div>
+      </div>
+    </div>
+    <!-- personal ↓↓↓ -->
+    <div *ngIf="!anonimous" class="row mb-4">
+      <div class="col-md-8">
+        <p class="text-primary fs-5">A continuación completa tus datos para dar respuesta a tu solicitud</p>
+        <p class="text-primary fs-4">Datos del solicitante</p>
+        <p>Los campos marcados con (*) son obligatorios</p>
+        <div class="row">
+          <div class="col-md-6">
+            <select #persona class="form-select mb-3" aria-label="tipo de persona" (change)="onSelectedPersona(persona.value)">
+              <option selected>Escoger</option>
+              <option value="natural">Persona Natural</option>
+              <option value="juridica">Persona Jurídica</option>
+              <option value="ninos_ninas_adolescentes">Niños, niñas y adolescentes</option>
+              <option value="apoderados">Apoderados</option>
+            </select>
+          </div>
+          <div class="d-none d-md-block col-md-6"></div>
+          <div *ngIf="!isJuridica" class="col-md-6">
+            <div class="mb-3">
+              <label for="name_1" class="form-label">Primer nombre*</label>
+              <input type="text" class="form-control" id="name_1" placeholder="Ej. Juan" required>
+            </div>
+          </div>
+          <div *ngIf="!isJuridica" class="col-md-6">
+            <div class="mb-3">
+              <label for="name_2" class="form-label">Segundo nombre</label>
+              <input type="text" class="form-control" id="name_2" placeholder="Ej. Alejandro">
+            </div>
+          </div>
+          <div *ngIf="!isJuridica" class="col-md-6">
+            <div class="mb-3">
+              <label for="lastName_1" class="form-label">Primer apellido*</label>
+              <input type="text" class="form-control" id="lastName_1" placeholder="Ej. Durán" required>
+            </div>
+          </div>
+          <div *ngIf="!isJuridica" class="col-md-6">
+            <div class="mb-3">
+              <label for="lastName_2" class="form-label">Segundo apellido</label>
+              <input type="text" class="form-control" id="lastName_2" placeholder="Ej. Torres">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="mb-3">
+              <label for="" class="form-label">Tipo de identificación*</label>
+              <select class="form-select" aria-label="Default select example">
+                <option selected>Escoger</option>
+                <option value="cc">Cédula de ciudadanía</option>
+                <option value="ce">Cédula de extranjería</option>
+                <option value="rc">Registro civil</option>
+                <option value="ti">Tarjeta de identidad</option>
+                <option value="nit">NIT</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="mb-3">
+              <label for="idNumber" class="form-label">Número de identificación*</label>
+              <input type="number" class="form-control" id="idNumber" placeholder="Ej. 1010167576">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="mb-3">
+              <label for="birthdate" class="form-label">Fecha de nacimiento*</label>
+              <input type="date" class="form-control" id="birthdate" placeholder="Ej. 1930-01-07">
+            </div>
+          </div>
+          <div class="d-none d-md-block col-md-6"></div>
+          <div *ngIf="!isJuridica" class="col-md-6 mb-3">
+            <p>Género*</p>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="genero" id="radioFemenino" value="personal">
+              <label class="form-check-label" for="radioFemenino">Femenino</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="genero" id="radioMasculino" value="anonimo">
+              <label class="form-check-label" for="radioMasculino">Masculino</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="genero" id="radioOtro" value="anonimo">
+              <label class="form-check-label" for="radioOtro">Otro</label>
+            </div>
+          </div>
+          <div *ngIf="!isJuridica" class="d-none d-md-block col-md-6"></div>
+          <div *ngIf="isJuridica" class="col-md-6">
+            <div class="mb-3">
+              <label for="razonSocial" class="form-label">Razón social*</label>
+              <input type="text" class="form-control" id="razonSocial" placeholder="Ej. Contoso S.A.S" required>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="mb-3">
+              <label for="" class="form-label">País*</label>
+              <select class="form-select" aria-label="Escoger país">
+                <option selected>Escoger</option>
+                <option value="CO">Colombia</option>
+                <option value="CO">Colombia</option>
+                <option value="CO">Colombia</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="mb-3">
+              <label for="areaDireccion" class="form-label text-primary fs-4">Dirección*</label>
+              <textarea class="form-control" id="areaDireccion" placeholder="Ej. Cra. 34 # 23 - 45 Apto 501" rows="3"></textarea>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="mb-3">
+              <label for="telFijo" class="form-label">Teléfono fijo*</label>
+              <p class="text-muted">(si es internacional agrega código de área)</p>
+              <input type="number" class="form-control" id="telFijo" placeholder="Ej. 572345678" required>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="mb-3">
+              <label for="telMovil" class="form-label">Teléfono Móvil*</label>
+              <p class="text-muted">(si es internacional agrega código de área)</p>
+              <input type="number" class="form-control" id="telMovil" placeholder="Ej. 573014560098" required>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="mb-3">
+              <label for="eMail" class="form-label">Correo electrónico*</label>
+              <input type="email" class="form-control" id="eMail" placeholder="Ej. correo@correo.com" required>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="mb-3">
+              <label for="eMailConfirm" class="form-label">Confirmar Correo*</label>
+              <input type="email" class="form-control" id="eMailConfirm" placeholder="Ej. correo@correo.com" required>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- personal ↑↑↑ -->
+    <div class="row mb-4">
+      <div class="col-md-8">
+        <div class="mb-3">
+          <label for="areaAcerca" class="form-label text-primary fs-4">{{textAcercaDe}} *(0/5098 caracteres)</label>
+          <textarea class="form-control" id="areaAcerca" placeholder="Ej. Descripción de la solicitud" rows="3"></textarea>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="isAgendarCita" class="row mb-4">
+      <div class="col">
+        <p class="text-primary fs-4">Selecciona el tipo de cita que deseas*</p>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="tipoCita" id="radioPresencial" value="personal">
+          <label class="form-check-label" for="radioPresencial">Presencial</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="tipoCita" id="radioVirtual" value="anonimo">
+          <label class="form-check-label" for="radioVirtual">Virtual</label>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="isAgendarCita" class="row mb-4">
+      <div class="col-md-8">
+        <p class="text-primary fs-4">Indícanos la hora y el día más adecuados para agendar tu cita y trataremos de atenderte según el horario disponible de la entidad</p>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="mb-3">
+              <label for="" class="form-label">Día</label>
+              <select class="form-select" aria-label="Escoger día">
+                <option selected>Escoger</option>
+                <option value="2">Lunes</option>
+                <option value="3">Martes</option>
+                <option value="4">Miércoles</option>
+                <option value="5">Jueves</option>
+                <option value="6">Viernes</option>
+                <option value="7">Sábado</option>
+                <option value="1">Domingo</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="mb-3">
+              <label for="" class="form-label">Hora</label>
+              <select class="form-select" aria-label="Escoger hora">
+                <option selected>Escoger</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="!isAgendarCita" class="row mb-4">
+      <div class="col-md-8">
+        <p class="text-primary fs-4">Documento adicional</p>
+        <p>Adjunta en un solo archivo la documentación que consideres necesaria para realizar tu {{solicitud}}</p>
+        <p class="small text-muted">Tipos de archivos permitidos: doc, txt, xls, xlsx, docx, ppt, pptx, pdf, mp4, mp3, zip, jpg, jpeg, png, gif, rar.<br>Peso máximo permitido 2MB</p>
+        <div class="dropzone" appDnd (fileDropped)="onFileDropped($event)">
+          <input type="file" #fileDropRef id="fileDropRef" (change)="fileBrowseHandler($event)" />
+          <div class="display-3"><i class="bi bi-upload text-primary"></i></div>
+          <h3>Arrastre aquí su archivo o haga click aquí para añadir</h3>
+        </div>
+        <div class="files-list">
+          <div class="single-file" *ngFor="let file of files; let i = index">
+            <div class="icon icon fs-1 text-accent"><i class="bi bi-filetype-{{fileExt}}"></i></div>
+            <div class="info">
+              <h4 class="name">{{ file?.name }}</h4>
+              <p class="size">{{ formatBytes(file?.size) }}</p>
+              <app-progress [progress]="file?.progress"></app-progress>
+            </div>
+            <button class="btn" (click)="deleteFile(i)"><i class="bi bi-trash text-danger"></i></button>
+          </div>
+        </div>
+      </div>
+      <div class="col-12">
+        <p class="text-primary fs-4">Selecciona el medio por el que te gustaría recibir la respuesta a tu solicitud*</p>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="medio" id="radioCorreo" value="correo">
+          <label class="form-check-label" for="radioCorreo">Por correo electrónico</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="medio" id="radioCorrespondencia" value="correspondencia">
+          <label class="form-check-label" for="radioCorrespondencia">Por correspondencia física</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="medio" id="radioTelefono" value="telefono">
+          <label class="form-check-label" for="radioTelefono">Por teléfono</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="medio" id="radioTicket" value="ticket">
+          <label class="form-check-label" for="radioTicket">seguimiento por ticket</label>
+        </div>
+      </div>
+    </div>
+    <div class="row my-5">
+      <div class="col-md-8">
+        <p class="text-primary fs-4">Aviso de privacidad y autorización para el tratamiento de datos personales</p>
+        <p class="small">La entidad sigue los lineamientos de anonimización de datos emitidos por el Archivo General de la Nación y efectivamente da cumplimiento a los mismos. Según anexo 2 de la resolución 2893 de 2020</p>
+        <p class="small">Puede ver aquí las recomendaciones en torno a las garantías de anonimato (Recomendaciones de anonimato)</p>
+        <button type="button" class="btn btn-outline-primary rounded-pill">VER TÉRMINOS Y CONDICIONES DE USO</button>
+        <div class="form-check mt-4">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+          <label class="form-check-label" for="flexCheckDefault">Consiento que mis datos personales sean transferidos en los términos que señala el presente aviso de privacidad*</label>
+        </div>
+      </div>
+    </div>
+    <div class="row my-5">
+      <div class="col-md-6">
+          <button type="button" class="btn btn-outline-primary rounded-pill px-4">CANCELAR</button>
+          <button type="button" class="btn btn-outline-primary rounded-pill px-4 mx-4">LIMPIAR</button>
+          <button type="button" class="btn btn-outline-primary rounded-pill px-4">ENVIAR</button>
+      </div>
+    </div>
+  </form>
+</section>

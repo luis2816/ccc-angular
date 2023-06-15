@@ -43,6 +43,9 @@ import { DynamicComponentDirective } from './directive/dynamic-component.directi
 import { SwiperSlideEventosComponent } from './components/componentes/swiper-slide-eventos/swiper-slide-eventos.component';
 import { PqrsComponent } from './pages/componentes/pqrs/pqrs.component';
 import { PodcastsComponent } from './pages/componentes/podcasts/podcasts.component';
+import { PqrsFormularioComponent } from './pages/componentes/pqrs-formulario/pqrs-formulario.component';
+import { DndDirective } from './directive/dnd.directive';
+import { ProgressComponent } from './components/componentes/progress/progress.component';
 
 @NgModule({
   declarations: [
@@ -81,7 +84,10 @@ import { PodcastsComponent } from './pages/componentes/podcasts/podcasts.compone
     DynamicComponentDirective,
     SwiperSlideEventosComponent,
     PqrsComponent,
-    PodcastsComponent
+    PodcastsComponent,
+    PqrsFormularioComponent,
+    DndDirective,
+    ProgressComponent
   ],
   imports: [
     BrowserModule,
