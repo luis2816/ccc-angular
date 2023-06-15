@@ -10,6 +10,8 @@ import { EventosService } from './services/eventos.service';
 export class EventosComponent implements OnInit {
 
   eventos: any = [];
+  itemsPerPage = 4;
+  currentPage = 1;
   constructor(private eventosService: EventosService){}
 
   ngOnInit(): void { 
@@ -24,4 +26,18 @@ export class EventosComponent implements OnInit {
     this.eventosService.setoidEvento(dato);
   }
 
+  getCurrentPageEvents() {
+    const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+    const endIndex = startIndex + this.itemsPerPage;
+    return this.eventos.slice(startIndex, endIndex);
+}
+
+getPages() {
+    const pageCount = Math.ceil(this.eventos.length / this.itemsPerPage);
+    return Array(pageCount).fill(0).map((_, index) => index + 1);
+}
+
+goToPage(page: number) {
+    this.currentPage = page;
+}
 }

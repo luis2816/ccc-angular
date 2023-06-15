@@ -130,9 +130,10 @@ h2, .h2 {
 h3, .h3 {
   font-size: calc(1.3rem + 0.6vw);
 }
+
 @media (min-width: 1200px) {
   h3, .h3 {
-    font-size: 1.75rem;
+    font-size: 1.2rem;
   }
 }
 
@@ -10122,7 +10123,7 @@ textarea.form-control-lg {
   bottom: 1rem;
   right: 2rem;
   color: #fff;
-  font-size: 1.9rem;
+  font-size: 1.2rem;
   text-decoration: none;
 }
 .card.bg-img.only-title .card-body {
@@ -10308,7 +10309,7 @@ textarea.form-control-lg {
   color: #0378b3;
 }
 .card.evento .card-body .date .day {
-  font-size: 4rem;
+  font-size: 3.5rem;
   line-height: 0.6;
   font-weight: bolder;
   margin-bottom: 0.7rem;
