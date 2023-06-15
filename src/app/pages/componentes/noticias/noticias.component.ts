@@ -10,6 +10,8 @@ export class NoticiasComponent implements OnInit {
 
   noticias:any = [];
   noticia:any=[];
+  itemsPerPage = 4;
+  currentPage = 1;
   
   constructor(private swiperNoticiaService: SwiperNoticiaService){}
   ngOnInit(): void {
@@ -24,5 +26,20 @@ export class NoticiasComponent implements OnInit {
    verDetalle(oid: Number){
    this.swiperNoticiaService.setoidNoticia(oid);
    }
+
+   getCurrentPageEvents() {
+    const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+    const endIndex = startIndex + this.itemsPerPage;
+    return this.noticias.slice(startIndex, endIndex);
+}
+
+getPages() {
+    const pageCount = Math.ceil(this.noticias.length / this.itemsPerPage);
+    return Array(pageCount).fill(0).map((_, index) => index + 1);
+}
+
+goToPage(page: number) {
+    this.currentPage = page;
+}
 
 }

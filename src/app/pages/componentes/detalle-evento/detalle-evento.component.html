@@ -28,7 +28,8 @@
                     </ul>
                     <button type="button" class="btn btn-primary btn-lg px-5 fw-bold fs-4 rounded-4">Inscríbete</button>
                 </div>
-                <p class="event-description border-top border-1 border-primary pt-3 mb-3">{{evento.descripcion}}</p>
+
+                <p class="event-description border-top border-1 border-primary pt-3 mb-3" [innerHTML]="evento.descripcion"></p>
                 <h4 class="my-3">Información general</h4>
                 <ul class="list-unstyled contact-info-icons row row-cols-1 row-cols-md-2">
                     <li class="ci place">Lugar: {{evento.lugar}}</li>

@@ -10,13 +10,13 @@
         </div>
     </div>
 </nav>
-<section >
+<section>
     <div class="container">
         <div class="row">
             <div class="col-md-8 order-md-last">
                 <h1 class="mb-4">Noticias</h1>
                 <div class="row row-cols-1 row-cols-md-2 g-4">
-                    <div class="col" *ngFor="let noticia of noticias" >
+                    <div class="col" *ngFor="let noticia of getCurrentPageEvents()">
                         <div class="card evento">
                             <div class="swiper-slide">
                                 <div class="card bg-img">
@@ -27,18 +27,28 @@
                                     <span class="badge rounded-pill text-bg-success">{{noticia.tipo}}</span>
                                 </div>
                             </div>
-                         <div class="card-footer">
-                             <ul class="list-unstyled contact-info-icons">
-                                 <li class="ci city"></li>
-                                 <li class="ci duration"></li>
-                                 <li class="ci email"></li>
-                                 <li class="detailsBtn"><a (click)="verDetalle(noticia.oid)" [routerLink]="['/detalleNoticia']">ver detalles</a></li>
-                             </ul>
-                         </div>
-                     </div>
-                     </div>
+                            <div class="card-footer">
+                                <ul class="list-unstyled contact-info-icons">
+                                    <li class="ci city"></li>
+                                    <li class="ci duration"></li>
+                                    <li class="ci email"></li>
+                                    <li class="detailsBtn"><a (click)="verDetalle(noticia.oid)"
+                                            [routerLink]="['/detalleNoticia']">ver detalles</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>  
+                <!-- Paginador -->
+                <nav aria-label="Paginación" style="margin-top: 20px;">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item" *ngFor="let page of getPages()" [class.active]="page === currentPage">
+                            <a class="page-link" (click)="goToPage(page)">{{ page }}</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
             <div class="col-md-4 order-md-first">
                 <div class="card shadow-lg rounded-4">
                     <div class="card-body p-4">
@@ -59,8 +69,7 @@
                         <li class="ci email"><a href="mailto:correo@mail.com.co">correo@mail.com.co</a></li>
                     </ul>
                 </div>
-            </div>            
+            </div>
         </div>
     </div>
 </section>
-
