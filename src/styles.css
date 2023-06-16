@@ -10125,6 +10125,8 @@ textarea.form-control-lg {
   color: #fff;
   font-size: 1.2rem;
   text-decoration: none;
+  padding-left: 20px;
+  padding-right: 15px;
 }
 .card.bg-img.only-title .card-body {
   position: inherit;
@@ -10407,6 +10409,8 @@ textarea.form-control-lg {
   color: #fff;
   padding: 2rem;
 }
+
+/*
 .swiper.swiper-blog .swiper-slide::after {
   content: "";
   position: absolute;
@@ -10418,7 +10422,7 @@ textarea.form-control-lg {
   background-image: linear-gradient(to top, #000000 15%, #00000082 35%, #0000 60%);
   opacity: 0.7;
   transition: all 0.5s ease-in-out;
-}
+}*/
 .swiper.swiper-blog .swiper-slide h3, .swiper.swiper-blog .swiper-slide .h3, .swiper.swiper-blog .swiper-slide p {
   position: relative;
   z-index: 1;
@@ -10476,6 +10480,15 @@ section {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+.banner img{
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
 }
 .banner::before {
   content: "";

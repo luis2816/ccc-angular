@@ -1,10 +1,46 @@
- <div class="swiper swiper-blog" id="prueba">
-    <div class="swiper-wrapper">
-        <div class="swiper-slide"><video src="https://assets.mixkit.co/videos/download/mixkit-young-models-posing-in-front-of-the-camera-47778-medium.mp4" muted autoplay loop></video><h3>Se acerca el evento más <b>fashion</b> del departamento</h3></div>
-        <div class="swiper-slide"><video src="https://assets.mixkit.co/videos/download/mixkit-busy-office-space-918-medium.mp4" ></video><h3>Jornada laboral de <b>cuatro</b> horas</h3></div>
-        <div class="swiper-slide"><video src="https://assets.mixkit.co/videos/download/mixkit-girl-walking-on-the-runway-47779-medium.mp4" ></video><h3>Conozca a la <b>representante</b> al reinado</h3></div>
-        <div class="swiper-slide"><video src="https://assets.mixkit.co/videos/download/mixkit-online-shoping-with-credit-card-14009-medium.mp4" ></video><h3>Preocupación por el <b>pago</b> de impuestos</h3></div>
-        <div class="swiper-slide"><video src="https://assets.mixkit.co/videos/download/mixkit-hands-of-a-man-counting-coins-close-up-view-18263-medium.mp4" ></video><h3><b>Cinco</b> métodos de ahorro</h3></div>
+ <div id="carouselExampleCaptions" class="carousel slide">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
-    <div class="swiper-pagination"></div>
-</div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <video
+        id="vid1"
+        class="video-js vjs-default-skin"
+        controls
+        
+        width="640" height="264"
+        data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "https://www.youtube.com/watch?v=zMOHbTBiD74"}] }'
+      >
+      </video>
+        <div class="carousel-caption d-none d-md-block">
+          <p>¡Emprendedor y empresario del sector creativo y cultural de Popayán! </p>
+        </div>
+      </div>
+      <div class="carousel-item active">
+        <video
+        id="vid1"
+        class="video-js vjs-default-skin"
+        controls
+        
+        width="640" height="264"
+        data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "https://youtu.be/ikHT-d2UKJc"}] }'
+      >
+      </video>
+        <div class="carousel-caption d-none d-md-block">
+        
+          <p>Renovación mercantil</p>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>

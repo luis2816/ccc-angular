@@ -2,7 +2,7 @@
     <div class="col">
         <h2>{{titulo}}</h2>
         <div class="row row-cols-1  row-cols-md-2 row-cols-xl-3 g-4 mt-5">
-            <div class="card side-img" *ngFor="let destacado of destacados">
+            <div class="card side-img" *ngFor="let destacado of getCurrentPageEvents()">
                 <div class="card-image">
                     <img src="{{destacado.ruta}}" alt="">
                 </div>
@@ -13,7 +13,7 @@
                     <button class="btn btn-primary" (click)="showMore = !showMore" *ngIf="showMore">Ver menos</button>
                     <small><i class="bi bi-clock"></i>{{destacado.fecha_publicacion}}</small>
                 </div>
-            </div>
+            </div>  
         </div>
     </div>
 </section>

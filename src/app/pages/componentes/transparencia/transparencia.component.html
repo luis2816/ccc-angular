@@ -1,13 +1,13 @@
-<app-nav [titulo]="'Tranparencia'"></app-nav>
+<app-nav [titulo]="'Transparencia'"></app-nav>
 <section class="p-0">
     <div class="container mt-3 mb-5">
-        <div class="row banner rounded-5 pb-5" style="background: url('https://source.unsplash.com/random/1024x768?business+meeting')no-repeat center/cover;">
+        <div class="row banner rounded-5 pb-5" style="background: url('{{contenidoWeb.imagen}}')no-repeat center/cover;">
             <div class="col-md-6 align-self-end">
-                <h1 class="text-white">Transparencia y acceso a la información pública</h1>
+                <h1 class="text-white">{{contenidoWeb.titulo_1}}</h1>
             </div>
         </div>
         <div class="row mt-3">
-            <p class="text-primary">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ligula purus, pharetra sit amet mi lobortis, aliquam porta nisl. Aliquam rhoncus elementum libero, id fringilla tortor elementum non. Donec pellentesque odio eget nibh dapibus, ut ultricies erat blandit. Phasellus finibus diam sed metus fermentum egestas. Aenean vel sapien finibus  ac leo felis. Pellentesque tincidunt, metus non convallis mattis, nisl lacus porttitor elit, vitae tincidunt ligula nunc quis mi. Etiam vestibulum nunc id eros viverra, eget vestibulum ligula pellentesque. Suspendisse potenti.  pellentesque lorem nec est lacinia aliquet.</p>
+            <p class="text-primary">{{contenidoWeb.descripcion}}</p>
         </div>         
     </div>
 </section>
@@ -18,145 +18,293 @@
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingOne">
                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    1.1 Misión, visión, funciones y deberes
+                    1.1 Tramites y servicios
                     </button>
                 </h2>
                 <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#infoEntidad">
                     <div class="accordion-body">
-                        <ol type="a">
-                            <li class="mb-3">Misión y Visión
-                                <ul class="list-unstyled py-3">
-                                    <li><a href="#">Misión y Visión</a></li>
-                                    <li><a href="#">Principios y valores</a></li>
-                                </ul>
-                            </li>
-                            <li class="mb-3">Funciones y deberes
-                                <ul class="list-unstyled py-3">
-                                    <li><a href="#">Decreto 863 de 2020</a></li>
-                                    <li><a href="#">Acuerdo 001 de 2016</a></li>
-                                    <li><a href="#">Decreto 883 del 2015</a></li>
-                                    <li><a href="#">Decreto 1364 del 2012</a></li>
-                                    <li><a href="#">Manual específico de funciones y compentencias laborales para los empleos de la planta de personal del Municipio</a></li>
-                                </ul>
-                            </li>
-                        </ol>
+                        <ul class="lista">
+                            <li><a href="https://camara-c.web.app/servicios-virtuales">Servicios Delegados</a></li>
+                            <li><a href="https://cccauca.org.co/ley-de-transparencia/servicios-delegados">Funciones de Registro</a></li>
+                            <li><a href="http://www.cccauca.org.co/soy-empresario/formato-e-instructivos-de-registros-publicos">Formato de los Registros Públicos</a></li>
+                            <li><a href="https://www.cccauca.org.co/servicios-virtuales/tarifas-de-registro">Tarifas&nbsp;de Regristro</a></li>
+                            <li><a href="http://www.cccauca.org.co/servicios-delegados">Detalle del Servicio y Trámites prestadores&nbsp;</a></li>
+                            <li><a href="https://www.cccauca.org.co/ley-de-transparencia/normatividad-sobre-de-los-registros">Normatividad sobre&nbsp;de los Registros</a></li>
+                            <li><a href="http://siicauca.confecamaras.co/disparador.php?accion=cargarprincipalindex">Formatos y Formularios</a></li>
+                            <li><a href="https://siicauca.confecamaras.co/disparador.php?accion=primeraPantallaRemitida&amp;_empresa=28">Compra y venta de certificados eléctrónicos</a></li>
+                            <li><a href="https://bodecom.com/ccc/_lib/file/doc/Transparencia/tramites/portocolos_servicio_al_cliente_cae-v1.pdf">Protocolo Servicio al Cliente - CAE</a></li>
+                            <li><a href="https://bodecom.com/ccc/_lib/file/doc/Transparencia/tramites/glosario_camara_de_comercio_del_cauca.pdf">Glosario&nbsp;Cámara de Comercio del Cauca</a></li>
+                            <li><a href="https://bodecom.com/ccc/_lib/file/doc/Transparencia/tramites/drp-02_const_y_matricula_de_pjesal_y_establecv12.pdf">Procedimientos</a></li>
+                            <li><a href="https://bodecom.com/ccc/_lib/file/doc/Transparencia/tramites/directorio_entidades_-_directorio_de_agremiaciones_asociaciones_y_otros_grupos_de_interes.pdf">Directorio Entidades/Directorio de agremiaciones, asociaciones y otros grupos de interés</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
             <div class="accordion-item">
             <h2 class="accordion-header" id="headingTwo">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                1.2 Esctructura orgánica y organigrama
+                1.2 Presupuesto
                 </button>
             </h2>
             <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#infoEntidad">
                 <div class="accordion-body">
-                <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                    <div class="accordion-body">
+                        <ul class="lista">
+                            <li><a href="https://bodecom.com/ccc/_lib/file/doc/Transparencia/presupuesto/presupuesto_2016_0.pdf"><span style="color:#0000CD;">Presupuesto General&nbsp;</span></a></li>
+                            <li><a href="https://bodecom.com/ccc/_lib/file/doc/Transparencia/presupuesto/12._ejec._pptal_a_dic-2015.pdf"><span style="color:#0000CD;">Presupuesto 2015</span></a></li>
+                            <li><a href="https://bodecom.com/ccc/_lib/file/doc/Transparencia/presupuesto/ejecucion_presupuestal_a_31_dic_2017.pdf"><span style="color:#0000CD;">Presupuesto 2017</span></a></li>
+                            <li><a href="https://bodecom.com/ccc/_lib/file/doc/Transparencia/presupuesto/resumen_ppto_2018.pdf"><span style="color:#0000CD;">Presupuesto&nbsp;2018</span></a></li>
+                            <li><a href="https://bodecom.com/ccc/_lib/file/doc/Transparencia/presupuesto/dictamen_r.f.-17.pdf"><span style="color:#0000CD;">Dictamen Revisor Fiscal 2017</span></a></li>
+                            <li><a href="https://bodecom.com/ccc/_lib/file/doc/Transparencia/presupuesto/resumen_ppto_2019.pdf"><span style="color:#0000CD;">Presupuesto 2019</span></a></li>
+                            <li><a href="https://bodecom.com/ccc/_lib/file/doc/Transparencia/presupuesto/dictamen_revisor_fiscal_a_31_dic_2018.pdf"><span style="color:#0000CD;">Dictamen&nbsp;Revisor Fiscal&nbsp;2018</span></a></li>
+                            <li><a href="https://bodecom.com/ccc/_lib/file/doc/Transparencia/presupuesto/estados_financieros_niif_consolidado_pb_y_pv_2018.pdf"><span style="color:#0000CD;">Estados Financieros 2018 - 2017</span></a></li>
+                            <li><a href="https://bodecom.com/ccc/_lib/file/doc/Transparencia/presupuesto/resumen_ppto_2020.pdf"><span style="color:#0000CD;">Presupuesto 2020</span></a></li>
+                            <li><a href="https://bodecom.com/ccc/_lib/file/doc/Transparencia/presupuesto/archivos/ejec_resumido_diciembre_31_2019.pdf"><span style="color:#0000CD;">Presupuesto corte&nbsp;a 31 de diciembre de 2019</span></a></li>
+                            <li><a href="https://bodecom.com/ccc/_lib/file/doc/Transparencia/presupuesto/dictamen_revisor_fiscal_2019.pdf"><span style="color:#0000CD;">Dictamen Revisor Fiscal 2019</span></a></li>
+                            <li><a href="https://bodecom.com/ccc/_lib/file/doc/Transparencia/presupuesto/1._eeff2019_1.pdf"><span style="color:#0000CD;">Estados Financieros 2019&nbsp;- 2018</span></a></li>
+                            <li><a href="https://bodecom.com/ccc/_lib/file/doc/Transparencia/presupuesto/resumen_ppto_2021.pdf"><span style="color:#0000CD;">Presupuesto 2021</span></a></li>
+                            <li><a href="https://bodecom.com/ccc/_lib/file/doc/Transparencia/presupuesto/eeff_2020_completos_firmados_compressed.pdf"><span style="color:#0000CD;">Estados Financieros 2020</span></a></li>
+                            <li><a href="https://bodecom.com/ccc/_lib/file/doc/Transparencia/presupuesto/dictamen_2020.pdf"><span style="color:#0000CD;">Dictamen Revisor Fiscal 2020</span></a></li>
+                            <li><a href="https://bodecom.com/ccc/_lib/file/doc/Transparencia/presupuesto/2._eeff_jd_2021_dictaminados_compressed.pdf"><span style="color:#0000CD;">Estados Financieros 2021</span></a></li>
+                            <li><a href="https://bodecom.com/ccc/_lib/file/doc/Transparencia/presupuesto/1._ppto_2022_cccauca.pdf"><span style="color:#0000CD;">Presupuesto 2022</span></a></li>
+                            <li><a href="https://bodecom.com/ccc/_lib/file/doc/Transparencia/presupuesto/ESTADOS FINANCIEROS 2022.pdf"><span style="color:#0000CD;">Estados</span><span style="color:#0000CD;"> Financieros 2022</span></a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             </div>
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingThree">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                    1.3 Mapas y cartas descriptivas de los procesos
+                    1.3 PQRS
                     </button>
                 </h2>
                 <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#infoEntidad">
                     <div class="accordion-body">
-                    <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                        <ul class="lista">
+                            <li><a href="https://camara-c.web.app/pqrs">PQRS</a></li>
+                            <li><a href="https://bodecom.com/ccc/_lib/file/doc/Transparencia/pqrs/seguimiento_a_peticiones.pdf">Seguimiento a&nbsp;PQRS</a></li>
+                            <li><a href="https://bodecom.com/ccc/_lib/file/doc/Transparencia/pqrs/estadistica_pqrsf_2018.pdf">Informe de PQRS&nbsp;2018</a></li>
+                            <li><a href="https://bodecom.com/ccc/_lib/file/doc/Transparencia/pqrs/informe_de_pqrsf_2021.pdf">Informe de PQRS&nbsp;2021</a></li>
+                            <li><a href="https://bodecom.com/ccc/_lib/file/doc/Transparencia/pqrs/informe_de_pqrsf_2022.pdf">Informe de PQRS&nbsp;2022</a></li>
+                            <li><a href="https://www.cccauca.org.co/ley-de-transparencia/recursos-administrativos-y-revocatoria-directa">Recursos Administrativos</a></li>
+                            <li><a href="https://bodecom.com/ccc/_lib/file/doc/Transparencia/pqrs/carta_de_derechos_y_deberes_de_la_cccauca_2020_1.pdf">Tiempo de atención de los diferentes&nbsp;támites ante la CCCauca&nbsp;</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingFour">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                    1.4 Directorio instituconal incluyendo sedes, oficinas, sucursales, o regionales y dependencias
+                    1.4 Planeación
                     </button>
                 </h2>
                 <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#infoEntidad">
                     <div class="accordion-body">
-                    <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                        <ul class="lista">
+                            <li><a href="https://bodecom.com/ccc/_lib/file/doc/Transparencia/planeacion/aviso_de_privacidad.pdf">Política de Manejo de Datos&nbsp;Personales</a></li>
+                            <li><a href="https://bodecom.com/ccc/_lib/file/doc/Transparencia/planeacion/ped-07_mapa_de_procesosv9_0.pdf">Mapa de Procesos del SGC de la Entidad</a></li>
+                            <li><a href="https://bodecom.com/ccc/_lib/file/doc/Transparencia/planeacion/ped-04_politica_de_calidad_v8.pdf">Política de Gestión de Calidad</a></li>
+                            <li><a href="https://bodecom.com/ccc/_lib/file/doc/Transparencia/planeacion/codigo_de_etica_y_buen_gobierno_corporativo_septiembre_2018_compressed_1.pdf">Código de Etica</a></li>
+                            <li><a href="https://bodecom.com/ccc/_lib/file/doc/Transparencia/planeacion/estatutos_camara_de_comercio_del_cauca_ultima_version_03_de_julio_de_2019_con_anexos.pdf">Estatutos de la Cámara de Comercio del Cauca&nbsp;2019</a></li>
+                            <li><a href="https://bodecom.com/ccc/_lib/file/doc/Transparencia/planeacion/estatutos_camara_de_comercio_del_cauca_aprob_jd_26-02-21.pdf">Estatutos de la Cámara de Comercio del Cauca&nbsp;2020</a></li>
+                            <li><a href="https://www.cccauca.org.co/atencion-ciudadana/sistema-preventivo-de-fraudes-sipref">SIPREF</a></li>
+                            <li><a href="https://bodecom.com/ccc/_lib/file/doc/Transparencia/planeacion/daf-29-autorizacion_tratamiento_de_datos_personales_contratistas.pdf">Autorización&nbsp;Tratamiento de Datos&nbsp;Personales&nbsp;Contratistas</a></li>
+                            <li><a href="https://bodecom.com/ccc/_lib/file/doc/Transparencia/planeacion/drd-23-documento_de_seguridad.pdf">Documento&nbsp;de Seguridad</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingFive">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                    1.5 Directorio de servidores públicos, empleados o contratistas
+                    1.5 Notificaciones judiciales
                     </button>
                 </h2>
                 <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#infoEntidad">
                     <div class="accordion-body">
-                    <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                        <a href="mailto:coorcontratacion@cccauca.org.co">coorcontratacion@cccauca.org.co</a>
                     </div>
                 </div>
             </div>
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingSix">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                    1.6 Directorios de entidades
+                    1.6 Normatividad
                     </button>
                 </h2>
                 <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#infoEntidad">
                     <div class="accordion-body">
-                    <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                        <ul class="lista">
+                            <li><a href="https://bodecom.com/ccc/_lib/file/doc/Transparencia/normatividad/ley_1727_de_2014.pdf">Ley 1727 de 2014</a></li>
+                            <li><a href="https://bodecom.com/ccc/_lib/file/doc/Transparencia/normatividad/decreto_2042_del_15_de_octubre_de_2014_0.pdf">Decreto 2042 de 2014</a></li>
+                            <li><a href="https://bodecom.com/ccc/_lib/file/doc/Transparencia/normatividad/decreto_1074_del_26_de_mayo_de_2015.pdf">Decreto Único Reglamentario 1074 de 2015</a></li>
+                            <li><a href="https://bodecom.com/ccc/_lib/file/doc/Transparencia/normatividad/resolucion_23681_23-04-21.pdf">Resolución&nbsp;número&nbsp;23681 de&nbsp;2021</a></li>
+                            <li><a href="http://svrpubindc.imprenta.gov.co/diario/">Diario Oficial</a></li>
+                            <li><a href="https://www.suin-juriscol.gov.co/">Sistema&nbsp;Único de Informacion&nbsp;Normativa SUIN- JURISCOL</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
             <div class="accordion-item">
                 <h2 class="accordion-header" id="heading_A-1-7">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_A-1-7" aria-expanded="false" aria-controls="collapse_A-1-7">
-                    1.7 Directorio de Agremiaciones o Asociaciones
+                    1.7 Manuales
                     </button>
                 </h2>
                 <div id="collapse_A-1-7" class="accordion-collapse collapse" aria-labelledby="heading_A-1-7" data-bs-parent="#infoEntidad">
                     <div class="accordion-body">
-                    <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                        <ul class="lista">
+                            <li><a href="https://bodecom.com/ccc/_lib/file/doc/Transparencia/manuales/DAM-02 Manual de contratacion V9.pdf">Manual de Contratación</a></li>
+                            <li><a href="https://www.cccauca.org.co/servicios-virtuales/registro-unico-empresarial-rues">Procedimientos Registros Públicos RUES&nbsp;</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
             <div class="accordion-item">
                 <h2 class="accordion-header" id="heading_A-1-8">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_A-1-8" aria-expanded="false" aria-controls="collapse_A-1-8">
-                    1.8 Servicio al público, normas, formularios y protocolos de atención
+                    1.8 Indicadores de gestión
                     </button>
                 </h2>
                 <div id="collapse_A-1-8" class="accordion-collapse collapse" aria-labelledby="heading_A-1-8" data-bs-parent="#infoEntidad">
                     <div class="accordion-body">
-                    <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                        <ul class="lista">
+                            <li><a href="https://bodecom.com/ccc/_lib/file/doc/Transparencia/indicadores-gestion/gestion_estrategica_2015_0.pdf">Gestión Estratégica 2015 – 2018.</a></li>
+                            <li><a href="https://bodecom.com/ccc/_lib/file/doc/Transparencia/indicadores-gestion/gestion_estrategica_2018.pdf">Gestión&nbsp;Estratégico&nbsp;2018 - 2024</a></li>
+                            <li><a href="https://bodecom.com/ccc/_lib/file/doc/Transparencia/indicadores-gestion/tablero_de_comando_corporativo_cccaucav2.pdf">Tablero de Comando Corporativo (BSC).</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="heading_B-1-1">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_B-1-1" aria-expanded="false" aria-controls="collapse_B-1-1">
+                    1.9 Estructura Orgánica y Talento Humano
+                    </button>
+                </h2>
+                <div id="collapse_B-1-1" class="accordion-collapse collapse" aria-labelledby="heading_B-1-1" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <ul class="lista">
+                            <li><a href="http://www.cccauca.org.co/nuestra-camara/historia">Naturaleza&nbsp;Jurídica e&nbsp;Histórica</a></li>
+                            <li><a href="http://www.cccauca.org.co/nuestra-camara/quienes-somos">Misión</a></li>
+                            <li><a href="http://www.cccauca.org.co/nuestra-camara/quienes-somos">Visión</a></li>
+                            <li><a href="https://bodecom.com/ccc/_lib/file/doc/Transparencia/estructura-organica/ped-04_politica_de_calidad_v8.pdf">Política de calidad</a></li>
+                            <li><a href="https://bodecom.com/ccc/_lib/file/doc/Transparencia/estructura-organica/ped-06_organigrama_v_15_011723.pdf">Organigrama</a></li>
+                            <li><a href="https://bodecom.com/ccc/_lib/file/doc/Transparencia/estructura-organica/descripcion_de_areas_cccauca.pdf">Descripción Áreas de la CCCauca</a></li>
+                            <li><a href="https://bodecom.com/ccc/_lib/file/doc/Transparencia/estructura-organica/informacion_colaboradres_a_21-12-2022-1_1.pdf">Directorio</a></li>
+                            <li><a href="https://bodecom.com/ccc/_lib/file/doc/Transparencia/estructura-organica/escala_salarial_i_1.pdf">Escala Salarial</a></li>
+                            <li><a href="http://www.cccauca.org.co/nuestra-camara/sedes">Plan de Atención al Ciudadano</a></li>
+                            <li><a href="https://www.contratos.gov.co/consultas/inicioConsulta.do">Contratistas</a>&nbsp;(Secop&nbsp;Sistema Electrónico de Contratación Pública)</li>
+                            <li><a href="https://bodecom.com/ccc/_lib/file/doc/Transparencia/estructura-organica/camara-comercio-para-ninos-infografia.pdf">La Cámara de Comercio del Cauca para NIÑOS</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="heading_20">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_20" aria-expanded="false" aria-controls="collapse_20">
+                    2.0 Entes de control
+                    </button>
+                </h2>
+                <div id="collapse_20" class="accordion-collapse collapse" aria-labelledby="heading_20" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <p><a href="https://bodecom.com/ccc/_lib/file/doc/Transparencia/entes-control/relacion_de_todas_las_entidades_que_vigilan_al_sujeto_obligado.pdf">Relación de todas las entidades que vigilan al sujeto obligado.&nbsp;</a></p>
+                        <ul class="lista">
+                            <li><a href="http://www.procuraduria.gov.co/">Procuraduría General de la Nación</a></li>
+                            <li><a href="https://www.supersociedades.gov.co/">Superintendencia de Sociedades</a></li>
+                            <li><a href="http://www.contraloria.gov.co/">Contraloría General de la República de Colombia</a></li>
+                            <li><a href="https://www.ugpp.gov.co/">Unidad&nbsp;de Pensiones&nbsp;y&nbsp;Parafiscales</a></li>
+                            <li><a href="https://www.archivogeneral.gov.co/agn/home/">Archivo General&nbsp;de&nbsp;la Nación</a></li>
+                            <li><a href="https://www.datos.gov.co/">Datos abiertos</a></li>
+                            <li><a href="https://bodecom.com/ccc/_lib/file/doc/Transparencia/entes-control/datos_abiertos_cccauca.pdf">Datos abiertos&nbsp;Cámara de Comercio del Cauca</a>&nbsp;</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="heading_21">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_21" aria-expanded="false" aria-controls="collapse_21">
+                    2.1 Datos abiertos
+                    </button>
+                </h2>
+                <div id="collapse_21" class="accordion-collapse collapse" aria-labelledby="heading_21" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <div><p>&ZeroWidthSpace;<a href="http://datos.gov.co/">Para acceder a la página de datos abiertos dar clic aquí</a></p>
+
+                            <ul class="lista">
+                                <li><a href="https://bodecom.com/ccc/_lib/file/doc/Transparencia/datos-abiertos/pgd_camara_de_comercio_del_cauca.pdf">Programa de Gestión Documental</a></li>
+                                <li><a href="https://bodecom.com/ccc/_lib/file/doc/Transparencia/datos-abiertos/tablas_de_retencion_documental.pdf">Tablas de Retención Documental (TRD)</a></li>
+                                <li><a href="https://bodecom.com/ccc/_lib/file/doc/Transparencia/datos-abiertos/trd_registros_publicos_2021.pdf">Tablas de Retención Documental 2021 ( TRD )</a></li>
+                                <li><a href="https://bodecom.com/ccc/_lib/file/doc/Transparencia/datos-abiertos/instrumentos_gestion_transparencia_cccauca.xlsx">Registro Activos de Información</a></li>
+                                <li><a href="https://bodecom.com/ccc/_lib/file/doc/Transparencia/datos-abiertos/instrumentos_gestion_transparencia_cccauca.xlsx">Indice de Información Clasificada</a></li>
+                                <li><a href="https://bodecom.com/ccc/_lib/file/doc/Transparencia/datos-abiertos/instrumentos_gestion_transparencia_cccauca.xlsx">Esquema de publicación de la Información Pública</a></li>
+                            </ul>
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="heading_22">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_22" aria-expanded="false" aria-controls="collapse_22">
+                    2.2 Control
+                    </button>
+                </h2>
+                <div id="collapse_22" class="accordion-collapse collapse" aria-labelledby="heading_22" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <div><ul class="lista">
+                            <li><a href="https://bodecom.com/ccc/_lib/file/doc/Transparencia/control/informe_de_gestion_2015.pdf">Informes de Gestión&nbsp;2015</a></li>
+                            <li><a href="https://bodecom.com/ccc/_lib/file/doc/Transparencia/control/procedimiento_auditorias_1.pdf">Procedimiento de&nbsp;Auditoria&nbsp;Interna </a></li>
+                            <li><a href="https://bodecom.com/ccc/_lib/file/doc/Transparencia/control/informe_de_gestion_2016.pdf">Informe de Gestión 2016</a></li>
+                            <li><a href="https://bodecom.com/ccc/_lib/file/doc/Transparencia/control/informe2.pdf">Informe&nbsp;de Gestión&nbsp;2017</a></li>
+                            <li><a href="https://bodecom.com/ccc/_lib/file/doc/Transparencia/control/informe.pdf">Informe de Gestión 2018</a></li>
+                            <li><a href="https://bodecom.com/ccc/_lib/file/doc/Transparencia/control/info_gestion_2019_vc_compressed.pdf">Informe de Gestión 2019</a></li>
+                            <li>Video:<a href="https://www.youtube.com/watch?v=i4ATEaShL6k">Informe de Gestión 2019</a></li>
+                            <li><a href="https://www.youtube.com/watch?v=jhJ-hueFalc">Video:</a><a href="https://www.youtube.com/watch?v=jhJ-hueFalc">Informe</a> de <a href="https://www.youtube.com/watch?v=jhJ-hueFalc">Gestión</a> 2020</li>
+                            <li><a href="https://bodecom.com/ccc/_lib/file/doc/Transparencia/control/Informe%20de%20gestion%20CCCauca%202021.pdf">Informe de Gestión 2021</a></li>
+                            <li><a href="https://www.youtube.com/watch?v=Ltc3TwI4x7o&amp;t=5s">Video: Informe de Gestión 2021</a></li>
+                            <li><a href="https://drive.google.com/file/d/1rx9XOx2915dhqbuxlq_i6qAypyDPGBva/view?usp=share_link">Informe de gestión 2022</a></li>
+                            <li><a href="https://bodecom.com/ccc/_lib/file/doc/Transparencia/control/informe_final_contraloria-empalme.pdf">Informe final contraloria (Empalme Presidencia Ejecutiva)</a></li>
+                            <li><a href="https://bodecom.com/ccc/_lib/file/doc/Transparencia/control/plan_de_mejoramiento_visita_sic_2018.pdf">Plan de mejoramiento (Visita SIC 2018)</a></li>
+                            <li><a href="https://bodecom.com/ccc/_lib/file/doc/Transparencia/control/plan_de_mejoramiento_auditoria_cgr_2019.pdf">Plan de mejoramiento Auditoria CGR 2019</a></li>
+                        </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="heading_23">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_23" aria-expanded="false" aria-controls="collapse_23">
+                    2.3 Contrataciones
+                    </button>
+                </h2>
+                <div id="collapse_23" class="accordion-collapse collapse" aria-labelledby="heading_23" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <div><p>&nbsp;</p>
+
+                            <ul class="lista">
+                                <li><a href="https://drive.google.com/file/d/1OhaAorCqRxl3Yp1XyiHj5Ts5MghvlT3j/view?usp=sharing">Manual de contratación</a></li>
+                                <li><a href="https://bodecom.com/ccc/_lib/file/doc/Transparencia/contrataciones/contratos_2022.pdf">Información y registro de contratos 2022</a></li>
+                                <li>
+                                <p><a href="https://bodecom.com/ccc/_lib/file/doc/Transparencia/contrataciones/contratos_2021.pdf">Información y registro de contratos 2021</a></p>
+                                </li>
+                                <li><a href="https://bodecom.com/ccc/_lib/file/doc/Transparencia/contrataciones/contratos_2020_vf.pdf">Información y registro de contratos 2020</a></li>
+                                <li><a href="https://bodecom.com/ccc/_lib/file/doc/Transparencia/contrataciones/contratos_2019_vf.pdf">Información y registro de contratos 2019</a></li>
+                                <li><a href="https://bodecom.com/ccc/_lib/file/doc/Transparencia/contrataciones/contratos_2018_vf.pdf">Información y registro de contratos&nbsp;2018</a></li>
+                                <li><a href="https://bodecom.com/ccc/_lib/file/doc/Transparencia/contrataciones/formato_contrato_web_6.pdf">&nbsp;Información y registro de contratos 2015 - 2017.</a></li>
+                                <li><a href="https://www.contratos.gov.co/consultas/inicioConsulta.do">Secop&nbsp;I</a></li>
+                            </ul>
+                            </div>
                     </div>
                 </div>
             </div>
         </div>
    </div>
-   <div class="row mb-5">
-    <p class="mb-3 text-primary fs-4"><strong>2. Normativa</strong> de la Cámara de comercio del Cauca</p>
-        <div class="accordion accordion-flush" id="normativaCCC">
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="heading_B-1-1">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_B-1-1" aria-expanded="false" aria-controls="collapse_B-1-1">
-                    1.1 Normativa de la entidad o autoridad
-                    </button>
-                </h2>
-                <div id="collapse_B-1-1" class="accordion-collapse collapse" aria-labelledby="heading_B-1-1" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                    <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                    </div>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="heading_B-1-2">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_B-1-2" aria-expanded="false" aria-controls="collapse_B-1-2">
-                    1.2 Normativa de la entidad o autoridad
-                    </button>
-                </h2>
-                <div id="collapse_B-1-2" class="accordion-collapse collapse" aria-labelledby="heading_B-1-2" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                    <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+           
 </div>
 
