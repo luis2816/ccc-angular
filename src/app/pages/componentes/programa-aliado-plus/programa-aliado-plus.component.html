@@ -2,7 +2,7 @@
 <section class="container">
     <div class="row">
         <div class="col">
-            <img class="img-fluid" src="../../../../assets/images/banner-aliados-plus.jpg" alt="">
+            <img class="img-fluid" src="{{contenidoWeb.imagen}}" alt="">
         </div>
     </div>
 </section>
@@ -20,8 +20,8 @@
 <section class="container">
     <div class="row mb-4">
         <div class="col">
-            <h2>¿De que trata Aliados Plus?</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ligula purus, pharetra sit amet mi lobortis, aliquam porta nisl. Aliquam rhoncus elementum libero, id fringilla tortor elementum non. Donec pellentesque odio eget nibh dapibus, ut ultricies erat blandit. Phasellus finibus diam sed metus fermentum egestas. Aenean vel sapien finibus risus eleifend fermentum nec nec dui. Nulla et dapibus sem, id mattis erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nulla id sollicitudin nulla, eu tempor tellus. Curabitur tincidunt mi et nisi imperdiet varius.<a class="readmore" href="#">Ver más...</a></p>
+            <h2>{{contenidoWeb.titulo_1}}</h2>
+            <p>{{contenidoWeb.descripcion}}<a class="readmore" href="#">Ver más...</a></p>
         </div>
     </div>
     <div class="row">
@@ -74,17 +74,21 @@
             <h3>Preguntas Frecuentes</h3>
             <div class="block-buttons-group  px-0">
                 <div class="block-button">
-                    <p>Renovar es aportar al desarrollo</p>
-                    <a href="#">Ver</a>
+                    <p> ¿Cómo se registra el cambio de dirección de una persona jurídica o natural? </p>
+                    <a  [routerLink]="['/preguntas-frecuentes']">Ver</a>
                 </div>
                 <div class="block-button">
-                    <p>Renovar es aportar al desarrollo</p>
-                    <a href="#">Ver</a>
+                    <p>¿Qué programas o proyectos se tiene para los emprendedores?</p>
+                    <a  [routerLink]="['/preguntas-frecuentes']">Ver</a>
                 </div>
                 <div class="block-button">
-                    <p>Renovar es aportar al desarrollo</p>
-                    <a href="#">Ver</a>
+                    <p>¿Qué programas o proyectos se tiene para microempresarios?</p>
+                    <a  [routerLink]="['/preguntas-frecuentes']">Ver</a>
                 </div>
+            </div>
+            <div class="d-flex justify-content-end">
+                <a [routerLink]="['/preguntas-frecuentes']" class="btn btn-lg btn-primary fw-bold rounded-4 py-4 px-5 mt-4">Ver todas las preguntas
+                  >></a>
             </div>
         </div>
     </div>
