@@ -11172,4 +11172,68 @@ footer .sub-footer .subfooter-menu li:last-child {
     transform: translate(1px, -2px) rotate(-1deg);
   }
 }
+#fakeChatBot{
+  position: fixed;
+	bottom: 2rem;
+	right: 2rem;
+	z-index: 1040;
+}
+#fakeChatBot .icon{
+  width: 3.75rem;
+  height: 3.75rem;
+  background: #fff;
+  border-radius: 5rem;
+  cursor: pointer;
+  position: relative;
+  transition: all .3s ease-in-out;
+  color: var(--bs-primary);
+}
+#fakeChatBot .icon:hover{
+  color: var(--bs-white);
+  background-color: var(--bs-primary);
+}
+#fakeChatBot .icon::before{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  font-family: 'bootstrap-icons';
+  content: "\F6B1";
+  font-size: 2.5rem;
+}
+#offChat {
+  position: fixed;
+	bottom: 1.5rem;
+	right: 1.5rem;
+  left: unset;
+	border-radius: 1rem;
+	width: 20rem;
+	height: 27rem;
+	background-color: #fff;
+	z-index: 1;
+  overflow: hidden;
+}
+#offChat .offcanvas-header{
+  border-bottom: 3px solid var(--bs-primary);
+}
+#offChat .offcanvas-body > .message {
+  max-width: 80%;
+  border-radius: .7rem;
+  padding: .5rem 1rem;
+  margin-bottom: 1.5rem;
+  display: table;
+  white-space: break-spaces;
+}
+#offChat .offcanvas-body > .message:not(.msgbot){
+  background-color:var(--bs-primary);
+  margin-left: auto;
+  text-align: right;
+  color: #fff;
+  font-weight: 500;
+}
+#offChat .offcanvas-body > .msgbot{
+  background-color:var(--bs-light);
+  margin-right: auto;
+  border: 1px solid #e2e2e2;
+}
 /*# sourceMappingURL=style.css.map */

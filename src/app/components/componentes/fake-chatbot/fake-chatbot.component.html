@@ -1,0 +1,20 @@
+<div id="fakeChatBot">
+  <button class="btn btn-primary icon shadow" type="button" data-bs-toggle="offcanvas" data-bs-target="#offChat" aria-controls="offChat"></button>
+  <div class="chat shadow offcanvas offcanvas-bottom" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offChat" aria-labelledby="cccChat">
+    <div class="offcanvas-header text-primary py-1 px-3">
+      <h5 class="offcanvas-title" id="cccChat"><i class="bi bi-robot fs-3"></i> Chat</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div #scrollMe class="offcanvas-body small">
+      <ng-container *ngFor="let message of messages">
+        <div class="message" [ngClass]="{ 'msgbot': message.author === 'bot','to': message.author === 'user' }">{{ message.content }}</div>
+      </ng-container>
+    </div>
+    <div class="offcanvas-footer p-1">
+      <div class="input-group">
+        <input [(ngModel)]="value" (keyup.enter)="sendMessage()" type="text" class="form-control">
+        <button (click)="sendMessage()" type="button" class="btn btn-primary">Enviar</button>
+      </div>
+    </div>
+  </div>
+</div>

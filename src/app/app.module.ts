@@ -46,6 +46,8 @@ import { PodcastsComponent } from './pages/componentes/podcasts/podcasts.compone
 import { PqrsFormularioComponent } from './pages/componentes/pqrs-formulario/pqrs-formulario.component';
 import { DndDirective } from './directive/dnd.directive';
 import { ProgressComponent } from './components/componentes/progress/progress.component';
+import { FakeChatbotComponent } from './components/componentes/fake-chatbot/fake-chatbot.component';
+import { ChatService } from './components/componentes/fake-chatbot/service/chat.service';
 
 @NgModule({
   declarations: [
@@ -87,7 +89,8 @@ import { ProgressComponent } from './components/componentes/progress/progress.co
     PodcastsComponent,
     PqrsFormularioComponent,
     DndDirective,
-    ProgressComponent
+    ProgressComponent,
+    FakeChatbotComponent
   ],
   imports: [
     BrowserModule,
@@ -97,7 +100,7 @@ import { ProgressComponent } from './components/componentes/progress/progress.co
     FormsModule
   ],
 
-  providers: [],
+  providers: [ChatService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
