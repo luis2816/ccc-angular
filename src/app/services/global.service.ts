@@ -21,7 +21,7 @@ ruta: any= [];
       }
   ]
   get_contenidoWeb_modulo(parametro: any): any {
-    const url ='http://35.231.9.84:8091/scriptcase/app/CCC/ws_pme/?get_contenidoWeb_modulo';
+    const url =this.var_ruta_prod+'get_contenidoWeb_modulo';
     const body = { "modulo": parametro };
     return this.http.post(url, body);
   }

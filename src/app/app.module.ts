@@ -48,6 +48,8 @@ import { DndDirective } from './directive/dnd.directive';
 import { ProgressComponent } from './components/componentes/progress/progress.component';
 import { FakeChatbotComponent } from './components/componentes/fake-chatbot/fake-chatbot.component';
 import { ChatService } from './components/componentes/fake-chatbot/service/chat.service';
+import { VideoPlayerComponent } from './components/componentes/video-player/video-player.component';
+import { PreguntasFrecuentesComponent } from './pages/preguntas-frecuentes/preguntas-frecuentes.component';
 
 @NgModule({
   declarations: [
@@ -90,7 +92,9 @@ import { ChatService } from './components/componentes/fake-chatbot/service/chat.
     PqrsFormularioComponent,
     DndDirective,
     ProgressComponent,
-    FakeChatbotComponent
+    FakeChatbotComponent,
+    VideoPlayerComponent,
+    PreguntasFrecuentesComponent
   ],
   imports: [
     BrowserModule,

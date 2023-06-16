@@ -19,6 +19,7 @@ import { NoticiasComponent } from "./pages/componentes/noticias/noticias.compone
 import { PqrsComponent } from "./pages/componentes/pqrs/pqrs.component";
 import { PodcastsComponent } from "./pages/componentes/podcasts/podcasts.component";
 import { PqrsFormularioComponent } from "./pages/componentes/pqrs-formulario/pqrs-formulario.component";
+import { PreguntasFrecuentesComponent } from "./pages/preguntas-frecuentes/preguntas-frecuentes.component";
 
 const APP_ROUTES: Routes=[
 
@@ -42,6 +43,7 @@ const APP_ROUTES: Routes=[
 {path:'pqrs', component: PqrsComponent},
 {path:'pqrs-formulario/:solicitud/:subtitulo', component: PqrsFormularioComponent},
 {path:'podcast', component: PodcastsComponent},
+{path:'preguntas-frecuentes', component: PreguntasFrecuentesComponent},
 {path:'**', pathMatch: 'full' , redirectTo: 'inicio'}
 ];
 

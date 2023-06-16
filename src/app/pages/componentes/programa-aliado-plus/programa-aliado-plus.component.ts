@@ -1,4 +1,5 @@
-import { Component, AfterViewInit, ElementRef  } from '@angular/core';
+import { GlobalService } from 'src/app/services/global.service';
+import { Component, AfterViewInit, ElementRef, OnInit  } from '@angular/core';
 import Swiper from 'swiper';
 
 @Component({
@@ -6,9 +7,15 @@ import Swiper from 'swiper';
   templateUrl: './programa-aliado-plus.component.html',
   styleUrls: ['./programa-aliado-plus.component.css']
 })
-export class ProgramaAliadoPlusComponent implements AfterViewInit {
+export class ProgramaAliadoPlusComponent implements AfterViewInit, OnInit {
 
-   constructor(private elementRef: ElementRef) { }
+   contenidoWeb: any= [];
+   constructor(private elementRef: ElementRef, private globalService: GlobalService) { }
+   ngOnInit(): void {
+     //Obtener el contenido web de la pagina competitividad-regional
+     this.globalService.get_contenidoWeb_modulo('programa-alido-plus')
+     .subscribe((response: any) => this.contenidoWeb = response.contenidoWeb );
+  }
 
   ngAfterViewInit(): void {
 

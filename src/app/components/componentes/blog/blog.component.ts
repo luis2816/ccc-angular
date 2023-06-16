@@ -1,3 +1,4 @@
+import { BlogService } from './services/blog.service';
 import { Component, OnInit, AfterViewInit, ElementRef } from '@angular/core';
 import Swiper from 'swiper';
 
@@ -6,9 +7,15 @@ import Swiper from 'swiper';
   templateUrl: './blog.component.html',
   styleUrls: ['./blog.component.css']
 })
-export class BlogComponent implements AfterViewInit {
+export class BlogComponent implements AfterViewInit, OnInit {
 
-  constructor(private elementRef: ElementRef){
+  listaBlogs: any = [];
+  constructor(private elementRef: ElementRef, private blogService: BlogService){
+  }
+  ngOnInit(): void {
+   //Se obtinene todas las noticias
+   this.blogService.getBlogs()
+   .subscribe((response: any) => this.listaBlogs= response.listaBlogs);
   }
 
   ngAfterViewInit(): void {
