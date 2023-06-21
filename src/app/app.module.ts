@@ -32,7 +32,6 @@ import { DetalleEventoComponent } from './pages/componentes/detalle-evento/detal
 import { DetalleNoticiaComponent } from './pages/componentes/detalle-noticia/detalle-noticia.component';
 import { DetalleconvocatoriaComponent } from './pages/componentes/detalleconvocatoria/detalleconvocatoria.component';
 import { DetalleCompetitividadRegionalComponent } from './pages/componentes/detalle-competitividad-regional/detalle-competitividad-regional.component';
-import { PlantillaComponent } from './plantillas/plantilla/plantilla.component';
 import { ServiciosComponent } from './pages/componentes/servicios/servicios.component';
 import { ComercioComponent } from './pages/componentes/comercio/comercio.component';
 import { TransparenciaComponent } from './pages/componentes/transparencia/transparencia.component';
@@ -50,6 +49,8 @@ import { FakeChatbotComponent } from './components/componentes/fake-chatbot/fake
 import { ChatService } from './components/componentes/fake-chatbot/service/chat.service';
 import { VideoPlayerComponent } from './components/componentes/video-player/video-player.component';
 import { PreguntasFrecuentesComponent } from './pages/preguntas-frecuentes/preguntas-frecuentes.component';
+import { NuestraCamaraComponent } from './pages/componentes/nuestra-camara/nuestra-camara.component';
+
 
 @NgModule({
   declarations: [
@@ -78,7 +79,6 @@ import { PreguntasFrecuentesComponent } from './pages/preguntas-frecuentes/pregu
     DetalleNoticiaComponent,
     DetalleconvocatoriaComponent,
     DetalleCompetitividadRegionalComponent,
-    PlantillaComponent,
     ServiciosComponent,
     ComercioComponent,
     TransparenciaComponent,
@@ -94,7 +94,8 @@ import { PreguntasFrecuentesComponent } from './pages/preguntas-frecuentes/pregu
     ProgressComponent,
     FakeChatbotComponent,
     VideoPlayerComponent,
-    PreguntasFrecuentesComponent
+    PreguntasFrecuentesComponent,
+    NuestraCamaraComponent,
   ],
   imports: [
     BrowserModule,

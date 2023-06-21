@@ -11,7 +11,7 @@ export class AppComponent  {
   componentVisible = true;
 
   constructor(private globalService: GlobalService){
-    globalService.obtenerRutas();
+  
   }
   toggleComponent() {
     this.componentVisible = !this.componentVisible;

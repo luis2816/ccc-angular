@@ -1,0 +1,62 @@
+<nav id="BreadCrumb" aria-label="breadcrumb">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a [routerLink]="['/']">Inicio</a></li>
+                    <li class="breadcrumb-item"><a [routerLink]="['/'+currentPath]">{{titulo}}</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">{{subModuloSeleccionado}}</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</nav>
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="banner rounded-5" style="height:350px;background-image: url(https://source.unsplash.com/random/1280x768?data+charts);">
+                <h2 class="title bt-left">{{titulo}}</h2>
+            </div>
+        </div>
+    </div>
+</section>
+<main>
+    <div class="container">
+        <section class="row justify-content-evenly">
+            <div class="col-md-3">
+                <div class="d-grid gap-3 bordered-btns">
+                    <button *ngFor="let subModulo of lista_subModulos" class="btn" type="button"
+                        (click)="obtenerContenidoWeb(subModulo.oid_subModulo,subModulo.subModulo  )">{{subModulo.subModulo}}</button>
+                </div>
+            </div>
+            <div class="col-md-8" >
+                <div class="card shadow h-100 p-3 rounded-4" [ngSwitch]="oid_subModulo">
+                    <div *ngSwitchCase="11">
+                        <app-swiper-noticia></app-swiper-noticia>
+                    </div>
+                    <div *ngSwitchCase="12">
+                        <app-swiper-eventos></app-swiper-eventos>
+                    </div>
+                    <div *ngSwitchCase="13">
+                        <app-card-side-img></app-card-side-img>
+                    </div>
+                    <div *ngSwitchCase="10">
+                        <app-transparencia></app-transparencia>
+                    </div>
+                    <div *ngSwitchCase="16">
+                        <app-pqrs></app-pqrs>
+                    </div>
+                    <div *ngSwitchCase="17">
+                        <app-preguntas-frecuentes></app-preguntas-frecuentes>
+                    </div>
+                    <div *ngSwitchDefault>
+                        <p [innerHTML]="contenidoWeb.contendidoWeb"></p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+    </div>
+</main>
