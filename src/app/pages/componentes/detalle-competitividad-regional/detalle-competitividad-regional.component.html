@@ -3,14 +3,14 @@
         <div class="row">
             <div class="col">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a [routerLink]="['/competitividad-regional']">Competitividad regional</a></li>
+                    <li class="breadcrumb-item"><a [routerLink]="['/']">Inicio</a></li>
+                    <li class="breadcrumb-item"><a [routerLink]="['/competitividad-regional']">Competitividad Regional</a></li>
                     <li class="breadcrumb-item active" aria-current="page">{{competitividad.sub_titulo}}</li>
                 </ol>
             </div>
         </div>
     </div>
 </nav>
-
 <main class="container pt-3">
     <section class="row banner rounded-5" style="background: url('{{competitividad.ruta}}')no-repeat center/cover;">
         <h1 class="title bt-left text-white">{{competitividad.sub_titulo}}</h1>
