@@ -42,4 +42,8 @@ goToPage(page: number) {
     this.currentPage = page;
 }
 
+reemplazarEspacios(titulo: string): string {
+  return titulo.replace(/ /g, '-');;
+}
+
 }

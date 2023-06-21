@@ -32,7 +32,7 @@
                                     <li class="ci duration">{{e.hora}}</li>
                                     <li class="ci email">correo@mail.com.co</li>
                                     <li class="detailsBtn">
-                                        <a (click)="enviarDato(e.oid)" [routerLink]="['/detalle']">ver detalles</a>
+                                        <a (click)="enviarDato(e.oid)" [routerLink]="['/detalleEvento',reemplazarEspacios(e.titulo) ]">ver detalles</a>
                                     </li>
                                 </ul>
                             </div>

@@ -61,6 +61,9 @@ filtrarOfertas(evento: any) {
   // Actualiza la lista de ofertas en el componente <app-ofertas>
   this.listaOfertas = ofertasFiltradas;
 }
+reemplazarEspacios(titulo: string): string {
+  return titulo.replace(/ /g, '-');;
+}
 ngAfterViewInit(): void {
   const OfertasSwiper = new Swiper(this.elementRef.nativeElement.querySelector('#Ofertas .swiper'), {
     spaceBetween: 40,
@@ -81,6 +84,8 @@ ngAfterViewInit(): void {
           }
         }
   });
+
+
 
 }
 

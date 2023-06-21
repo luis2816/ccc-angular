@@ -34,7 +34,7 @@
                                     <li class="ci duration"></li>
                                     <li class="ci email"></li>
                                     <li class="detailsBtn"><a (click)="verDetalle(noticia.oid)"
-                                            [routerLink]="['/detalleNoticia']">ver detalles</a></li>
+                                            [routerLink]="['/detalleNoticia', reemplazarEspacios(noticia.titulo)]">ver detalles</a></li>
                                 </ul>
                             </div>
                         </div>

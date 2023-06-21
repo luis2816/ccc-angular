@@ -11,7 +11,7 @@
                                     <img src="{{evento.ruta}}" alt="">
                                     <div class="card-title bt-left">
                                         <h3>{{evento.titulo}}</h3>
-                                        <button (click)="enviarDato(evento.oid)" [routerLink]="['/detalle']" class="btn btn-light bt-left">
+                                        <button (click)="enviarDato(evento.oid)" [routerLink]="['/detalleEvento', evento.titulo]" class="btn btn-light bt-left">
                                             <span>Ver</span><i class="bi bi-arrow-right"></i>
                                         </button>
                                     </div>
