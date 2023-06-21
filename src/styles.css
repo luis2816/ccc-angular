@@ -11249,4 +11249,17 @@ footer .sub-footer .subfooter-menu li:last-child {
   margin-right: auto;
   border: 1px solid #e2e2e2;
 }
+
+#userwayAccessibilityIcon{top: 10rem;}
+body > .skiptranslate {display: none !important;}
+#google_element { margin-right: 1.5rem;}
+#google_element .skiptranslate { font-size: 0;}
+#google_element .skiptranslate > span{display: none !important;}
+#google_element .skiptranslate select{
+  margin: 0;
+	height: 1.8rem;
+	font-size: 1rem;
+	border: 0;
+	border-radius: .5rem;
+}
 /*# sourceMappingURL=style.css.map */
