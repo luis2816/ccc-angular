@@ -11,9 +11,10 @@ export class BlogService {
  }
  ruta= this.globalService.var_ruta_prod;
 
- getBlogs(): any {
-  const url =this.ruta+'get_blog';
-  return this.http.get(url);
+ getBlogs(parametro: any): any {
+  const url =this.ruta+'get_blog_modulo';
+    const body = { "modulo": parametro };
+    return this.http.post(url, body);
 }
 
 }

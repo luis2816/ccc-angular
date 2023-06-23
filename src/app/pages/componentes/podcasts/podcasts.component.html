@@ -4,7 +4,7 @@
             <div class="col">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a [routerLink]="['/']">Inicio</a></li>
-                    <li class="breadcrumb-item"><a [routerLink]="['/podcast']">podcasts</a></li>
+                    <li class="breadcrumb-item"><a [routerLink]="['/podcast']">sala de prensa</a></li>
                 </ol>
             </div>
         </div>
@@ -169,7 +169,7 @@
                                     <img src="{{especial.rutaImagen}}" alt="">
                                     <div class="card-title bt-left">
                                         <h3>{{especial.titulo}}</h3>
-                                        <button class="btn btn-light" (click)="mostrarDetalle(especial.oid)" data-bs-toggle="modal" data-bs-target="#modalDetalle">
+                                        <button class="btn btn-light"  data-bs-toggle="modal" data-bs-target="#modalDetalle">
                                             <span>Ver</span><i class="bi bi-arrow-right"></i>
                                           </button>
                                     </div>
@@ -186,88 +186,11 @@
     </div>
 </section>
 
-<section id="comunicados-prensa">
-    <div class="container">
-        <div class="row ">
-            <h2>Comunicados de Prensa</h2>
-            <div class="swiper slidesPerView-4">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide" *ngFor="let item of listaComunicadosPrensa">
-                        <div class="card img-top">
-                            <div class="card-img-top">
-                                <img src="{{item.rutaImagen}}" alt="">
-                                <span class="media-type"><i class="bi bi-newspaper"></i></span>
-                            </div>
-                            <div class="card-body">
-                                <h3 class="card-title">{{item.titulo}}</h3>
-                                <p class="card-text">{{item.descripcion}}</p>
-                                <button class="btn btn-light" (click)="mostrarDetalle(item.oid)" data-bs-toggle="modal" data-bs-target="#modalDetalle">
-                                    <span>Ver</span><i class="bi bi-arrow-right"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="podcast">
-    <div class="container">
-        <div class="row ">
-            <h2>Podcasts</h2>
-            <div class="swiper slidesPerView-4">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide" *ngFor="let item of listaPodcast">
-                        <div class="card img-top">
-                            <div class="card-img-top">
-                                <img src="{{item.rutaImagen}}" alt="">
-                                <span class="media-type"><i class="bi bi-newspaper"></i></span>
-                            </div>
-                            <div class="card-body">
-                                <h3 class="card-title">{{item.titulo}}</h3>
-                                <p class="card-text">{{item.descripcion}}</p>
-                                <button class="btn btn-light" (click)="mostrarDetalle(item.oid)" data-bs-toggle="modal" data-bs-target="#modalDetalle">
-                                    <span>Ver</span><i class="bi bi-arrow-right"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+<app-swiper-prensa [tipoPodcast]="'2'" [titulo]="'Comunicado de prensa'"></app-swiper-prensa>
+<app-swiper-prensa [tipoPodcast]="'1'" [titulo]="'Podcast'"></app-swiper-prensa>
+<app-modal></app-modal>
 
 
-<!-- Modal -->
-<div class="modal fade" id="modalDetalle" tabindex="-1" aria-labelledby="modalDetalle" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" >{{podcastSeleccionado.titulo}}</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-            <div class="row">
-                <div class="col-md-6">
-                    <img style="width: 100px;" src="{{podcastSeleccionado.rutaImagen}}" alt="">
-                </div>
-                <div class="col-md-6">
-                    <div class="audio-container">
-                        <audio  controls src="{{ podcastSeleccionado.rutaAudio }}" type="audio/mpeg"></audio>  
-                      </div>
-                      <h4>{{podcastSeleccionado.descripcion}}</h4>
-                </div>
-            </div>
-        </div>
-      </div>
-    </div>
-</div>
-  
 
  
 

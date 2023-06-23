@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
             <div class="banner rounded-5" style="height:350px">
-               <img  src="{{contenidoWeb.imagen}}" style="">
+               <img  src="{{contenidoWeb.imagen}}" >
                 <h2 class="title bt-left">{{contenidoWeb.titulo_1}}</h2>
             </div>
         </div>
@@ -47,140 +47,10 @@
                 </div>
             </div>
         </div>
+       <app-ranking-empresa ></app-ranking-empresa>
         <div class="row mb-5">
             <div class="col">
-                <div class="card shadow rounded-4">
-                    <div class="card-body">
-                        <div class="row justify-content-center align-items-end">
-                            <div class="col-md-auto">
-                                <p>Filtrar por:</p>
-                                <div class="dropdown">
-                                    <button class="btn btn-light dropdown-toggle" type="button" id="triggerId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Seleccionar</button>
-                                    <div class="dropdown-menu" aria-labelledby="triggerId">
-                                        <a class="dropdown-item" href="#">Oferta laboral</a>
-                                        <a class="dropdown-item" href="#">Pasantía</a>
-                                        <a class="dropdown-item" href="#">Tarjeta Invitación</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-8">
-                                  <input type="text" class="form-control w-100" name="" id="" placeholder="">
-                            </div>
-                            <div class="col-md-auto">
-                                <button type="button" class="btn btn-primary">Buscar</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row mb-5">
-            <h3>Resultado de búsqueda</h3>
-            <div class="swiper slidesPerView-3">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="card bgbody-footer">
-                            <div class="card-body">
-                                <img src="https://source.unsplash.com/random/640x320?reports" alt="">
-                                <div class="card-title">
-                                    <h5>Ranking Empresas</h5>
-                                </div>
-                                <span class="badge bg-text-accent">Sep-Oct 2022</span>
-                            </div>
-                            <div class="card-footer">
-                                <ul class="social-share list-unstyled">
-                                    <li>Compartir</li>
-                                    <li><i class="bi bi-envelope-fill" style="color: #FFA000;"></i></li>
-                                    <li><i class="bi bi-facebook" style="color: #4460A0;"></i></li>
-                                    <li><i class="bi bi-twitter" style="color: #00AAEC;"></i></li>
-                                    <li><i class="bi bi-whatsapp" style="color: #67C15E;"></i></li>
-                                </ul>
-                                <button type="button" class="btn btn-primary btn-sm">Descargar</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="card bgbody-footer">
-                            <div class="card-body">
-                                <img src="https://source.unsplash.com/random/640x320?records" alt="">
-                                <div class="card-title">
-                                    <h5>Ranking Empresas</h5>
-                                </div>
-                                <span class="badge bg-text-accent">Sep-Oct 2022</span>
-                            </div>
-                            <div class="card-footer">
-                                <ul class="social-share list-unstyled">
-                                    <li>Compartir</li>
-                                    <li><i class="bi bi-envelope-fill" style="color: #FFA000;"></i></li>
-                                    <li><i class="bi bi-facebook" style="color: #4460A0;"></i></li>
-                                    <li><i class="bi bi-twitter" style="color: #00AAEC;"></i></li>
-                                    <li><i class="bi bi-whatsapp" style="color: #67C15E;"></i></li>
-                                </ul>
-                                <button type="button" class="btn btn-primary btn-sm">Descargar</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="card bgbody-footer">
-                            <div class="card-body">
-                                <img src="https://source.unsplash.com/random/640x320?registers" alt="">
-                                <div class="card-title">
-                                    <h5>Ranking Empresas</h5>
-                                </div>
-                                <span class="badge bg-text-accent">Sep-Oct 2022</span>
-                            </div>
-                            <div class="card-footer">
-                                <ul class="social-share list-unstyled">
-                                    <li>Compartir</li>
-                                    <li><i class="bi bi-envelope-fill" style="color: #FFA000;"></i></li>
-                                    <li><i class="bi bi-facebook" style="color: #4460A0;"></i></li>
-                                    <li><i class="bi bi-twitter" style="color: #00AAEC;"></i></li>
-                                    <li><i class="bi bi-whatsapp" style="color: #67C15E;"></i></li>
-                                </ul>
-                                <button type="button" class="btn btn-primary btn-sm">Descargar</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="card bgbody-footer">
-                            <div class="card-body">
-                                <img src="https://source.unsplash.com/random/640x320?statistics" alt="">
-                                <div class="card-title">
-                                    <h5>Ranking Empresas</h5>
-                                </div>
-                                <span class="badge bg-text-accent">Sep-Oct 2022</span>
-                            </div>
-                            <div class="card-footer">
-                                <ul class="social-share list-unstyled">
-                                    <li>Compartir</li>
-                                    <li><i class="bi bi-envelope-fill" style="color: #FFA000;"></i></li>
-                                    <li><i class="bi bi-facebook" style="color: #4460A0;"></i></li>
-                                    <li><i class="bi bi-twitter" style="color: #00AAEC;"></i></li>
-                                    <li><i class="bi bi-whatsapp" style="color: #67C15E;"></i></li>
-                                </ul>
-                                <button type="button" class="btn btn-primary btn-sm">Descargar</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row mb-5">
-            <div class="col">
-                <div class="card bg-img">
-                    <div class="card-body">
-                        <img src="https://source.unsplash.com/random/1280x768?co-working" alt="">
-                        <div class="card-title bt-left">
-                            <h3>Responsabilidad Social Empresarial</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ligula purus,
-                                pharetra sit amet mi lobortis, aliquam porta nisl. Aliquam rhoncus</p>
-                            <button class="btn btn-light ms-auto">
-                                <span>Ver</span><i class="bi bi-arrow-right"></i>
-                            </button>                     
-                        </div>
-                        <div class="tag">Blog</div>
-                    </div>
-                </div>
+               <app-blog [modulo]="'informacion-economica'"></app-blog>
             </div>
         </div>
     </div>

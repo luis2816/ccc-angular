@@ -13,7 +13,7 @@ constructor(private globalService: GlobalService){}
   ngOnInit(): void {
      //Obtener el contenido web de la pagina competitividad-regional
      this.globalService.get_contenidoWeb_modulo('informacion-economica')
-     .subscribe((response: any) =>this.contenidoWeb=response.contenidoWeb);
+     .subscribe((response: any) =>console.log(response.contenidoWeb));
      
   }
 

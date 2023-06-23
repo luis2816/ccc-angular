@@ -11249,6 +11249,48 @@ footer .sub-footer .subfooter-menu li:last-child {
   margin-right: auto;
   border: 1px solid #e2e2e2;
 }
+#contenidoServicio p a{
+  
+    background-color: rgba(255,255,255,1);
+    border: 1px solid rgba(229,232,241,1);
+    border-radius: 8px;
+    display: block;
+    font-size: 0.9375rem;
+    line-height: 24px;
+    margin-top: 10px;
+    padding: 16px 110px 16px 30px;
+    text-decoration: none;
+    margin-bottom: 20px;
+    position: relative;
+    color: #0378b3;
+  }
+
+  #contenidoServicio p a:after {
+    color: #0378b3;
+    content: '\e92a';
+    font-family: 'icomoon';
+    font-size: 1.25rem;
+    position: absolute;
+    right: 21px;
+    top: 14px;
+}
+.wrapper-btn-tramite {
+  background-color: #0378b3;
+  border-radius: 6px;
+  width: 340px;
+  padding: 18px;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
+.wrapper-btn-tramite a {
+  font-family: 'Nunito Sans',sans-serif;
+  font-size: 1.5em;
+  font-weight: 600;
+  color: rgba(255,255,255,1);
+  position: relative;
+  padding: 18px;
+}
 
 #userwayAccessibilityIcon{top: 10rem;}
 body > .skiptranslate {display: none !important;}

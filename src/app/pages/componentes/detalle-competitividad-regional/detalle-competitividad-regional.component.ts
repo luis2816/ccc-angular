@@ -44,8 +44,9 @@ export class DetalleCompetitividadRegionalComponent implements OnInit {
   }
 
   cambiarOidcompetitividad(oid: Number) {
+  
     this.oidCompetitividad = oid;
-
+    console.log(this.competitividad);
     //obtenemos la varible guardada en el localStorage
     const oidCompetitividadlocal = localStorage.getItem('oidCompetitividad');
 

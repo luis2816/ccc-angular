@@ -19,7 +19,15 @@
         <div class="col-md-8 order-md-last">
             <h2 class="mb-4">{{competitividad.titulo}}</h2>
             <p>{{competitividad.descripcion}}</p>
+            <div  *ngIf="oidCompetitividad=='8'">
+                <app-ofertas></app-ofertas>
+            </div>
+            <div *ngIf="oidCompetitividad=='6'">
+                <app-swiper-prensa [tipoPodcast]="'2'" [titulo]="'Comunicado de prensa'"></app-swiper-prensa>
+
+            </div>
         </div>
+        
 
         <div class="col-md-4 order-md-first">
             <div class="card border-primary rounded-5">

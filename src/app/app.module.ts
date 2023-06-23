@@ -50,6 +50,10 @@ import { ChatService } from './components/componentes/fake-chatbot/service/chat.
 import { VideoPlayerComponent } from './components/componentes/video-player/video-player.component';
 import { PreguntasFrecuentesComponent } from './pages/preguntas-frecuentes/preguntas-frecuentes.component';
 import { NuestraCamaraComponent } from './pages/componentes/nuestra-camara/nuestra-camara.component';
+import { RankingEmpresaComponent } from './components/componentes/ranking-empresa/ranking-empresa.component';
+import { SwiperPrensaComponent } from './components/componentes/swiper-prensa/swiper-prensa.component';
+import { ModalComponent } from './components/componentes/modal/modal.component';
+import { DetalleServicioVirtualComponent } from './pages/componentes/detalle-servicio-virtual/detalle-servicio-virtual.component';
 
 
 @NgModule({
@@ -96,6 +100,10 @@ import { NuestraCamaraComponent } from './pages/componentes/nuestra-camara/nuest
     VideoPlayerComponent,
     PreguntasFrecuentesComponent,
     NuestraCamaraComponent,
+    RankingEmpresaComponent,
+    SwiperPrensaComponent,
+    ModalComponent,
+    DetalleServicioVirtualComponent,
   ],
   imports: [
     BrowserModule,

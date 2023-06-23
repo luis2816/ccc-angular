@@ -1,0 +1,24 @@
+<!-- Modal -->
+<div class="modal fade" id="modalDetalle" tabindex="-1" aria-labelledby="modalDetalle" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" >{{listaItems.titulo}}</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <img style="width: 100px;" src="{{listaItems.rutaImagen}}" alt="">
+                </div>
+                <div class="col-md-6">
+                    <div class="audio-container">
+                        <audio  controls src="{{ listaItems.rutaAudio }}" type="audio/mpeg"></audio>  
+                      </div>
+                      <h4>{{listaItems.descripcion}}</h4>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+</div>

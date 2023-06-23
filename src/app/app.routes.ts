@@ -21,6 +21,7 @@ import { PodcastsComponent } from "./pages/componentes/podcasts/podcasts.compone
 import { PqrsFormularioComponent } from "./pages/componentes/pqrs-formulario/pqrs-formulario.component";
 import { PreguntasFrecuentesComponent } from "./pages/preguntas-frecuentes/preguntas-frecuentes.component";
 import { NuestraCamaraComponent } from "./pages/componentes/nuestra-camara/nuestra-camara.component";
+import { DetalleServicioVirtualComponent } from "./pages/componentes/detalle-servicio-virtual/detalle-servicio-virtual.component";
 
 
 const APP_ROUTES: Routes=[
@@ -30,6 +31,7 @@ const APP_ROUTES: Routes=[
 {path:'detalle-competitividad-regional', component: DetalleCompetitividadRegionalComponent},
 {path:'informacion-economica', component: InformaionEconomicaComponent},
 {path:'servicios-virtuales', component: ServiciosVirtualesComponent},
+{path:'servicios-virtuales/:solicitud', component: DetalleServicioVirtualComponent},
 {path:'servicios', component: ServiciosComponent},
 {path:'comercio', component: ComercioComponent},
 {path:'transparencia', component: TransparenciaComponent},
@@ -47,7 +49,6 @@ const APP_ROUTES: Routes=[
 {path:'podcast', component: PodcastsComponent},
 {path:'preguntas-frecuentes', component: PreguntasFrecuentesComponent},
 {path:'nuestra-camara', component: NuestraCamaraComponent},
-{path:'actualidad', component: NuestraCamaraComponent},
 {path:'atencion-ciudadana', component: NuestraCamaraComponent},
 {path:'**', pathMatch: 'full' , redirectTo: 'inicio'}
 ];

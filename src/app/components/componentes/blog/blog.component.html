@@ -1,46 +1,22 @@
- <div id="carouselExampleCaptions" class="carousel slide">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    </div>
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <video
-        id="vid1"
-        class="video-js vjs-default-skin"
-        controls
-        
-        width="640" height="264"
-        data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "https://www.youtube.com/watch?v=zMOHbTBiD74"}] }'
-      >
-      </video>
-        <div class="carousel-caption d-none d-md-block">
-          <p>¡Emprendedor y empresario del sector creativo y cultural de Popayán! </p>
-        </div>
+<h2>Blog</h2>
+<section id="blogs">
+  <div class="row mb-5">
+      <div class="swiper slidesPerView-3">
+          <div class="swiper-wrapper">
+              <div class="swiper-slide" *ngFor="let blog of listaBlogs">
+                <div class="card bgbody-footer">
+                  <div class="card-body">
+                      <img src="{{blog.nombreImagen}}" alt="">
+                      <div class="card-title">
+                          <h5>{{blog.titulo}}</h5>
+                          <p>{{blog.descripcion}}</p>
+                          <a href="{{blog.nombreArchivo}}" target="_blank" class="btn btn-primary btn-sm">Ver</a>
+                      </div>
+                  </div>
+              </div>
+              </div>
+             
+          </div>
       </div>
-      <div class="carousel-item active">
-        <video
-        id="vid1"
-        class="video-js vjs-default-skin"
-        controls
-        
-        width="640" height="264"
-        data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "https://youtu.be/ikHT-d2UKJc"}] }'
-      >
-      </video>
-        <div class="carousel-caption d-none d-md-block">
-        
-          <p>Renovación mercantil</p>
-        </div>
-      </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
   </div>
+</section>

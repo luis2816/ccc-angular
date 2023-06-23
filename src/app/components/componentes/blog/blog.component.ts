@@ -1,5 +1,5 @@
 import { BlogService } from './services/blog.service';
-import { Component, OnInit, AfterViewInit, ElementRef } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ElementRef, Input } from '@angular/core';
 import Swiper from 'swiper';
 
 @Component({
@@ -9,36 +9,37 @@ import Swiper from 'swiper';
 })
 export class BlogComponent implements AfterViewInit, OnInit {
 
+  @Input() modulo: string | undefined;
+
   listaBlogs: any = [];
   constructor(private elementRef: ElementRef, private blogService: BlogService){
   }
   ngOnInit(): void {
    //Se obtinene todas las noticias
-   this.blogService.getBlogs()
-   .subscribe((response: any) => this.listaBlogs= response.listaBlogs);
+   this.blogService.getBlogs(this.modulo)
+   .subscribe((response: any) => this.listaBlogs= response.lista_blog);
   }
 
   ngAfterViewInit(): void {
-    const blogSwiper = new Swiper(this.elementRef.nativeElement.querySelector('#prueba .swiper'), {
-      grabCursor: true,
-      effect: "creative",
-      creativeEffect: {
-          prev: {
-          shadow: true,
-          origin: "left center",
-          translate: ["-5%", 0, -200],
-          rotate: [0, 100, 0],
+    const rblogsSwiper = new Swiper(this.elementRef.nativeElement.querySelector('#blogs .swiper'), {
+      spaceBetween: 40,
+    slidesPerView: 1,
+    freeMode: {
+        enabled: true,
+        sticky: true,
+    },            
+    pagination: false,
+    breakpoints: {
+          567: {
+            slidesPerView: 2,
+            spaceBetween: 20,
           },
-          next: {
-          origin: "right center",
-          translate: ["5%", 0, -200],
-          rotate: [0, -100, 0],
-          },
-      },
-      pagination: {
-          el: ".swiper-pagination",
-          clickable: false,
-      },
+          768: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+          }
+        }
     });
+
   }
 }

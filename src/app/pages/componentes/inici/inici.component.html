@@ -4,15 +4,13 @@
 <main>
     <div class="container">
         <app-swiper-eventos></app-swiper-eventos>
-
-        <section id="Blog" class="pt-0">
-            <div class="row mb-4">
-                <h2>Blog</h2>
-            </div>
+        
+        <section class="pt-0">
             <div class="row">
                 <div class="col-md-6">
                     <!-- Slider main container -->
-                    <app-blog></app-blog>
+                    <app-blog [modulo]="'informacion-economica'"></app-blog>
+
                 </div>
                 <div class="col-md-6 mt-3">
                     <h3 class="fw-bold text-secondary h4 ms-5 mb-0">PODCAST</h3>

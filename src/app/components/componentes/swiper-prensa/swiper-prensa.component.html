@@ -1,0 +1,26 @@
+<section id="comunicados-prensa">
+    <div class="container">
+        <div class="row ">
+            <h2>{{titulo}}</h2>
+            <div class="swiper slidesPerView-4">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" *ngFor="let item of listaComunicadosPrensa">
+                        <div class="card img-top">
+                            <div class="card-img-top">
+                                <img src="{{item.rutaImagen}}" alt="">
+                                <span class="media-type"><i class="bi bi-newspaper"></i></span>
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">{{item.titulo}}</h3>
+                                <p class="card-text">{{item.descripcion}}</p>
+                                <button class="btn btn-light" (click)="enviarDato(item.oid)" data-bs-toggle="modal" data-bs-target="#modalDetalle">
+                                    <span>Ver</span><i class="bi bi-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

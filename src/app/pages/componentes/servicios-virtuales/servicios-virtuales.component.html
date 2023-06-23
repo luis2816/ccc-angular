@@ -1,46 +1,62 @@
-<app-nav [titulo]="'Servicios'"></app-nav>
+<nav id="BreadCrumb" aria-label="breadcrumb">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a [routerLink]="['/']">Inicio</a></li>
+                    <li class="breadcrumb-item"><a  [routerLink]="['/servicios-virtuales']">Servicios virtuales</a></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</nav>
+
 <main>
     <div class="container">
         <section class="row justify-content-evenly">
             <div class="col-md-3">
                 <div class="d-grid gap-3 bordered-btns">
-                    <button class="btn" type="button">Certificados<br><b>Electrónicos</b></button>
-                    <button class="btn" type="button">Renovación<br><b>Registros públicos</b></button>
-                    <button class="btn" type="button">Trámites de registros<br><b>públicos</b></button>
-                    <button class="btn" type="button">Registro único<br><b>de proponentes - rup</b></button>
-                    <button class="btn" type="button">Registro nacional<br><b>de turismo</b></button>
-                    <button class="btn" type="button">Modelos de<br><b>actas y documentos</b></button>
-                    <button class="btn" type="button"><b>Consultas</b></button>
+                    <button *ngFor="let servicio of lista_opcionesServicios" class="btn" 
+                    type="button"   [routerLink]="['/servicios-virtuales', servicio.servicio]" (click)="enviarDato(servicio)">{{servicio.servicio}}</button>                    
                 </div>
             </div>
-            <div class="col-md-8">
+            <div class="col-md-8 align-self-start"  >
                 <div class="card shadow h-100 p-3 rounded-4">
                     <div class="card-body">
                         <h1 class="card-title text-primary mb-3">Servicios <span
                                 class="fw-normal text-decoration-underline">Virtuales</span></h1>
                         <div class="card-text">
                             <div class="input-group mb-3 search-service">
-                                <input type="text" class="form-control" placeholder="Registro" aria-label="buscar">
+                                <input type="text" class="form-control" placeholder="Registro" aria-label="buscar"  name="searchInput" id="searchInput"
+                                (input)="filtrarServicio($event)">
                                 <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i
                                         class="bi bi-search"></i></button>
                             </div>
                         </div>
                         <div class="row row-cols-md-2 g-4">
-                            <div class="col">
+                            <div class="col"  *ngFor="let servicio of getCurrentPageEvents()">
                                 <div class="card bg-img">
                                     <div class="card-body">
-                                        <img src="#" alt="">
-                                        <a href="#"><i class="bi bi-arrow-right"></i></a>
+                                        <img src="{{servicio.rutaImagen}}" alt="">
+                                        <a (click)="enviarDato(servicio)" [routerLink]="['/servicios-virtuales', servicio.servicio]"><i class="bi bi-arrow-right"></i></a>
                                     </div>
-                                    <span class="badge rounded-pill text-bg-success"></span>
+                                    <span class="badge rounded-pill text-bg-success">{{servicio.servicio}}</span>
                                 </div>
                             </div>
 
                         </div>
+                           <!-- Paginador -->
+                <nav aria-label="Paginación" style="margin-top: 20px;">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item" *ngFor="let page of getPages()" [class.active]="page === currentPage">
+                            <a class="page-link" (click)="goToPage(page)">{{ page }}</a>
+                        </li>
+                    </ul>
+                </nav>
                     </div>
                 </div>
+               
             </div>
-
         </section>
 
                 <app-swiper-noticia></app-swiper-noticia>

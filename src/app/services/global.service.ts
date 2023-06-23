@@ -7,8 +7,8 @@ import { Router } from '@angular/router';
 })
 export class GlobalService {
 
-  public var_ruta_prod ="http://35.231.9.84:8091/scriptcase/app/CCC/ws_pme/?";
-  //public var_ruta_prod  = "https://bodecom.com/ccc/ws_pme/?";
+  //public var_ruta_prod ="http://35.231.9.84:8091/scriptcase/app/CCC/ws_pme/?";
+  public var_ruta_prod  = "https://bodecom.com/ccc/ws_pme/?";
   constructor(private router: Router, private http: HttpClient) { }
 
 ruta: any= [];
