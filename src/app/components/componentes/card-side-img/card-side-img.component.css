@@ -1,9 +1,13 @@
+.card-body{
+  padding-top: 0 !important;
+}
+.card-title {
+
+  line-height: 1;
+  margin-bottom: .3rem !important;
+}
 .card-text {
-    max-height: 100px; /* Altura máxima inicial del texto */
-    overflow: hidden;
-  }
-  
-  .card-text.expanded {
-    max-height: none; /* Altura máxima cuando se muestra todo el texto */
-    overflow: visible;
-  }
+
+  margin-bottom: .3rem !important;
+}
+

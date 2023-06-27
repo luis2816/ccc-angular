@@ -1,17 +1,16 @@
-<h2>Blog</h2>
-<section class="row">
-    <div class="col">
-        <div class="card bg-img">
-            <div class="card-body"  *ngFor="let blog of listaBlogs">
-                <img src="{{blog.nombreImagen}}" alt="">
-                <div class="card-title bt-left">
-                    <h3>{{blog.titulo}}</h3>
-                    <p>{{blog.descripcion}}</p>
-                    <button class="btn btn-light ms-auto">
-                        <span>Ver</span><i class="bi bi-arrow-right"></i>
-                    </button>                     
-                </div>
+<swiper-container class="swiper blogSwiper" init="false" navigation="false" pagination="true">
+  <swiper-slide class="swiper-slide" *ngFor="let blog of listaBlogs">
+    <div class="card bg-img">
+        <div class="card-body">
+            <img src="{{blog.nombreImagen}}" alt="">
+            <div class="card-title bt-left">
+                <h3>{{blog.titulo}}</h3>
+                <p>{{blog.descripcion}}</p>
+                <button class="btn btn-light ms-auto">
+                    <span>Ver</span><i class="bi bi-arrow-right"></i>
+                </button>
             </div>
         </div>
     </div>
-</section>
+  </swiper-slide>
+</swiper-container>

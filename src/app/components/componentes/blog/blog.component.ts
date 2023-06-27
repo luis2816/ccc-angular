@@ -21,25 +21,17 @@ export class BlogComponent implements AfterViewInit, OnInit {
   }
 
   ngAfterViewInit(): void {
-    const rblogsSwiper = new Swiper(this.elementRef.nativeElement.querySelector('#blogs .swiper'), {
-      spaceBetween: 40,
-    slidesPerView: 1,
-    freeMode: {
-        enabled: true,
-        sticky: true,
-    },            
-    pagination: false,
-    breakpoints: {
-          567: {
-            slidesPerView: 2,
-            spaceBetween: 20,
-          },
-          768: {
-            slidesPerView: 3,
-            spaceBetween: 20,
-          }
-        }
-    });
+    var blogSwiper = this.elementRef.nativeElement.querySelector('.blogSwiper');
+    if(location.pathname == '/inicio')blogSwiper.classList.add('inicio');
+    const home_swParams = {
+      slidesPerView: 1,
+      freeMode: {
+          enabled: true,
+          sticky: true,
+      },
 
+    }
+    Object.assign(blogSwiper, home_swParams);
+    blogSwiper.initialize();
   }
 }

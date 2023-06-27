@@ -10182,7 +10182,7 @@ textarea.form-control-lg {
   line-height: 1.1;
   margin-bottom: 0.3rem;
 }
-.card.side-img:hover .card-body .card-title a {
+.card.side-img .card-body .card-title a:hover {
   color: #0378b3;
 }
 .card.side-img.objetivo {
@@ -11269,5 +11269,9 @@ body > .skiptranslate {display: none !important;}
 	font-size: 1rem;
 	border: 0;
 	border-radius: .5rem;
+}
+/* fix blog swiper home */
+.inicio.blogSwiper .card-body{
+  padding-top: 22rem;
 }
 /*# sourceMappingURL=style.css.map */

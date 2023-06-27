@@ -7,12 +7,11 @@
                     <img src="{{destacado.ruta}}" alt="">
                 </div>
                 <div class="card-body">
-                    <h5 class="card-title"><a (click)="enviaroidNoticia(destacado.oid)" [routerLink]="['/detalleNoticia']" class="stretched-link">{{destacado.titulo}}</a></h5>
-                    <p class="card-text" [class.expanded]="showMore">{{destacado.descripcion}}</p>
-                    <button class="btn btn-primary">Ver más</button>
-                    <small><i class="bi bi-clock"></i>{{destacado.fecha_publicacion}}</small>
+                    <h5 class="card-title"><a (click)="enviaroidNoticia(destacado.oid)" [routerLink]="['/detalleNoticia']" title="{{destacado.titulo}}">{{destacado.titulo | slice:0:50}}...</a></h5>
+                    <p class="card-text" [class.expanded]="showMore">{{destacado.descripcion | slice:0:70}}...</p>
+                    <small><i class="bi bi-clock"></i> {{destacado.fecha_publicacion}}</small>
                 </div>
-            </div>  
+            </div>
         </div>
     </div>
 </section>
