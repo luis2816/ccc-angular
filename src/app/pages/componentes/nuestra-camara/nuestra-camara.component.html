@@ -14,7 +14,8 @@
 <section>
     <div class="container">
         <div class="row">
-            <div class="banner rounded-5" style="height:350px;background-image: url(https://source.unsplash.com/random/1280x768?data+charts);">
+            <div class="banner rounded-5"
+                style="height:350px;background-image: url(https://source.unsplash.com/random/1280x768?data+charts);">
                 <h2 class="title bt-left">{{titulo}}</h2>
             </div>
         </div>
@@ -25,15 +26,38 @@
         <section class="row justify-content-evenly">
             <div class="col-md-3">
                 <div class="d-grid gap-3 bordered-btns">
-                    <button *ngFor="let subModulo of lista_subModulos" class="btn" type="button"
+                    <div *ngFor="let subModulo of lista_subModulos">
+                        <div [ngSwitch]="subModulo.oid_subModulo">
+                            <div class="d-grid gap-3 bordered-btns" *ngSwitchCase="7">
+                                <button  class="btn" type="button"  [routerLink]="['/centro-conciliacion']">{{subModulo.subModulo}}</button>
+                            </div>
+
+                            <div class="d-grid gap-3 bordered-btns" *ngSwitchCase="10">
+                                <button  class="btn" type="button"  [routerLink]="['/transparencia']">{{subModulo.subModulo}}</button>
+                            </div>
+
+                            <div class="d-grid gap-3 bordered-btns" *ngSwitchCase="16">
+                                <button  class="btn" type="button"  [routerLink]="['/pqrs']">{{subModulo.subModulo}}</button>
+                            </div>
+
+                            <div class="d-grid gap-3 bordered-btns" *ngSwitchCase="17">
+                                <button  class="btn" type="button"  [routerLink]="['/preguntas-frecuentes']">{{subModulo.subModulo}}</button>
+                            </div>
+
+                          
+
+                            <div class="d-grid gap-3 bordered-btns" *ngSwitchDefault>
+                                <button  class="btn" type="button"
                         (click)="obtenerContenidoWeb(subModulo.oid_subModulo,subModulo.subModulo  )">{{subModulo.subModulo}}</button>
+                            </div>
+                        </div>
+                        
+                    </div>
+
                 </div>
             </div>
-            <div class="col-md-8" >
+            <div class="col-md-8">
                 <div class="card shadow h-100 p-3 rounded-4" [ngSwitch]="oid_subModulo">
-                    <div *ngSwitchCase="7">
-                        <app-centro-conciliacion></app-centro-conciliacion>
-                    </div>
                     <div *ngSwitchCase="11">
                         <app-swiper-noticia></app-swiper-noticia>
                     </div>

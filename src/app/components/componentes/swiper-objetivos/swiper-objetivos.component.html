@@ -1,0 +1,11 @@
+
+<div  style="margin-top: 20px;" class="card side-img objetivo" *ngFor="let objetivo of listaObjetivos">
+    <div class="card-image">
+        <img src="{{objetivo.nombreImagen}}" alt="">
+    </div>
+    <div class="card-body">
+        <h5 class="card-title"><a href="#" class="stretched-link">{{objetivo.titulo}}</a></h5>
+        <p class="card-text">{{objetivo.descripcion}}</p>
+        <small><i class="bi bi-clock"></i> Hace 3 horas</small>
+    </div>                    
+</div>

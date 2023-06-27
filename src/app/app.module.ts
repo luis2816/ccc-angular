@@ -56,7 +56,8 @@ import { ModalComponent } from './components/componentes/modal/modal.component';
 import { DetalleServicioVirtualComponent } from './pages/componentes/detalle-servicio-virtual/detalle-servicio-virtual.component';
 import { CentroConciliacionComponent } from './pages/componentes/centro-conciliacion/centro-conciliacion.component';
 import { RenovacionMercantilComponent } from './pages/componentes/renovacion-mercantil/renovacion-mercantil.component';
-
+import { SwiperProgramasComponent } from './components/componentes/swiper-programas/swiper-programas.component';
+import { SwiperObjetivosComponent } from './components/componentes/swiper-objetivos/swiper-objetivos.component';
 
 @NgModule({
   declarations: [
@@ -108,6 +109,8 @@ import { RenovacionMercantilComponent } from './pages/componentes/renovacion-mer
     DetalleServicioVirtualComponent,
     CentroConciliacionComponent,
     RenovacionMercantilComponent,
+    SwiperProgramasComponent,
+    SwiperObjetivosComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,18 @@
+<h2> Otros programas</h2>
+<section id="programas"  style="margin-bottom: 7rem;">
+    <div class="col">
+        <div class="swiper slidesPerView-3 swiper-noticias" style="margin-bottom: -7rem;">
+            <div class="swiper-wrapper">
+                <div  class="swiper-slide" *ngFor="let programa of listaProgramas">
+                    <div class="card bg-img">
+                        <div class="card-body">
+                            <img src="{{programa.nombreImagen}}" alt="">
+                            <a >{{programa.titulo}} <i
+                                    class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
