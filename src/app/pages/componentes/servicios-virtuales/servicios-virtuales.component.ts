@@ -1,28 +1,35 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit, ElementRef, AfterViewInit } from '@angular/core';
 import { ServiciosVirtualesService } from './services/servicios-virtuales.service';
 import { servicio } from './modelo-servicio';
+import Swiper from 'swiper';
 
 @Component({
   selector: 'app-servicios-virtuales',
   templateUrl: './servicios-virtuales.component.html',
   styleUrls: ['./servicios-virtuales.component.css']
 })
-export class ServiciosVirtualesComponent implements OnInit  {
+export class ServiciosVirtualesComponent implements OnInit, AfterViewInit   {
   
   lista_serviciosVirtuales: servicio[]=[];
+  lista_serviciosVirtuales_destacados: servicio[]=[];
   lista_opcionesServicios: any= [];
   itemsPerPage = 4;
   currentPage = 1;
 
-  constructor(private serviciosVirtualesService: ServiciosVirtualesService){
+  constructor(private serviciosVirtualesService: ServiciosVirtualesService,private elementRef: ElementRef){
   }
   ngOnInit(): void { 
-    //Se obtiene todos los serviciosVirtuales
+    //Se obtiene todos los serviciosVirtuales no destacados
     this.serviciosVirtualesService.getServiciosVirtuales()
     .subscribe((response: any) => {
       this.lista_serviciosVirtuales = response.lista_servicios_virtuales;
       this.lista_opcionesServicios = response.lista_servicios_virtuales;
     });
+
+     //Se obtiene todos los serviciosVirtuales  destacados
+     this.serviciosVirtualesService.getServiciosVirtuales_destacados()
+     .subscribe((response: any) => {
+       this.lista_serviciosVirtuales_destacados = response.lista_servicios_virtuales;});
     
     
   }
@@ -64,6 +71,28 @@ goToPage(page: number) {
   
     // Actualiza la lista de ofertas en el componente <app-ofertas>
     this.lista_serviciosVirtuales = serviciosFiltrados;
+  }
+
+  ngAfterViewInit(): void {
+    const NoticiasSwiper = new Swiper(this.elementRef.nativeElement.querySelector('#OtrosServicios .swiper'), {
+      spaceBetween: 40,
+      slidesPerView: 1,
+      freeMode: {
+          enabled: true,
+          sticky: true,
+      },            
+      pagination: false,
+      breakpoints: {
+            567: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+            },
+            768: {
+              slidesPerView: 3,
+              spaceBetween: 20,
+            }
+          }
+    });
   }
 
   

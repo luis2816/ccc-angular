@@ -59,6 +59,24 @@
             </div>
         </section>
 
-                <app-swiper-noticia></app-swiper-noticia>
-    </div>
+ 
+        <section class="row bg-primary rounded-5 p-2" id="OtrosServicios"  style="margin-bottom: 7rem;">
+            <div class="col">
+                <h2 class="text-white ms-3">Servicios Destacados</h2>
+                <div class="swiper slidesPerView-3" style="margin-bottom: -7rem;">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide" *ngFor="let servicio of lista_serviciosVirtuales_destacados">
+                            <div class="card bg-img">
+                                <div class="card-body">
+                                    <img src="{{servicio.rutaImagen}}" alt="">
+                                    <a (click)="enviarDato(servicio)" [routerLink]="['/servicios-virtuales', servicio.servicio]"><i class="bi bi-arrow-right"></i></a>
+
+                                </div>
+                                <span class="badge rounded-pill text-bg-success">{{servicio.servicio}}</span>
+                            </div>
+                        </div>  
+                    </div>
+                </div>
+            </div>
+        </section>    </div>
 </main>

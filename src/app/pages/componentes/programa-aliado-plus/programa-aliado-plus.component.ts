@@ -13,13 +13,11 @@ export class ProgramaAliadoPlusComponent implements AfterViewInit, OnInit {
    constructor(private elementRef: ElementRef, private globalService: GlobalService) { }
    ngOnInit(): void {
      //Obtener el contenido web de la pagina competitividad-regional
-     this.globalService.get_contenidoWeb_modulo('programa-alido-plus')
+     this.globalService.get_contenidoWeb_modulo('programa-aliado-plus')
      .subscribe((response: any) => this.contenidoWeb = response.contenidoWeb );
   }
 
   ngAfterViewInit(): void {
-
-
     const OfertasSwiper = new Swiper(this.elementRef.nativeElement.querySelector('#Eventos .swiper'), {
       spaceBetween: 40,
       slidesPerView: 1,
