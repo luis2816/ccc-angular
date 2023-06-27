@@ -54,6 +54,8 @@ import { RankingEmpresaComponent } from './components/componentes/ranking-empres
 import { SwiperPrensaComponent } from './components/componentes/swiper-prensa/swiper-prensa.component';
 import { ModalComponent } from './components/componentes/modal/modal.component';
 import { DetalleServicioVirtualComponent } from './pages/componentes/detalle-servicio-virtual/detalle-servicio-virtual.component';
+import { CentroConciliacionComponent } from './pages/componentes/centro-conciliacion/centro-conciliacion.component';
+import { RenovacionMercantilComponent } from './pages/componentes/renovacion-mercantil/renovacion-mercantil.component';
 
 
 @NgModule({
@@ -104,6 +106,8 @@ import { DetalleServicioVirtualComponent } from './pages/componentes/detalle-ser
     SwiperPrensaComponent,
     ModalComponent,
     DetalleServicioVirtualComponent,
+    CentroConciliacionComponent,
+    RenovacionMercantilComponent,
   ],
   imports: [
     BrowserModule,

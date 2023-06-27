@@ -31,6 +31,9 @@
             </div>
             <div class="col-md-8" >
                 <div class="card shadow h-100 p-3 rounded-4" [ngSwitch]="oid_subModulo">
+                    <div *ngSwitchCase="7">
+                        <app-centro-conciliacion></app-centro-conciliacion>
+                    </div>
                     <div *ngSwitchCase="11">
                         <app-swiper-noticia></app-swiper-noticia>
                     </div>

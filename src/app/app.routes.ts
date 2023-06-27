@@ -22,6 +22,8 @@ import { PqrsFormularioComponent } from "./pages/componentes/pqrs-formulario/pqr
 import { PreguntasFrecuentesComponent } from "./pages/preguntas-frecuentes/preguntas-frecuentes.component";
 import { NuestraCamaraComponent } from "./pages/componentes/nuestra-camara/nuestra-camara.component";
 import { DetalleServicioVirtualComponent } from "./pages/componentes/detalle-servicio-virtual/detalle-servicio-virtual.component";
+import { CentroConciliacionComponent } from "./pages/componentes/centro-conciliacion/centro-conciliacion.component";
+import { RenovacionMercantilComponent } from "./pages/componentes/renovacion-mercantil/renovacion-mercantil.component";
 
 
 const APP_ROUTES: Routes=[
@@ -50,6 +52,8 @@ const APP_ROUTES: Routes=[
 {path:'preguntas-frecuentes', component: PreguntasFrecuentesComponent},
 {path:'nuestra-camara', component: NuestraCamaraComponent},
 {path:'atencion-ciudadana', component: NuestraCamaraComponent},
+{path:'centro-conciliacion', component: CentroConciliacionComponent},
+{path:'renovacion-mercantil', component: RenovacionMercantilComponent},
 {path:'**', pathMatch: 'full' , redirectTo: 'inicio'}
 ];
 

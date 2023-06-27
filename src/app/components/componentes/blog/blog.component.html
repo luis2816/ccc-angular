@@ -1,22 +1,17 @@
 <h2>Blog</h2>
-<section id="blogs">
-  <div class="row mb-5">
-      <div class="swiper slidesPerView-3">
-          <div class="swiper-wrapper">
-              <div class="swiper-slide" *ngFor="let blog of listaBlogs">
-                <div class="card bgbody-footer">
-                  <div class="card-body">
-                      <img src="{{blog.nombreImagen}}" alt="">
-                      <div class="card-title">
-                          <h5>{{blog.titulo}}</h5>
-                          <p>{{blog.descripcion}}</p>
-                          <a href="{{blog.nombreArchivo}}" target="_blank" class="btn btn-primary btn-sm">Ver</a>
-                      </div>
-                  </div>
-              </div>
-              </div>
-             
-          </div>
-      </div>
-  </div>
+<section class="row">
+    <div class="col">
+        <div class="card bg-img">
+            <div class="card-body"  *ngFor="let blog of listaBlogs">
+                <img src="{{blog.nombreImagen}}" alt="">
+                <div class="card-title bt-left">
+                    <h3>{{blog.titulo}}</h3>
+                    <p>{{blog.descripcion}}</p>
+                    <button class="btn btn-light ms-auto">
+                        <span>Ver</span><i class="bi bi-arrow-right"></i>
+                    </button>                     
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
