@@ -14,16 +14,12 @@ export class DetalleCompetitividadRegionalComponent implements OnInit {
   competitividad: any = [];
   listamenu: any = [];
   constructor(private competitividadRegionalService: CompetitividadRegionalService,
-    private detalleCompetitividadRegionalService: DetalleCompetitividadRegionalService) {
+  private detalleCompetitividadRegionalService: DetalleCompetitividadRegionalService) {}
 
-
-
-  }
   ngOnInit(): void {
-
     //Obtenemos la lista del menu
     this.competitividadRegionalService.getTiposcompetitividadRegional()
-      .subscribe((response: any) => this.listamenu = response.lista_competitividad);
+    .subscribe((response: any) => this.listamenu = response.lista_competitividad);
 
     //obtenemos la varible guardada en el localStorage
     const oidCompetitividadlocal = localStorage.getItem('oidCompetitividad');
@@ -34,19 +30,19 @@ export class DetalleCompetitividadRegionalComponent implements OnInit {
       localStorage.setItem('oidCompetitividad', this.oidCompetitividad);
       //Obtenemos el detalle del evento
       this.detalleCompetitividadRegionalService.get_detalle_competitividad(this.oidCompetitividad)
-        .subscribe((response: any) => this.competitividad = response.competitividad_detalle);
+      .subscribe((response: any) => this.competitividad = response.competitividad_detalle);
 
     } else {
       //Obtenemos el detalle del evento
       this.detalleCompetitividadRegionalService.get_detalle_competitividad(oidCompetitividadlocal)
-        .subscribe((response: any) => this.competitividad = response.competitividad_detalle);
+      .subscribe((response: any) => this.competitividad = response.competitividad_detalle);
     }
   }
 
   cambiarOidcompetitividad(oid: Number) {
-  
+
     this.oidCompetitividad = oid;
-    console.log(this.competitividad);
+    // console.log(this.competitividad);
     //obtenemos la varible guardada en el localStorage
     const oidCompetitividadlocal = localStorage.getItem('oidCompetitividad');
 

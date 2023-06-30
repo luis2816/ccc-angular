@@ -1,6 +1,6 @@
 <app-nav [titulo]="'Servicios'"></app-nav>
 
-<section class="pt-0">
+<section class="py-0">
     <img class="img-fluid" src="../../../../assets/images/banner-nuestros-programas.jpg" alt="">
 </section>
 <section>
@@ -117,7 +117,7 @@
             </div>
         </div>
     </div>
-</div>  
+</div>
 <section>
     <div class="container">
 
@@ -125,7 +125,7 @@
 
         <h2 class="mb-4">Nuestros Servicios</h2>
         <div class="row mb-5">
-            <div class="col-md-6">
+            <div class="col-md-6 mb-3 mb-md-0">
                 <div class="card bg-img only-title">
                     <div class="card-body">
                         <img src="https://source.unsplash.com/random/450x320?enterprise" alt="">
@@ -137,7 +137,7 @@
                 <div class="card bg-img only-title">
                     <div class="card-body">
                         <img src="https://source.unsplash.com/random/450x320?convention" alt="">
-                        <a href="servicios-virtuales.html" class="stretched-link">Servicios Virtuales</a>
+                        <a [routerLink]="['/servicios-virtuales']" class="stretched-link">Servicios Virtuales</a>
                     </div>
                 </div>
             </div>
@@ -160,7 +160,7 @@
                         <div class="card-icon border-end border-4">
                             <img src="../../../../assets/icons/persona-brazo-levantado.svg" alt="">
                         </div>
-                        <a href="centro-de-conciliacion.html" class="card-title stretched-link">Centro de Conciliación</a>
+                        <a [routerLink]="['/centro-conciliacion']" class="card-title stretched-link">Centro de Conciliación</a>
                     </div>
                 </div>
             </div>

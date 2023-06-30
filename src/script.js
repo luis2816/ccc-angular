@@ -1,5 +1,6 @@
 
 document.addEventListener('DOMContentLoaded', function(){
+
   var mainSwiper = new Swiper(".mainSwiper", {
     spaceBetween: 0,
     centeredSlides: true,
@@ -36,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function(){
           slidesPerView: 6,
         }
       }
-  }); 
+  });
 
   var swiperEventos = new Swiper(".swiper-eventos", {
       spaceBetween: 30,
@@ -44,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function(){
       freeMode: {
           enabled: true,
           sticky: true,
-      },            
+      },
       pagination: {
           el: ".swiper-pagination",
           clickable: true,
@@ -125,7 +126,7 @@ document.addEventListener('DOMContentLoaded', function(){
   });
 
   var swiper_1 = new Swiper(".slidesPerView-1", {
-    slidesPerView: 1,           
+    slidesPerView: 1,
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
@@ -138,18 +139,21 @@ document.addEventListener('DOMContentLoaded', function(){
     freeMode: {
         enabled: true,
         sticky: true,
-    },            
+    },
     pagination: false,
     breakpoints: {
-          567: {
-            slidesPerView: 2,
-            spaceBetween: 20,
-          },
-          768: {
-            slidesPerView: 3,
-            spaceBetween: 20,
-          }
-        }
+      375:{
+        slidesPerView: 1
+      },
+      567: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      768: {
+        slidesPerView: 3,
+        spaceBetween: 20,
+      }
+    }
   });
 
   var swiper_4 = new Swiper(".slidesPerView-4", {
@@ -158,7 +162,7 @@ document.addEventListener('DOMContentLoaded', function(){
     freeMode: {
         enabled: true,
         sticky: true,
-    },            
+    },
     pagination: false,
     breakpoints: {
           567: {
@@ -171,14 +175,4 @@ document.addEventListener('DOMContentLoaded', function(){
           }
         }
   });
-
-
-  if(location.port == 3000 ){
-    let bad = [0,1,8,9];
-    let lnks = document.querySelectorAll("#OffCanvasMenu .nav-link");
-    bad.forEach(el => {lnks[el].classList.add('disabled');});
-    let page = location.pathname.slice(1);
-    let link = document.querySelector(`a[href="${page}"]`);
-    if(link != undefined)link.classList.add('active');
-  }
 });

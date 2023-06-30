@@ -27,14 +27,14 @@
 
             </div>
         </div>
-        
+
 
         <div class="col-md-4 order-md-first">
-            <div class="card border-primary rounded-5">
-                  <div class="card-body">
-                    <ul class="list-unstyled">
+            <div class="card border-primary rounded-4">
+                  <div class="card-body px-0">
+                    <ul class="sidebar-competitividad list-unstyled mb-0">
                         <li *ngFor="let item of listamenu">
-                            <a (click)="cambiarOidcompetitividad(item.oid)" [routerLink]="['/detalle-competitividad-regional']" >{{item.titulo}}</a>
+                            <a (click)="cambiarOidcompetitividad(item.oid)" [ngClass]="{'active-link': item.oid == oidCompetitividad}" [routerLink]="['/detalle-competitividad-regional']" >{{item.titulo}}</a>
                         </li>
                     </ul>
                 </div>

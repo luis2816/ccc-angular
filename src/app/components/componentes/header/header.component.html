@@ -6,13 +6,15 @@
                     <a class="nav-link logogovco" aria-label="Logo Gobierno de Colombia. Te llevará al inicio" href="https://www.gov.co" target="_blank"><img src="https://cdn.www.gov.co/assets/images/logo.svg" height="30"></a>
                 </div>
                 <div class="col-auto">
+                  <div class="accesibility">
+                    <button class="btn btn-outline-accent universal-icon" (click)="showControls()"><i class="bi bi-universal-access-circle text-white"></i></button>
+                    <button class="btn icon-minus border-0" [ngClass]="{'disabled':rootFontSize==16}" (click)="changeFontSize(false)"><span></span></button>
+                    <span class="letter-icon text-white"><i class="bi bi-type"></i></span>
+                    <button class="btn icon-plus border-0" [ngClass]="{'disabled':rootFontSize==20}" (click)="changeFontSize(true)"><span></span></button>
+                  </div>
+                </div>
+                <div class="col-auto">
                   <div class="d-flex align-items-center">
-                    <div class="accesibility">
-                      <button class="btn btn-outline-accent universal-icon" (click)="showControls()"><i class="bi bi-universal-access-circle text-white"></i></button>
-                      <button class="btn icon-minus border-0" [ngClass]="{'disabled':rootFontSize==16}" (click)="changeFontSize(false)"><span></span></button>
-                      <span class="text-white fs-4 mx-2"><i class="bi bi-type"></i></span>
-                      <button class="btn icon-plus border-0" [ngClass]="{'disabled':rootFontSize==20}" (click)="changeFontSize(true)"><span></span></button>
-                    </div>
                     <div id="google_element"></div>
                     <div class="follow-us">
                       <ul class="list-unstyled d-flex flex-row mb-0">
